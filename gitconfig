@@ -1,19 +1,29 @@
 [core]
-  editor=vim
+editor=vim
+autocrlf = input
 
 [user]
-  email="wezegege@live.fr"
-  name="Wezegege"
+email="wezegege@live.fr"
+name="Wezegege"
 
 [color]
-  branch=auto
-  diff=auto
-  interactive=auto
-  status=auto
+branch=auto
+diff=auto
+interactive=auto
+status=auto
 
 [format]
-  pretty=oneline
+pretty=oneline
 
 [github]
-  user = wezegege
-  token = 7c191e4a3f07cf8a78b19bb99d3935d8
+user = wezegege
+token = 7c191e4a3f07cf8a78b19bb99d3935d8
+
+[alias]
+st = status
+ci = commit
+co = checkout
+br = branch
+
+[help]
+autocorrect = 1

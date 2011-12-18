@@ -120,6 +120,8 @@ set smartcase
 set infercase
 set showmatch
 set showfulltag
+
+set timeoutlen=500
 set autoread " Read changes on a file by a different application
 set linebreak
 set clipboard+=unnamed,unnamedplus

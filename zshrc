@@ -37,7 +37,6 @@ setopt AUTO_CD
 
 export REPORTTIME=30
 
-bindkey -v
 # End of lines configured by zsh-newuser-install
 
 export PATH=$PATH:~/workspace/binaries

@@ -46,9 +46,9 @@ set listchars=eol:¶,tab:→→,trail:»,extends:↓,precedes:←,nbsp:·
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-if has('mouse')
-  set mouse=a
-endif
+"if has('mouse')
+"  set mouse=a
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type

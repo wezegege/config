@@ -6,7 +6,19 @@
 # environment
 #====================================================================
 
-export PATH=$PATH:~/workspace/binaries
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/python" ] ; then
+    PATH="$HOME/python:$PATH"
+fi
+
+
+# unset bell
+
+xset b 0
+setterm -blength 0
 
 #====================================================================
 # aliases

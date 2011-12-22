@@ -40,5 +40,15 @@ alias cdd="cd .."
 
 # applications
 
+alias dotar="tar pczf"
 alias untar="tar xvf"
+alias seetar="tar ztvf"
 alias sqlite="sqlite3"
+
+#===================================================================
+# work specifics
+#====================================================================
+
+export PYTHONSTARTUP=$HOME/.pythonstartup
+export http_proxy=10.66.243.130:8080
+export no_proxy=localhost,10.66.0.0

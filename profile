@@ -40,5 +40,7 @@ alias cdd="cd .."
 
 # applications
 
+alias dotar="tar pczf"
 alias untar="tar xvf"
+alias seetar="tar ztvf"
 alias sqlite="sqlite3"

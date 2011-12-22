@@ -20,6 +20,8 @@ set HIST_IGNORE_SPACE
 set HIST_REDUCE_BLANKS
 set AUTO_CD
 
+shopt -s cdspell
+
 # prompt
 
 function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }

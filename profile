@@ -48,3 +48,4 @@ alias seetar="tar ztvf"
 
 alias sqlite="sqlite3"
 alias make="make -j 4"
+alias vi="vim"

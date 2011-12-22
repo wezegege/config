@@ -51,6 +51,8 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
 
+set autocorrect
+
 export REPORTTIME=30
 
 if [ -f ~/.profile ]; then

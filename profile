@@ -38,9 +38,13 @@ alias grep="egrep -n --color=auto"
 alias mkdir="mkdir -p"
 alias cdd="cd .."
 
-# applications
+# archive
 
 alias dotar="tar pczf"
 alias untar="tar xvf"
 alias seetar="tar ztvf"
+
+# applications
+
 alias sqlite="sqlite3"
+alias make="make -j 4"

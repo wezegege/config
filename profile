@@ -49,6 +49,10 @@ alias sqlite="sqlite3"
 # work specifics
 #====================================================================
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
 export PYTHONSTARTUP=$HOME/.pythonstartup
-export http_proxy=10.66.243.130:8080
-export no_proxy=localhost,10.66.0.0
+export HTTP_PROXY=10.66.243.130:8080
+export HTTPS_PROXY=10.66.243.130:8080
+export NO_PROXY=localhost,10.66.0.0

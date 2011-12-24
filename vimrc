@@ -172,6 +172,7 @@ nmap < <<
 
 "paste shortcuts
 nmap <leader>p "+p
+nmap <leader>P "*p
 nmap <leader>0 "0p
 nmap <leader>1 "1p
 nmap <leader>2 "2p

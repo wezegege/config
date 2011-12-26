@@ -129,7 +129,7 @@ set tabpagemax=15
 set wildmenu
 set wildignore=*.o,*~,*.dll,*.so,*.a,*.pyc,*.pyo,*.swp,*.bak,*.class
 set wildmode=longest,list,full
-set fillchars="" " for separators
+set fillchars="" " split separators
 set diffopt+=iwhite " what to consider as a diff
 set shortmess=atI " Shorten vim messages
 set whichwrap=b,s,h,l,<,>,[,] " Easier navigation
@@ -204,6 +204,37 @@ cnoremap <ESC><C-F> <S-Right>
 cnoremap <ESC><C-H> <C-W>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Conque
+let g:ConqueTerm_FastMode = 1
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_InsertOnEnter = 1
+map <silent><leader>s <esc>:ConqueTerm zsh<CR>
+
+" LustyJuggler
+let g:LustyJugglerDefaultMappings = 0
+nmap <silent> <Leader>b :LustyJuggler<CR>
+
+" Tagbar
+let g:tagbar_usearrows = 1
+nnoremap <silent><leader>t :TagbarToggle<CR>
+
+"  Command-t
+noremap <leader>f <Esc>:call ProjectRoot()<CR>
+
+" Syntastic
+noremap <leader>x <Esc>:Errors<CR>
+
+" Indent-guides
+noremap <leader>ig <nop>
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+let g:indent_guides_enable_on_vim_startup = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -238,6 +269,40 @@ if !exists(":DiffOrig")
         \ | wincmd p | diffthis
 endif
 
+function! ProjectRoot()
+  let dest=""
+  let parent="."
+  while isdirectory(parent . "/.svn")
+    let dest=parent
+    let parent=parent . "/.."
+  endwhile
+  if dest == ""
+    let parent="."
+    while isdirectory(parent)
+      if isdirectory(parent . "/.git")
+        let dest=parent
+        break
+      else
+        let parent=parent . "/.."
+      endif
+    endwhile
+  endif
+  if dest == ""
+    let current_dir=getcwd()
+    for folder in split($PROJECTPATH, ":")
+      if current_dir =~ folder . "/"
+        let dest = substitute(current_dir, folder . "\\/\\([^/]\\+\\).*", folder . "\\/\\1", "g")
+        break
+      endif
+    endfor
+  endif
+  if dest == ""
+    let dest="~"
+  endif
+  exec "cd" dest
+  CommandT
+endfunction
+
 function! Shortcuts()
   echo ",e : explorer"
   echo ",c : clean extra spaces"
@@ -257,36 +322,3 @@ nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>
 nmap <silent><leader>d <esc>:call DelimitColumns()<CR>
 nmap <silent><leader>o <esc>:DiffOrig<CR>
 nmap <leader>h <esc>:call Shortcuts()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Conque
-let g:ConqueTerm_FastMode = 1
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-map <silent><leader>s <esc>:ConqueTerm zsh<CR>
-
-" LustyJuggler
-let g:LustyJugglerDefaultMappings = 0
-nmap <silent> <Leader>b :LustyJuggler<CR>
-
-" Tagbar
-let g:tagbar_usearrows = 1
-nnoremap <silent><leader>t :TagbarToggle<CR>
-
-"  Command-t
-noremap <leader>f <Esc>:CommandT<CR>
-noremap <leader>F <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
-
-" Syntastic
-noremap <leader>x <Esc>:Errors<CR>
-
-" Indent-guides
-noremap <leader>ig <nop>
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-let g:indent_guides_enable_on_vim_startup = 1

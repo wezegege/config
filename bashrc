@@ -21,6 +21,7 @@ set HIST_REDUCE_BLANKS
 set AUTO_CD
 
 shopt -s cdspell
+shopt -s nocaseglob
 
 # prompt
 

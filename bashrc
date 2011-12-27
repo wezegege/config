@@ -20,6 +20,8 @@ set HIST_IGNORE_SPACE
 set HIST_REDUCE_BLANKS
 set AUTO_CD
 
+set completion-ignore-case on
+
 shopt -s cdspell
 shopt -s nocaseglob
 

@@ -8,13 +8,24 @@
 #====================================================================
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
-if [ -d "$HOME/python" ] ; then
-    PATH="$HOME/python:$PATH"
+if [ -d "$HOME/.local/lib/python" ] ; then
+    PATH="$HOME/.local/lib/python:$PATH"
 fi
 
+# PROJECTPATH
+
+PROJECTPATH="$HOME/.local/lib/python:$HOME/.local/lib"
+PROJECTPATH="$PROJECTPATH:$HOME/workspace/cpp:$HOME/workspace/python"
+PROJECTPATH="$PROJECTPATH:$HOME/workspace/wiki:$HOME/workspace"
+PROJECTPATH="$PROJECTPATH:/usr/local/lib:/usr/local/share"
+PROJECTPATH="$PROJECTPATH:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
+PROJECTPATH="$PROJECTPATH:/usr/include:/usr/share"
+PROJECTPATH="$PROJECTPATH:/var/lib:/var/www"
+PROJECTPATH="$PROJECTPATH:/etc"
+export PROJECTPATH
 
 # unset bell
 
@@ -22,7 +33,7 @@ xset b 0
 setterm -blength 0
 
 #====================================================================
-# aliases
+# functions
 #====================================================================
 
 # parent_dir 3 -> cd ../../../
@@ -36,7 +47,7 @@ function parent_dir {
   cd $dir
 }
 
-export PROJECTPATH=~"/workspace:/usr/local/lib:/usr/local/share:/usr/lib:/usr/include:/usr/share:/var/lib:/var/www:/etc"
+
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
 function project_root {

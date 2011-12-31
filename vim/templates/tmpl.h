@@ -18,10 +18,10 @@
  *
  */
 #pragma once
-#ifndef %GUARD%
-#define %GUARD%
+#ifndef ¤GUARD¤
+#define ¤GUARD¤
 
-class %CLASS% {
+class ¤CLASS¤ {
   public:
 
   private:

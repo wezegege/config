@@ -122,6 +122,10 @@ set infercase
 set showmatch
 set showfulltag
 
+" Folding
+set foldenable
+set foldmethod=syntax
+
 set timeoutlen=500
 set autoread " Read changes on a file by a different application
 set linebreak

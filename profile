@@ -12,7 +12,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 if [ -d "$HOME/.local/lib/python" ] ; then
-    PATH="$HOME/.local/lib/python:$PATH"
+    PYTHONPATH="$HOME/.local/lib/python:$PYTHONPATH"
 fi
 
 # PROJECTPATH

@@ -10,16 +10,19 @@ function COLOR () {
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
 yellow=`COLOR 150`
-PROMPT="`COLOR 74`[$lightblue%n`COLOR 74`@$lightblue%M`COLOR 74`:$lightblue%~`COLOR 74`]$yellow(%*)
+PROMPT="${darkblue}[${lightblue}%n${darkblue}@${lightblue}%M${darkblue}:${lightblue}%~${darkblue}]${yellow}(%*)
 %#%f "
-PROMPT2="%F{3}%_> "
+PROMPT2="${yellow}%_>%f "
 
 # completion
 autoload -U compinit compinit
+compinit -C
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 # create a cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
@@ -50,6 +53,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
+
+set autocorrect
 
 export REPORTTIME=30
 

@@ -18,4 +18,4 @@
  *
  */
 
-#include "%FOLDER%/%HEADER%.h"
+#include "¤FOLDER¤/¤HEADER¤.h"

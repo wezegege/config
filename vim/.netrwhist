@@ -1,8 +1,0 @@
-﻿let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/g179076/Plone3/zinstance'
-let g:netrw_dirhist_2='/home/g179076/Plone3'
-let g:netrw_dirhist_3='/home/g179076'
-let g:netrw_dirhist_4='/home'
-let g:netrw_dirhist_5='/home/g179076'
-let g:netrw_dirhist_6='/home/g179076/doc'

@@ -12,13 +12,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 if [ -d "$HOME/.local/lib/python" ] ; then
-    PATH="$HOME/.local/lib/python:$PATH"
+    PYTHONPATH="$HOME/.local/lib/python:$PYTHONPATH"
 fi
 
 # PROJECTPATH
 
 PROJECTPATH="$HOME/.local/lib/python:$HOME/.local/lib"
 PROJECTPATH="$PROJECTPATH:$HOME/workspace/cpp:$HOME/workspace/python"
+PROJECTPATH="$PROJECTPATH:$HOME/workspace/perl:$HOME/workspace/php"
+PROJECTPATH="$PROJECTPATH:$HOME/workspace/sh:$HOME/workspace/eclipse"
 PROJECTPATH="$PROJECTPATH:$HOME/workspace/wiki:$HOME/workspace"
 PROJECTPATH="$PROJECTPATH:/usr/local/lib:/usr/local/share"
 PROJECTPATH="$PROJECTPATH:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
@@ -80,8 +82,10 @@ function project_root {
 
 alias ls="ls --color=auto"
 alias ll="ls -A --group-directories-first"
-alias lq="ls -oh"
+alias lq="ls -oh --group-directories-first"
 alias la="ll -oh"
+alias lt="ls -lrt"
+alias lg="lt -A"
 
 # common commands
 
@@ -108,7 +112,7 @@ alias vi="vim"
 
 alias sqlite="sqlite3"
 
-#===================================================================
+#====================================================================
 # work specifics
 #====================================================================
 
@@ -116,6 +120,6 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export PYTHONSTARTUP=$HOME/.pythonstartup
-export HTTP_PROXY=10.66.243.130:8080
-export HTTPS_PROXY=10.66.243.130:8080
+export HTTP_PROXY=http://10.66.243.130:8080
+export HTTPS_PROXY=https://10.66.243.130:8080
 export NO_PROXY=localhost,10.66.0.0

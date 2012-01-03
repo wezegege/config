@@ -171,6 +171,7 @@ noremap è `
 noremap ² [
 noremap & ]
 
+nmap dc ]czz
 nmap <silent> <C-N> :silent noh<CR>
 nmap > >>
 nmap < <<

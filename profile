@@ -112,14 +112,3 @@ alias vi="vim"
 
 alias sqlite="sqlite3"
 
-#====================================================================
-# work specifics
-#====================================================================
-
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
-export PYTHONSTARTUP=$HOME/.pythonstartup
-export HTTP_PROXY=http://10.66.243.130:8080
-export HTTPS_PROXY=https://10.66.243.130:8080
-export NO_PROXY=localhost,10.66.0.0

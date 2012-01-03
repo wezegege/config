@@ -16,3 +16,9 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/dbext"]
+	path = vim/bundle/dbext
+	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "vim/bundle/netrw"]
+	path = vim/bundle/netrw
+	url = https://github.com/vim-scripts/netrw.vim.git

@@ -2,10 +2,6 @@
 editor=vim
 autocrlf = input
 
-[user]
-email="wezegege@live.fr"
-name="Wezegege"
-
 [color]
 branch=auto
 diff=auto
@@ -14,10 +10,6 @@ status=auto
 
 [format]
 pretty=oneline
-
-[github]
-user = wezegege
-token = 7c191e4a3f07cf8a78b19bb99d3935d8
 
 [alias]
 st = status

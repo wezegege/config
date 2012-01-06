@@ -106,11 +106,12 @@ alias cdd="project_root"
 
 # applications
 
+alias sudo="sudo -E"
+alias diff="diff -u"
+
 alias sqlite="sqlite3"
 alias fmake="make -j 4"
 alias vi="vim"
-
-alias sqlite="sqlite3"
 
 #====================================================================
 # work specifics

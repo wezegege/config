@@ -106,7 +106,7 @@ alias cdd="project_root"
 
 # applications
 
-alias sudo="sudo -E"
+alias sudo="sudo -E "
 alias diff="diff -u"
 
 alias sqlite="sqlite3"

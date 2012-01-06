@@ -37,3 +37,7 @@ PS1="$darkblue[$lightblue\u$darkblue@$lightblue\h$darkblue:$lightblue\w$darkblue
 if [ -f ~/.profile ]; then
   . ~/.profile
 fi
+
+if [ -f ~/.commonrc ]; then
+  . ~/.commonrc
+fi

@@ -61,3 +61,7 @@ export REPORTTIME=30
 if [ -f ~/.profile ]; then
   source ~/.profile
 fi
+
+if [ -f ~/.commonrc ]; then
+  source ~/.commonrc
+fi

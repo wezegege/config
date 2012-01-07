@@ -22,3 +22,6 @@
 [submodule "vim/bundle/netrw"]
 	path = vim/bundle/netrw
 	url = https://github.com/vim-scripts/netrw.vim.git
+[submodule "vim/bundle/lusty-juggler"]
+	path = vim/bundle/lusty-juggler
+	url = https://github.com/sjbach/lusty.git

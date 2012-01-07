@@ -25,3 +25,6 @@
 [submodule "vim/bundle/lusty-juggler"]
 	path = vim/bundle/lusty-juggler
 	url = https://github.com/sjbach/lusty.git
+[submodule "vim/bundle/pathogen"]
+	path = vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git

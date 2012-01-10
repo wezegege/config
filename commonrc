@@ -115,4 +115,4 @@ alias vi="vim"
 
 # zsh specifics
 
-alias pacclean="pacman -Rsn $(pacman -Qqdt)"
+alias pacclean='pacman -Rsn $(pacman -Qqdt)'

@@ -190,6 +190,16 @@ nmap <leader>7 "7p
 nmap <leader>8 "8p
 nmap <leader>9 "9p
 
+" config files
+
+nmap <leader>av :split ~/.vimrc<cr>
+nmap <leader>ab :split ~/.bashrc<cr>
+nmap <leader>az :split ~/.zshrc<cr>
+nmap <leader>ac :split ~/.commonrc<cr>
+nmap <leader>ap :split ~/.profile<cr>
+nmap <leader>as :split ~/.subversion/config<cr>
+nmap <leader>ag :split ~/.gitconfig<cr>
+
 " windows related controls
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j

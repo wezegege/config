@@ -231,6 +231,7 @@ map <silent><leader>s <esc>:ConqueTerm zsh<CR>
 
 " LustyJuggler
 let g:LustyJugglerDefaultMappings = 0
+let g:LustyJugglerSuppressRubyWarning = 1
 nmap <silent> <Leader>b :LustyJuggler<CR>
 
 " Tagbar

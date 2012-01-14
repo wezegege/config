@@ -7,6 +7,6 @@ files=`ls -A -I $name`
 
 cd ~
 for file in $files; do
-  rm .$file
+  mv .$file .$file.old
   ln -s $folder/$file .$file
 done

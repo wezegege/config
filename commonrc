@@ -90,8 +90,13 @@ alias lg="lt -A"
 # common commands
 
 alias less="less -R"
-alias grep="egrep -n --color=auto"
+alias grep="grep -n --color=auto"
 alias mkdir="mkdir -p"
+alias ps="ps aux"
+alias duu="du -skh *"
+
+# reminder
+# df : disk space
 
 # archive
 

@@ -1,4 +1,5 @@
-
+#!/bin/zsh
+#
 # Prompt
 
 autoload -U colors && colors

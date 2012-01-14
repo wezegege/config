@@ -18,6 +18,8 @@ ci = commit
 co = checkout
 br = branch
 sub = submodule
+subpull = submodule foreach git pull
+subco = submodule foreach git checkout master
 
 [help]
 autocorrect = 1

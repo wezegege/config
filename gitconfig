@@ -1,6 +1,7 @@
 [core]
 editor=vim
 autocrlf = input
+whitespace = trailing-spaces,space-before-tab
 
 [color]
 branch=auto
@@ -9,7 +10,7 @@ interactive=auto
 status=auto
 
 [format]
-pretty=oneline
+pretty=oneline # display one line per log entry
 
 [alias]
 st = status
@@ -20,3 +21,16 @@ sub = submodule
 
 [help]
 autocorrect = 1
+
+[diff]
+renames = copies # detects file moving and copying
+mnemonicprefix = true
+
+[branch]
+autosetupmerge = true # auto track remote branch
+
+[push]
+default = tracking # defaults push to upstream branch
+
+[rerere]
+enabled = true # record resolved conflicts hunks

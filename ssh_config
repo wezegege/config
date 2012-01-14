@@ -1,11 +1,12 @@
 Host *
   ControlMaster auto
   ControlPath /tmp/ssh_mux_%h_%p_%r
+  HashKnownHosts no
 
   ForwardAgent no
   ForwardX11 no
 
-Host etl-services
+Host services
   Hostname etl-services.rmm.sagem
   User kevin
 

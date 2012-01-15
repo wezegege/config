@@ -13,6 +13,3 @@ Host services
 Host valid7
   Hostname forge-valid7.rmm.sagem
   User kevin
-
-Host *.sagem
-  User sagemuser

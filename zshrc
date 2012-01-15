@@ -89,8 +89,6 @@ setopt HIST_REDUCE_BLANKS
 #====================================================================
 # Stuff
 #====================================================================
-select-word-style shell
-
 bindkey -e
 bindkey "OH" beginning-of-line # Home
 bindkey "OF" end-of-line # End

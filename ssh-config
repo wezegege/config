@@ -6,10 +6,14 @@ Host *
   ForwardAgent no
   ForwardX11 no
 
+# misc. forges
 Host services
   Hostname etl-services.rmm.sagem
   User kevin
 
+# valid forges
 Host valid7
   Hostname forge-valid7.rmm.sagem
   User kevin
+
+# prod forges

@@ -117,3 +117,11 @@ alias diff="diff -u"
 alias sqlite="sqlite3"
 alias fmake="make -j 4"
 alias vi="vim"
+
+#====================================================================
+# specificities
+#====================================================================
+
+if [ -f ~/.uncommonrc ]; then
+  source ~/.uncommonrc   # --> Read /etc/bashrc, if present.
+f

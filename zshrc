@@ -130,10 +130,6 @@ alias pacclean='pacman -Rsn $(pacman -Qqdt)'
 # Extra config files
 #====================================================================
 
-if [ -f ~/.profile ]; then
-  source ~/.profile
-fi
-
 if [ -f ~/.commonrc ]; then
   source ~/.commonrc
 fi

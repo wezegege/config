@@ -49,10 +49,6 @@ yellow=`COLOR 150`
 PS1="$darkblue[$lightblue\u$darkblue@$lightblue\h$darkblue:$lightblue\w$darkblue]$yellow(\t)
 \$\[\e[0m\] "
 
-if [ -f ~/.profile ]; then
-  . ~/.profile
-fi
-
 if [ -f ~/.commonrc ]; then
   . ~/.commonrc
 fi

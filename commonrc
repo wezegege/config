@@ -95,9 +95,6 @@ alias mkdir="mkdir -p"
 alias ps="ps aux"
 alias duu="du -skh *"
 
-# reminder
-# df : disk space
-
 # archive
 
 alias dotar="tar pczf"
@@ -111,7 +108,7 @@ alias cdd="project_root"
 
 # applications
 
-alias sudo="sudo -E "
+alias sudo="sudo "
 alias diff="diff -u"
 
 alias sqlite="sqlite3"

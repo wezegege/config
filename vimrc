@@ -266,6 +266,7 @@ function! CleanExtraSpaces()
   let old_query = getreg('/')
   :%s/\s\+$//e
   retab
+  set ff=unix
   call setpos('.', save_cursor)
   call setreg('/', old_query)
 endfunction

@@ -87,10 +87,15 @@ alias la="ll -oh"
 alias lt="ls -lrt"
 alias lg="lt -A"
 
+# grep
+
+alias grep="grep -n --color=auto"
+alias egrep="egrep -n --color=auto"
+alias fgrep="fgrep -n --color=auto"
+
 # common commands
 
 alias less="less -R"
-alias grep="grep -n --color=auto"
 alias mkdir="mkdir -p"
 alias ps="ps aux"
 alias duu="du -skh *"
@@ -101,6 +106,11 @@ alias dotar="tar pczf"
 alias untar="tar xvf"
 alias seetar="tar ztvf"
 
+# debian packages
+
+alias seepack="dpkg -c"
+alias instpack="dpkg -i"
+
 # functions
 
 alias ..="parent_dir"
@@ -108,7 +118,7 @@ alias cdd="project_root"
 
 # applications
 
-alias sudo="sudo "
+alias sudo="sudo -E "
 alias diff="diff -u"
 
 alias sqlite="sqlite3"

@@ -10,7 +10,11 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
-HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd .."
+if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion   # --> Read /etc/bashrc, if present.
+fi
+
+HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd"
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000

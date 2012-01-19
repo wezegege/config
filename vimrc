@@ -88,6 +88,7 @@ au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
 au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
 au BufRead,BufNewFile *.cmake set filetype=cmake
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.py set shiftwidth=3
 
 " File management
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o

@@ -50,7 +50,16 @@ function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
 yellow=`COLOR 150`
-PS1="$darkblue[$lightblue\u$darkblue@$lightblue\h$darkblue:$lightblue\w$darkblue]$yellow(\t)
+red=`COLOR 167`
+isroot=${lightblue}
+isremote=${lightblue}
+if [ "a$SSH_CLIENT" != "a" ]; then
+   isremote=${red}
+fi
+if [ "$USERNAME" == "root" ]; then
+  isroot=${red}
+fi
+PS1="${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${yellow}(\t)
 \$\[\e[0m\] "
 
 if [ -f ~/.commonrc ]; then

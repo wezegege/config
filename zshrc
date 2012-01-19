@@ -13,7 +13,16 @@ function COLOR () {
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
 yellow=`COLOR 150`
-PROMPT="${darkblue}[${lightblue}%n${darkblue}@${lightblue}%M${darkblue}"
+red=`COLOR 167`
+isroot=${lightblue}
+isremote=${lightblue}
+if [ "a$SSH_CLIENT" != "a" ]; then
+   isremote=${red}
+fi
+if [ "$USERNAME" = "root" ]; then
+  isroot=${red}
+fi
+PROMPT="${darkblue}[${isroot}%n${darkblue}@${isremote}%M${darkblue}"
 PROMPT="$PROMPT:${lightblue}%~${darkblue}]${yellow}(%*)
 %#%f "
 PROMPT2="${yellow}%_>%f "

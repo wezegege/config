@@ -50,6 +50,9 @@ set backspace=indent,eol,start
 "  set mouse=a
 "endif
 
+set splitright
+set splitbelow
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,10 +125,12 @@ set smartcase
 set infercase
 set showmatch
 set showfulltag
+set gdefault
 
 " Folding
 set foldenable
-set foldmethod=syntax
+set foldmethod=indent
+set foldlevelstart=99
 
 set timeoutlen=500
 set autoread " Read changes on a file by a different application
@@ -148,8 +153,6 @@ set nostartofline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set pastetoggle=<F2>
 let mapleader="," "leader controls
-cmap w!! w !sudo tee % >/dev/null
-nmap <cr> o<esc>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -172,10 +175,29 @@ noremap è `
 noremap ² [
 noremap & ]
 
-nmap dc ]czz
+" motion
+nnoremap <PageUp> <C-U>
+nnoremap <PageDown> <C-D>
+nmap <BS> X
+
+" search
+nnoremap / /\v
+vnoremap / /\v
 nmap <silent> <C-N> :silent noh<CR>
+
+"diff
+nmap dc ]czz
 nmap > >>
 nmap < <<
+cmap w!! w !sudo tee % >/dev/null
+nmap <cr> o<esc>
+nnoremap <leader>* [I
+
+" buffers
+nnoremap <C-PageUp> :bp<cr>
+nnoremap <C-PageDown> :bn<cr>
+nmap <BS> X
+nmap <leader>q :b #<cr>:bdelete #<cr>
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -192,7 +214,6 @@ nmap <leader>8 "8p
 nmap <leader>9 "9p
 
 " config files
-
 nmap <leader>av :split ~/.vimrc<cr>
 nmap <leader>ab :split ~/.bashrc<cr>
 nmap <leader>az :split ~/.zshrc<cr>

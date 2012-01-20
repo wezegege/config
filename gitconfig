@@ -18,6 +18,7 @@ ci = commit
 co = checkout
 br = branch
 sub = submodule
+subup = submodule update --init
 subpull = submodule foreach git pull
 subco = submodule foreach git checkout master
 

@@ -1,30 +1,18 @@
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/bundle/conque"]
-	path = vim/bundle/conque
-	url = https://github.com/rson/vim-conque.git
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/dbext"]
 	path = vim/bundle/dbext
 	url = https://github.com/vim-scripts/dbext.vim.git
-[submodule "vim/bundle/netrw"]
-	path = vim/bundle/netrw
-	url = https://github.com/vim-scripts/netrw.vim.git
-[submodule "vim/bundle/lusty-juggler"]
-	path = vim/bundle/lusty-juggler
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = https://github.com/vim-scripts/YankRing.vim.git

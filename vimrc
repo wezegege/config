@@ -246,32 +246,33 @@ cnoremap <ESC><C-H> <C-W>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Conque
-let g:ConqueTerm_FastMode = 1
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-map <silent><leader>s <esc>:ConqueTerm zsh<CR>
+"let g:ConqueTerm_FastMode = 1
+"let g:ConqueTerm_ReadUnfocused = 1
+"let g:ConqueTerm_InsertOnEnter = 1
+"map <silent><leader>s <esc>:ConqueTerm zsh<CR>
 
 " LustyJuggler
-let g:LustyJugglerDefaultMappings = 0
-let g:LustyJugglerSuppressRubyWarning = 1
-nmap <silent> <Leader>b :LustyJuggler<CR>
+"let g:LustyJugglerDefaultMappings = 0
+"let g:LustyJugglerSuppressRubyWarning = 1
+"nmap <silent> <Leader>b :LustyJuggler<CR>
 
 " Tagbar
 let g:tagbar_usearrows = 1
 nnoremap <silent><leader>t :TagbarToggle<CR>
 
-"  Command-t
-noremap <leader>f <Esc>:call ProjectRoot()<CR>
+" Yankring
+let g:yankring_history_dir = "~/.local/share/vim"
+
 
 " Syntastic
 noremap <leader>x <Esc>:Errors<CR>
 
 " Indent-guides
-noremap <leader>ig <nop>
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-let g:indent_guides_enable_on_vim_startup = 1
+"noremap <leader>ig <nop>
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+"let g:indent_guides_enable_on_vim_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions

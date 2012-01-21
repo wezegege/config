@@ -133,6 +133,7 @@ alias -g G="| grep"
 
 # applications
 
+alias pacup='pacman -Syu'
 alias pacclean='pacman -Rsn $(pacman -Qqdt)'
 
 #====================================================================

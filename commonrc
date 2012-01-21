@@ -31,7 +31,9 @@ export PROJECTPATH
 
 # unset bell
 
+if [ "a$SSH_CLIENT" != "a" ]; then
 xset b 0
+fi
 setterm -blength 0
 
 #====================================================================

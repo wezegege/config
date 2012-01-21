@@ -214,13 +214,13 @@ nmap <leader>8 "8p
 nmap <leader>9 "9p
 
 " config files
-nmap <leader>av :split ~/.vimrc<cr>
-nmap <leader>ab :split ~/.bashrc<cr>
-nmap <leader>az :split ~/.zshrc<cr>
-nmap <leader>ac :split ~/.commonrc<cr>
-nmap <leader>ap :split ~/.profile<cr>
-nmap <leader>as :split ~/.subversion/config<cr>
-nmap <leader>ag :split ~/.gitconfig<cr>
+nmap <leader>av :vsplit ~/.vimrc<cr>
+nmap <leader>ab :vsplit ~/.bashrc<cr>
+nmap <leader>az :vsplit ~/.zshrc<cr>
+nmap <leader>ac :vsplit ~/.commonrc<cr>
+nmap <leader>ap :vsplit ~/.profile<cr>
+nmap <leader>as :vsplit ~/.subversion/config<cr>
+nmap <leader>ag :vsplit ~/.gitconfig<cr>
 
 " windows related controls
 nmap <C-h> <C-w>h

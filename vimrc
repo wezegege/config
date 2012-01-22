@@ -262,7 +262,7 @@ nnoremap <silent><leader>t :TagbarToggle<CR>
 
 " Yankring
 let g:yankring_history_dir = "~/.local/share/vim"
-
+let g:yankring_enabled = 0
 
 " Syntastic
 noremap <leader>x <Esc>:Errors<CR>
@@ -341,7 +341,7 @@ function! ProjectRoot()
     let dest="~"
   endif
   exec "cd" dest
-  CommandT
+  CommandTFlush
 endfunction
 
 function! Shortcuts()

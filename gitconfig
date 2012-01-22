@@ -17,6 +17,7 @@ st = status
 ci = commit
 co = checkout
 br = branch
+difff = diff --staged
 sub = submodule
 subup = submodule update --init
 subpull = submodule foreach git pull

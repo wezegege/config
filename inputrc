@@ -1,6 +1,8 @@
+set bell-style none
 set completion-ignore-case on
 set show-all-if-unmodified on
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+
+"[1;5A": history-search-backward
+"[1;5B": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char

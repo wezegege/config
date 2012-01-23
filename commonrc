@@ -127,6 +127,7 @@ alias lns="ln -s"
 alias sqlite="sqlite3"
 alias fmake="make -j 4"
 alias vi="vim"
+alias shutdown="shutdown -h"
 
 #====================================================================
 # specificities

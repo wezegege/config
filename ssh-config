@@ -6,6 +6,12 @@ Host *
   ForwardAgent no
   ForwardX11 no
 
+# laptop
+Host wez-laptop
+  Hostname 192.168.1.101
+  Port 2222
+  User wezegege
+
 # misc. forges
 Host services
   Hostname etl-services.rmm.sagem

@@ -50,6 +50,9 @@ set backspace=indent,eol,start
 "  set mouse=a
 "endif
 
+set splitright
+set splitbelow
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,10 +125,12 @@ set smartcase
 set infercase
 set showmatch
 set showfulltag
+set gdefault
 
 " Folding
 set foldenable
-set foldmethod=syntax
+set foldmethod=indent
+set foldlevelstart=99
 
 set timeoutlen=500
 set autoread " Read changes on a file by a different application
@@ -148,8 +153,6 @@ set nostartofline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set pastetoggle=<F2>
 let mapleader="," "leader controls
-cmap w!! w !sudo tee % >/dev/null
-nmap <cr> o<esc>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -172,10 +175,29 @@ noremap è `
 noremap ² [
 noremap & ]
 
-nmap dc ]czz
+" motion
+nnoremap <PageUp> <C-U>
+nnoremap <PageDown> <C-D>
+nmap <BS> X
+
+" search
+nnoremap / /\v
+vnoremap / /\v
 nmap <silent> <C-N> :silent noh<CR>
+
+"diff
+nmap dc ]czz
 nmap > >>
 nmap < <<
+cmap w!! w !sudo tee % >/dev/null
+nmap <cr> o<esc>
+nnoremap <leader>* [I
+
+" buffers
+nnoremap <C-PageUp> :bp<cr>
+nnoremap <C-PageDown> :bn<cr>
+nmap <BS> X
+nmap <leader>q :b #<cr>:bdelete #<cr>
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -192,14 +214,13 @@ nmap <leader>8 "8p
 nmap <leader>9 "9p
 
 " config files
-
-nmap <leader>av :split ~/.vimrc<cr>
-nmap <leader>ab :split ~/.bashrc<cr>
-nmap <leader>az :split ~/.zshrc<cr>
-nmap <leader>ac :split ~/.commonrc<cr>
-nmap <leader>ap :split ~/.profile<cr>
-nmap <leader>as :split ~/.subversion/config<cr>
-nmap <leader>ag :split ~/.gitconfig<cr>
+nmap <leader>av :vsplit ~/.vimrc<cr>
+nmap <leader>ab :vsplit ~/.bashrc<cr>
+nmap <leader>az :vsplit ~/.zshrc<cr>
+nmap <leader>ac :vsplit ~/.commonrc<cr>
+nmap <leader>ap :vsplit ~/.profile<cr>
+nmap <leader>as :vsplit ~/.subversion/config<cr>
+nmap <leader>ag :vsplit ~/.gitconfig<cr>
 
 " windows related controls
 nmap <C-h> <C-w>h
@@ -225,32 +246,33 @@ cnoremap <ESC><C-H> <C-W>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Conque
-let g:ConqueTerm_FastMode = 1
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-map <silent><leader>s <esc>:ConqueTerm zsh<CR>
+"let g:ConqueTerm_FastMode = 1
+"let g:ConqueTerm_ReadUnfocused = 1
+"let g:ConqueTerm_InsertOnEnter = 1
+"map <silent><leader>s <esc>:ConqueTerm zsh<CR>
 
 " LustyJuggler
-let g:LustyJugglerDefaultMappings = 0
-let g:LustyJugglerSuppressRubyWarning = 1
-nmap <silent> <Leader>b :LustyJuggler<CR>
+"let g:LustyJugglerDefaultMappings = 0
+"let g:LustyJugglerSuppressRubyWarning = 1
+"nmap <silent> <Leader>b :LustyJuggler<CR>
 
 " Tagbar
 let g:tagbar_usearrows = 1
 nnoremap <silent><leader>t :TagbarToggle<CR>
 
-"  Command-t
-noremap <leader>f <Esc>:call ProjectRoot()<CR>
+" Yankring
+let g:yankring_history_dir = "~/.local/share/vim"
+let g:yankring_enabled = 0
 
 " Syntastic
 noremap <leader>x <Esc>:Errors<CR>
 
 " Indent-guides
-noremap <leader>ig <nop>
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-let g:indent_guides_enable_on_vim_startup = 1
+"noremap <leader>ig <nop>
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+"let g:indent_guides_enable_on_vim_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -319,7 +341,7 @@ function! ProjectRoot()
     let dest="~"
   endif
   exec "cd" dest
-  CommandT
+  CommandTFlush
 endfunction
 
 function! Shortcuts()

@@ -29,11 +29,6 @@ PROJECTPATH="$PROJECTPATH:/var/lib:/var/www"
 PROJECTPATH="$PROJECTPATH:/etc"
 export PROJECTPATH
 
-# unset bell
-
-xset b 0
-setterm -blength 0
-
 #====================================================================
 # functions
 #====================================================================
@@ -72,6 +67,12 @@ function project_root {
   fi
   [[ $dest == "" ]] && dest=~
   cd $dest
+}
+
+# Lists sometimes used commands
+function helper {
+  echo "df : list disk and their remaining spaces"
+  echo "pkgfile : find package corresponding to a command"
 }
 
 #====================================================================

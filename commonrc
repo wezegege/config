@@ -121,6 +121,8 @@ alias cdd="project_root"
 
 alias sudo="sudo -E "
 alias diff="diff -u"
+alias taill="tail -f"
+alias lns="ln -s"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"

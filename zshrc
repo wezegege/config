@@ -128,8 +128,24 @@ autoload zmv
 # global aliases
 
 alias -g L="| less"
-alias -g S="2>/dev/null"
+alias -g _="2>/dev/null"
 alias -g G="| grep"
+alias -g C="| wc -l"
+alias -g X="| xargs"
+alias -g S="| sort"
+
+# suffixes
+
+alias -s mkv="vlc"
+alias -s avi="vlc"
+alias -s pdf="evince"
+alias -s png="eog"
+alias -s jpg="eog"
+alias -s jpeg="eog"
+alias -s gif="eog"
+alias -s py="python"
+alias -s rb="ruby"
+alias -s pl="perl"
 
 # applications
 

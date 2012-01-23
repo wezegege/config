@@ -187,8 +187,12 @@ nmap <silent> <C-N> :silent noh<CR>
 
 "diff
 nmap dc ]czz
+
 nmap > >>
 nmap < <<
+vnoremap < <gv
+vnoremap > >gv
+
 cmap w!! w !sudo tee % >/dev/null
 nmap <cr> o<esc>
 nnoremap <leader>* [I

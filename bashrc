@@ -47,10 +47,17 @@ shopt -s expand_aliases
 # prompt
 
 function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }
+function CLASSIC_COLOR () { echo -ne "\[\e[1;$1m\]"; }
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
 yellow=`COLOR 150`
 red=`COLOR 167`
+if [ "$TERM" == "linux" ]; then
+  darkblue=`CLASSIC_COLOR 34`
+  lightblue=`CLASSIC_COLOR 36`
+  yellow=`CLASSIC_COLOR 33`
+  red=`CLASSIC_COLOR 31`
+fi
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then

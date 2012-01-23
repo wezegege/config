@@ -3,17 +3,21 @@
 #====================================================================
 # Prompt
 #====================================================================
-
 autoload -U colors && colors
 
-function COLOR () {
-  echo -ne "%{\033[38;5;$1m%}";
-}
+function COLOR () { echo -ne "%{\033[38;5;$1m%}"; }
+function CLASSIC_COLOR () { echo -ne "%{\033[1;$1m%}"; }
 
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
 yellow=`COLOR 150`
 red=`COLOR 167`
+if [ "$TERM" = "linux" ]; then
+  darkblue=`CLASSIC_COLOR 34`
+  lightblue=`CLASSIC_COLOR 36`
+  yellow=`CLASSIC_COLOR 33`
+  red=`CLASSIC_COLOR 31`
+fi
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
@@ -143,6 +147,7 @@ alias -s png="eog"
 alias -s jpg="eog"
 alias -s jpeg="eog"
 alias -s gif="eog"
+alias -s svg="eog"
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"

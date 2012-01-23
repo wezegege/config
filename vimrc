@@ -36,7 +36,7 @@ set showmode
 set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}\ (%l\/%L,%c%V)\ #%n\ %P
 set lazyredraw
 set ttyfast
-set scrolloff=5
+set scrolloff=2
 set cursorline
 set title
 

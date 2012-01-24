@@ -151,6 +151,8 @@ alias -s svg="eog"
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
+alias -s xls="oocalc"
+alias -s doc="oowriter"
 
 # applications
 

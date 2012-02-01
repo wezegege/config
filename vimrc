@@ -269,6 +269,9 @@ let g:yankring_history_dir = "~/.local/share/vim"
 let g:yankring_enabled = 0
 
 " Syntastic
+let g:syntastic_mode_map = {'mode': 'active',
+      \'active_filetypes': [],
+      \'passive_filetypes': ['python']}
 noremap <leader>x <Esc>:Errors<CR>
 
 " Indent-guides

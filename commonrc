@@ -134,10 +134,10 @@ alias shutdown="shutdown -h"
 #====================================================================
 # specificities
 #====================================================================
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ -f /usr/local/bin/virtualenvwrapper.sh && ! -d "~/.virtualenvs" ]]; then
+   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 if [ -f ~/.uncommonrc ]; then
-  source ~/.uncommonrc   # --> Read /etc/bashrc, if present.
+   source ~/.uncommonrc   # --> Read /etc/bashrc, if present.
 fi

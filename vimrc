@@ -91,7 +91,6 @@ au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
 au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
 au BufRead,BufNewFile *.cmake set filetype=cmake
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.py set shiftwidth=3 softtabstop=3
 
 " File management
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
@@ -106,8 +105,8 @@ set smartindent
 
 " Indent management
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=3
+set softtabstop=3
 set smarttab
 
 set autochdir
@@ -271,7 +270,7 @@ let g:yankring_enabled = 0
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
-      \'passive_filetypes': ['python']}
+      \'passive_filetypes': []}
 noremap <leader>x <Esc>:Errors<CR>
 
 " Indent-guides

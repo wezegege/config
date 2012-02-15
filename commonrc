@@ -99,7 +99,9 @@ alias fgrep="fgrep -n --color=auto"
 alias less="less -R"
 alias mkdir="mkdir -p"
 alias ps="ps aux"
-alias duu="du -skh *"
+alias du="du -h"
+alias duu="du -sk *"
+alias df="df -h"
 
 # archive
 

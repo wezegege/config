@@ -69,10 +69,18 @@ function project_root {
   cd $dest
 }
 
-# Lists sometimes used commands
-function helper {
-  echo "df : list disk and their remaining spaces"
-  echo "pkgfile : find package corresponding to a command"
+function pkg-install {
+   hash apt-get 2>/dev/null
+   [ $? -eq 0 ] && apt-get install
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && pacman -S
+}
+
+function pkg-upgrade {
+   hash apt-get 2>/dev/null
+   [ $? -eq 0 ] && apt-get update && apt-get upgrade
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && pacman -Syu
 }
 
 #====================================================================

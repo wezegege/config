@@ -29,6 +29,8 @@ PROJECTPATH="$PROJECTPATH:/var/lib:/var/www"
 PROJECTPATH="$PROJECTPATH:/etc"
 export PROJECTPATH
 
+export EDITOR="vim"
+
 #====================================================================
 # functions
 #====================================================================

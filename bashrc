@@ -19,13 +19,14 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILESIZE=20000
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoreboth
 set APPEND_HISTORY
 set AUTO_CD
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
+shopt -s cmdhist
+PROMPT_COMMAND='history -a; history -n'
 set completion-ignore-case on
 
 # make less more friendly for non-text input files, see lesspipe(1)

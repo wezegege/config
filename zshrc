@@ -31,6 +31,8 @@ PROMPT="$PROMPT:${lightblue}%~${darkblue}]${yellow}(%*)
 %#%f "
 PROMPT2="${yellow}%_>%f "
 
+#exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
+
 #====================================================================
 # Completion
 #====================================================================
@@ -110,7 +112,6 @@ bindkey "[6~" end-of-history # PageDown
 bindkey "[3~" delete-char # Del
 
 # Set default editor
-export EDITOR="vim"
 if [[ -x $(which vim) ]]
 then
   export EDITOR="vim"

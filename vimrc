@@ -129,7 +129,7 @@ set gdefault
 " Folding
 set foldenable
 set foldmethod=indent
-set foldlevelstart=99
+set foldlevelstart=1
 
 set timeoutlen=500
 set autoread " Read changes on a file by a different application

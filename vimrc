@@ -119,7 +119,6 @@ set nobackup
 
 " Search
 set incsearch    " do incremental searching
-set noignorecase
 set smartcase
 set infercase
 set showmatch
@@ -138,7 +137,7 @@ set clipboard+=unnamed,unnamedplus
 set tabpagemax=15
 set wildmenu
 set wildignore=*.o,*~,*.dll,*.so,*.a,*.pyc,*.pyo,*.swp,*.bak,*.class
-set wildmode=longest,list,full
+set wildmode=list:longest,list:full
 set fillchars="" " split separators
 set diffopt+=iwhite " what to consider as a diff
 set shortmess=atI " Shorten vim messages
@@ -193,7 +192,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 cmap w!! w !sudo tee % >/dev/null
-nmap <cr> o<esc>
+nmap <CR> o<esc>
 nnoremap <leader>* [I
 
 " buffers
@@ -201,6 +200,7 @@ nnoremap <C-PageUp> :bp<cr>
 nnoremap <C-PageDown> :bn<cr>
 nmap <BS> X
 nmap <leader>q :b #<cr>:bdelete #<cr>
+nmap <leader>b :buffers<cr>:b 
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -232,17 +232,19 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " allow command line editing like emacs
-cnoremap <C-A>      <Home>
-cnoremap <C-B>      <Left>
-cnoremap <C-E>      <End>
-cnoremap <C-F>      <Right>
-cnoremap <C-N>      <End>
-cnoremap <C-P>      <Up>
-cnoremap <ESC>b     <S-Left>
-cnoremap <ESC><C-B> <S-Left>
-cnoremap <ESC>f     <S-Right>
-cnoremap <ESC><C-F> <S-Right>
-cnoremap <ESC><C-H> <C-W>
+cnoremap <C-A>       <Home>
+cnoremap <C-B>       <Left>
+cnoremap <C-E>       <End>
+cnoremap <C-F>       <Right>
+cnoremap <C-N>       <End>
+cnoremap <C-P>       <Up>
+cnoremap <C-j>       <t_kd>
+cnoremap <C-k>       <t_ku>
+cnoremap <M-B>       <S-Left>
+cnoremap <ESC><C-B>  <S-Left>
+cnoremap <M-B>       <S-Right>
+cnoremap <ESC><C-F>  <S-Right>
+cnoremap <ESC><C-H>  <C-W>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins

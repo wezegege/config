@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-$Revision: ¤revision¤$
-$Author: ¤author¤$
-$Date: ¤date¤$
+$Revision$
+$Author$
+$Date$
 
 ---DocStart---
 Description:

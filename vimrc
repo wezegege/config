@@ -104,9 +104,9 @@ set copyindent
 set smartindent
 
 " Indent management
-set expandtab
 set shiftwidth=3
 set softtabstop=3
+set expandtab
 set smarttab
 
 set autochdir
@@ -146,6 +146,9 @@ set whichwrap=b,s,h,l,<,>,[,] " Easier navigation
 set hidden " don't close buffers, just hide them
 set key=
 set nostartofline
+set noerrorbells
+set visualbell
+set t_vb=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key binding

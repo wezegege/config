@@ -204,6 +204,7 @@ nnoremap <C-PageDown> :bn<cr>
 nmap <BS> X
 nmap <leader>q :b #<cr>:bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
+nnoremap <silent>d "_d
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -400,7 +401,6 @@ let &cpo = s:save_cpo | unlet s:save_cpo
 function! Shortcuts()
   echo ",e : explorer"
   echo ",c : clean extra spaces"
-  echo ",d : delimit columns"
   echo ",o : diff with origin"
   echo ",s : shell"
   echo ",b : buffers"
@@ -413,6 +413,5 @@ endfunction
 " Shortcuts
 nmap <silent> <leader>e :Explore<CR>
 nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>
-nmap <silent><leader>d <esc>:call DelimitColumns()<CR>
 nmap <silent><leader>o <esc>:DiffOrig<CR>
 nmap <leader>h <esc>:call Shortcuts()<CR>

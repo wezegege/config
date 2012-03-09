@@ -4,5 +4,7 @@ set show-all-if-unmodified on
 
 "[1;5A": history-search-backward
 "[1;5B": history-search-forward
+"p": history-search-backward
+"n": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char

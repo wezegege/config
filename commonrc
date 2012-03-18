@@ -29,7 +29,13 @@ PROJECTPATH="$PROJECTPATH:/var/lib:/var/www"
 PROJECTPATH="$PROJECTPATH:/etc"
 export PROJECTPATH
 
-export EDITOR="vim"
+# Set default editor
+if [[ -x $(which vim) ]]
+then
+  export EDITOR="vim"
+  export USE_EDITOR=$EDITOR
+  export VISUAL=$EDITOR
+fi
 
 #====================================================================
 # functions

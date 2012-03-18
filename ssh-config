@@ -1,7 +1,7 @@
 Host *
   ControlMaster auto
   ControlPath /tmp/ssh_mux_%h_%p_%r
-  ControlPersist yes
+  ControlPersist 1h
   HashKnownHosts yes
 
   ForwardAgent yes

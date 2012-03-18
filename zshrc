@@ -111,14 +111,6 @@ bindkey "[5~" beginning-of-history # PageUp
 bindkey "[6~" end-of-history # PageDown
 bindkey "[3~" delete-char # Del
 
-# Set default editor
-if [[ -x $(which vim) ]]
-then
-  export EDITOR="vim"
-  export USE_EDITOR=$EDITOR
-  export VISUAL=$EDITOR
-fi
-
 setopt AUTO_CD
 
 export REPORTTIME=30
@@ -138,6 +130,7 @@ alias -g G="| grep"
 alias -g C="| wc -l"
 alias -g X="| xargs"
 alias -g S="| sort"
+alias -g U="| uniq"
 
 # suffixes
 
@@ -153,7 +146,9 @@ alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
 alias -s xls="oocalc"
+alias -s ods="oocalc"
 alias -s doc="oowriter"
+alias -s odt="oowriter"
 
 # applications
 

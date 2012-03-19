@@ -204,7 +204,10 @@ nnoremap <C-PageDown> :bn<cr>
 nmap <BS> X
 nmap <leader>q :b #<cr>:bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
-nnoremap <silent>d "_d
+nnoremap <leader>d "_d
+nmap <leader>g :!egrep "/" *
+nmap <leader>s :%s#/#
+nmap <leader>S :bufdo %s#/#
 
 "paste shortcuts
 nmap <leader>p "+p

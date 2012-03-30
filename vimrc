@@ -179,7 +179,6 @@ noremap & ]
 " motion
 nnoremap <PageUp> <C-U>
 nnoremap <PageDown> <C-D>
-nmap <BS> X
 
 " search
 nnoremap / /\v

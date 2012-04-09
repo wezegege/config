@@ -4,6 +4,7 @@ startup_message off
 vbell off
 
 autodetach on
+nonblock on
 
 term screen-256color
 # allow 256 colors on xterm
@@ -31,3 +32,14 @@ bind = resize =
 bind + resize +1
 bind - resize -1
 bind _ resize max
+
+bind & select 1
+bind é select 2
+bind " select 3
+bind ' select 4
+bind ( select 5
+bind - select 6
+bind è select 7
+bind _ select 8
+bind ç select 9
+bind à select 10

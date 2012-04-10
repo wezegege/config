@@ -176,10 +176,6 @@ noremap è `
 noremap ² [
 noremap & ]
 
-" motion
-nnoremap <PageUp> <C-U>
-nnoremap <PageDown> <C-D>
-
 " search
 nnoremap / /\v
 vnoremap / /\v
@@ -197,6 +193,11 @@ cmap w!! w !sudo tee % >/dev/null
 nmap <CR> o<esc>
 nnoremap <leader>* [I
 
+" splits
+
+nmap <C-O> :split<CR>
+nmap <C-E> :vsplit<CR>
+
 " buffers
 nnoremap <C-PageUp> :bp<cr>
 nnoremap <C-PageDown> :bn<cr>
@@ -205,7 +206,7 @@ nmap <leader>q :b #<cr>:bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
 nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
-nmap <leader>s :%s#/#
+nnoremap <leader>s :%s#/#
 nmap <leader>S :bufdo %s#/#
 
 "paste shortcuts
@@ -280,7 +281,7 @@ let g:yankring_enabled = 0
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
-      \'passive_filetypes': []}
+      \'passive_filetypes': ['python']}
 noremap <leader>x <Esc>:Errors<CR>
 
 " Indent-guides

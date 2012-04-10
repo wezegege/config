@@ -1,0 +1,45 @@
+
+shell -${SHELL}
+startup_message off
+vbell off
+
+autodetach on
+nonblock on
+
+term screen-256color
+# allow 256 colors on xterm
+attrcolor b ".I" # allow bold color on xter:
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' # tell screen how to set colors
+defbce on # use current bg color for erased chars
+
+# scrolling
+defscrollback 2000
+termcapinfo xterm* ti@:te@
+
+ignorecase on
+msgminwait 0 # no delay to copy mode
+
+# status line at bottom showing opened windows and time and shit
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{ kw}%?-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+# binds
+
+escape b
+
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+bind & select 1
+bind é select 2
+bind " select 3
+bind ' select 4
+bind ( select 5
+bind - select 6
+bind è select 7
+bind _ select 8
+bind ç select 9
+bind à select 10

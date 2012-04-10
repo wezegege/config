@@ -200,7 +200,7 @@ nnoremap <leader>* [I
 " buffers
 nnoremap <C-PageUp> :bp<cr>
 nnoremap <C-PageDown> :bn<cr>
-nmap <BS> X
+" nmap <BS> X
 nmap <leader>q :b #<cr>:bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
 nnoremap <leader>d "_d

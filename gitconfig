@@ -17,11 +17,12 @@ st = status
 ci = commit
 co = checkout
 br = branch -avv
+pull = pull --recurse-submodules=yes
 difff = diff --staged
 addd = add --patch
 sub = submodule
 subup = submodule update --init
-subpull = submodule foreach git pull
+subpull = submodule foreach git pull origin master
 subco = submodule foreach git checkout master
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
 

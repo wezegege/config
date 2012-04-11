@@ -104,8 +104,8 @@ set copyindent
 set smartindent
 
 " Indent management
-set shiftwidth=3
-set softtabstop=3
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smarttab
 
@@ -194,13 +194,18 @@ nmap <CR> o<esc>
 nnoremap <leader>* [I
 
 " splits
-
 nmap <C-O> :split<CR>
 nmap <C-E> :vsplit<CR>
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
-" buffers
-nnoremap <C-PageUp> :bp<cr>
-nnoremap <C-PageDown> :bn<cr>
+" tabs
+nmap <C-T> :tabnew<CR>
+nnoremap <C-PageUp> :tabprevious<CR>
+nnoremap <C-PageDown> :tabnext<CR>
+
 " nmap <BS> X
 nmap <leader>q :b #<cr>:bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
@@ -231,12 +236,6 @@ nmap <leader>ac :vsplit ~/.commonrc<cr>
 nmap <leader>ap :vsplit ~/.profile<cr>
 nmap <leader>as :vsplit ~/.subversion/config<cr>
 nmap <leader>ag :vsplit ~/.gitconfig<cr>
-
-" windows related controls
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 
 " allow command line editing like emacs
 cnoremap <C-A>       <Home>

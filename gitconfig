@@ -1,5 +1,5 @@
 [core]
-editor=vim
+editor = vim
 autocrlf = input
 whitespace = trailing-spaces,space-before-tab
 
@@ -41,7 +41,3 @@ default = tracking # defaults push to upstream branch
 
 [rerere]
 enabled = true # record resolved conflicts hunks
-
-[github]
-user = wezegege
-token = 7c191e4a3f07cf8a78b19bb99d3935d8

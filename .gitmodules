@@ -4,21 +4,9 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
-[submodule "vim/bundle/dbext"]
-	path = vim/bundle/dbext
-	url = https://github.com/vim-scripts/dbext.vim.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/yankring"]
-	path = vim/bundle/yankring
-	url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "vim/bundle/commandt"]
-	path = vim/bundle/commandt
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git

@@ -104,10 +104,11 @@ set copyindent
 set smartindent
 
 " Indent management
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set expandtab " uses spaces instead of tabs
 set smarttab
+set shiftwidth=4 " beginning of line with smarttab
+set tabstop=4 " everything else with smarttab
+" set softtabstop=0
 
 set autochdir
 
@@ -121,9 +122,10 @@ set nobackup
 set incsearch    " do incremental searching
 set smartcase
 set infercase
+set wildignorecase " file name case insensitive completion
 set showmatch
 set showfulltag
-set gdefault
+set gdefault " substitutes are global by default
 
 " Folding
 set foldenable
@@ -145,6 +147,8 @@ set whichwrap=b,s,h,l,<,>,[,] " Easier navigation
 set hidden " don't close buffers, just hide them
 set key=
 set nostartofline
+
+" shutdown error bells
 set noerrorbells
 set visualbell
 set t_vb=

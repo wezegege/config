@@ -91,6 +91,7 @@ au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
 au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
 au BufRead,BufNewFile *.cmake set filetype=cmake
 au BufRead,BufNewFile *.md set filetype=markdown
+autocmd FileType make setlocal noexpandtab
 
 " File management
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
@@ -100,7 +101,7 @@ set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set autoindent    " always set autoindenting on
-set copyindent
+set nocopyindent  " if set to True, creates tabs instead of spaces
 set smartindent
 
 " Indent management
@@ -108,7 +109,7 @@ set expandtab " uses spaces instead of tabs
 set smarttab
 set shiftwidth=4 " beginning of line with smarttab
 set tabstop=4 " everything else with smarttab
-" set softtabstop=0
+set softtabstop=4
 
 set autochdir
 

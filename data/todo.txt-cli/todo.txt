@@ -1,0 +1,4 @@
++migration handle people in ad but not in ldap
++migration sync users
++migration translate see also
++svn branch/tag BO_<module_name><anything>

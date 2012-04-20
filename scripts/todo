@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/config/scripts/todo.txt-cli
+./todo.sh -d ~/config/data/todo.txt-cli/todo.cfg $@

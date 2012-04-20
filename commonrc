@@ -11,6 +11,7 @@
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+PATH="$HOME/config/scripts:$PATH"
 if [ -d "$HOME/.local/lib/python" ] ; then
     PYTHONPATH="$HOME/.local/lib/python:$PYTHONPATH"
 fi
@@ -147,6 +148,7 @@ alias fmake="make -j 4"
 alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
+alias do="make -f ${HOME}/config/data/Makefile"
 
 #====================================================================
 # specificities

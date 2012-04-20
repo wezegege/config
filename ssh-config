@@ -1,9 +1,151 @@
 Host *
-  ControlMaster auto
-  ControlPath /tmp/ssh_mux_%h_%p_%r
+#  ControlMaster auto
+#  ControlPath /tmp/ssh_mux_%h_%p_%r
 #  ControlPersist 1h
   HashKnownHosts yes
 
   ForwardAgent yes
   ForwardX11 no
 
+Host *.sagem 10.66.* 10.68.*
+   User sagemuser
+
+Host michel
+   Hostname 10.66.176.72
+   User kevin
+
+#--------------------------------------------------------------
+# Valid forges
+#--------------------------------------------------------------
+
+Host valid2
+   Hostname forge-valid2.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid2
+
+Host valid5
+   Hostname forge-valid5.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid5
+
+Host valid7
+   Hostname forge-valid7.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid7
+
+Host valid8
+   Hostname forge-valid8.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid8
+
+Host valid10
+   Hostname forge-valid10.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid10
+
+Host valid11
+   Hostname forge-valid11.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid11
+
+Host valid13
+   Hostname forge-valid13.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid13
+
+Host valid15
+   Hostname forge-valid15.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid15
+
+Host valid17
+   Hostname forge-valid17.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid17
+
+Host testperf2
+   Hostname forge-testperf2.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/testperf2
+
+Host test2
+   Hostname forge-test2.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/test2
+
+#--------------------------------------------------------------
+# Prod forges
+#--------------------------------------------------------------
+
+Host urd1modules
+   Hostname forge-urd1modules.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd1modules
+
+Host urd1femto
+   Hostname forge-urd1femto.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd1femto
+
+Host urd2
+   Hostname forge-urd2.vzy.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd2
+
+Host urd31
+   Hostname forge-urd31.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd31
+
+Host urd44
+   Hostname forge-urd44.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd44
+
+Host shenzhen router
+   Hostname forge-router.ads.local
+   User kevin
+   IdentityFile ~/.ssh/keys/shenzhen
+
+Host smartmetering
+   Hostname forge-smartmetering.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/smartmetering
+
+#--------------------------------------------------------------
+# Miscellanous
+#--------------------------------------------------------------
+
+Host biblio
+   Hostname forge-biblio.vzy.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/biblio
+
+Host frontend
+   Hostname rmm08066.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/frontend
+
+Host services
+   Hostname etl-services.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/services
+
+Host etl
+   Hostname forge-etl.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/etl
+
+#--------------------------------------------------------------
+# LDAP
+#--------------------------------------------------------------
+
+Host backup ldaptest
+   Hostname 10.66.236.94
+   User kevin
+   IdentityFile ~/.ssh/keys/backup
+
+Host ldapprod
+   Hostname 10.66.236.67
+   User kevin
+   IdentityFile ~/.ssh/keys/ldapprod

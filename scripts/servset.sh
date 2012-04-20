@@ -8,6 +8,7 @@ ln -s config/vim .vim
 ln -s config/inputrc .inputrc
 ln -s config/commonrc .commonrc
 ln -s config/gitconfig .gitconfig
+ln -s config/uncommonrc/sagemcom .uncommonrc
 cd config
 git submodule update --init
 cd ~

@@ -148,7 +148,7 @@ alias fmake="make -j 4"
 alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
-alias do="make -f ${HOME}/config/data/Makefile"
+alias gmake="make -f ${HOME}/config/data/Makefile"
 
 #====================================================================
 # specificities

@@ -1,13 +1,10 @@
-(A) +migration handle people in ad but not in ldap
-+migration sync users
-(B) +migration translate see also
 (C) +svn branch/tag BO_<module_name><anything>
-+migration merge with syncho algo @Nicolas
+(B) +migration merge with syncho algo @Nicolas
 (C) +svn2deb test it
 +sqlutils session proxy for class wide sessions
 +sqlutils each class should have a reference to a orm container
 +sqlutils single class making to test and improve
-@Fred RH
 @protectic april sheet
-@goislard component migration for two last modules
-(A) @sagemcom day count
+(B) @goislard component migration for two last modules
++migration screen case
+(A) +migration mapping issues @Fred

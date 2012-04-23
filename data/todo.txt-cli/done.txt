@@ -1,0 +1,5 @@
+x 2012-04-23 @sagemcom day count
+x 2012-04-23 @Fred RH
+x 2012-04-23 +migration sync users
+x 2012-04-23 +ldapsync log handling : overwrite on relaunch and timestamp on exception
+x 2012-04-23 +ldapsync handle 'can't contact ldap server

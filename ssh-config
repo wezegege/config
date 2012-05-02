@@ -5,7 +5,7 @@ Host *
   HashKnownHosts yes
 
   ForwardAgent yes
-  ForwardX11 no
+  ForwardX11 yes
 
 Host *.sagem 10.66.* 10.68.*
    User sagemuser

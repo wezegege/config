@@ -8,7 +8,7 @@ if has("multi_byte")
    endif
    set encoding=utf-8
    setglobal fileencoding=utf-8
-   setglobal bomb
+   " setglobal bom
    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
@@ -29,6 +29,7 @@ else
 endif
 
 set number
+set relativenumber
 set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
@@ -107,9 +108,9 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=4 " beginning of line with smarttab
-set tabstop=4 " everything else with smarttab
-set softtabstop=4
+set shiftwidth=2 " beginning of line with smarttab
+set tabstop=2 " everything else with smarttab
+set softtabstop=2
 
 set autochdir
 
@@ -237,10 +238,6 @@ nmap <leader>9 "9p
 nmap <leader>av :vsplit ~/.vimrc<cr>
 nmap <leader>ab :vsplit ~/.bashrc<cr>
 nmap <leader>az :vsplit ~/.zshrc<cr>
-nmap <leader>ac :vsplit ~/.commonrc<cr>
-nmap <leader>ap :vsplit ~/.profile<cr>
-nmap <leader>as :vsplit ~/.subversion/config<cr>
-nmap <leader>ag :vsplit ~/.gitconfig<cr>
 
 " allow command line editing like emacs
 cnoremap <C-A>       <Home>
@@ -257,7 +254,7 @@ cnoremap <M-B>       <S-Right>
 cnoremap <ESC><C-F>  <S-Right>
 cnoremap <ESC><C-H>  <C-W>
 
-cnoremap %s %s#\v#<left>
+cnoremap s# s#\v
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -279,14 +276,21 @@ let g:tagbar_usearrows = 1
 nnoremap <silent><leader>t :TagbarToggle<CR>
 
 " Yankring
-let g:yankring_history_dir = "~/.local/share/vim"
-let g:yankring_enabled = 0
+"let g:yankring_history_dir = "~/config/data/vim/yankring"
+"let g:yankring_enabled = 0
 
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
-      \'passive_filetypes': ['python']}
+      \'passive_filetypes': []}
 noremap <leader>x <Esc>:Errors<CR>
+
+" UltiSnips
+let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsListSnippets = "<C-s>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:ultisnips_python_style = "sphinx"
+noremap <leader>as :UltiSnipsEdit<cr>
 
 " Indent-guides
 "noremap <leader>ig <nop>

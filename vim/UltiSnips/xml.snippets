@@ -1,0 +1,9 @@
+snippet head "XML header" b
+<?xml version="1.0"?>
+endsnippet
+
+snippet t "Tag" b
+<${1:tag}>
+  $0
+</${1/(\w+).*/$1/}>
+endsnippet

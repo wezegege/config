@@ -5,7 +5,7 @@ Host *
   HashKnownHosts yes
 
   ForwardAgent yes
-  ForwardX11 no
+  ForwardX11 yes
 
 Host *.sagem 10.66.* 10.68.*
    User sagemuser
@@ -47,6 +47,11 @@ Host valid11
    Hostname forge-valid11.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/valid11
+
+Host valid12
+   Hostname forge-valid12.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid12
 
 Host valid13
    Hostname forge-valid13.rmm.sagem
@@ -111,6 +116,11 @@ Host smartmetering
    Hostname forge-smartmetering.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/smartmetering
+
+Host screens
+   Hostname forge-screens.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/screens
 
 #--------------------------------------------------------------
 # Miscellanous

@@ -107,9 +107,9 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=4 " beginning of line with smarttab
-set tabstop=4 " everything else with smarttab
-set softtabstop=4
+set shiftwidth=3 " beginning of line with smarttab
+set tabstop=3 " everything else with smarttab
+set softtabstop=3
 
 set autochdir
 

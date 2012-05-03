@@ -1,10 +1,6 @@
-(C) +svn branch/tag BO_<module_name><anything>
+
 (B) +migration merge with syncho algo @Nicolas
-(C) +svn2deb test it
-+sqlutils session proxy for class wide sessions
-+sqlutils each class should have a reference to a orm container
-+sqlutils single class making to test and improve
-@protectic april sheet
-(B) @goislard component migration for two last modules
-+migration screen case
-(A) +migration mapping issues @Fred
+(Z) +sqlutils session proxy for class wide sessions
+(Z) +sqlutils each class should have a reference to a orm container
+(Z) +sqlutils single class making to test and improve
+(C) +svn2deb debug with @Jeremy

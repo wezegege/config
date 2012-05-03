@@ -3,3 +3,13 @@ x 2012-04-23 @Fred RH
 x 2012-04-23 +migration sync users
 x 2012-04-23 +ldapsync log handling : overwrite on relaunch and timestamp on exception
 x 2012-04-23 +ldapsync handle 'can't contact ldap server
+x 2012-04-24 @goislard component migration for two last modules
+x 2012-04-24 +migration mapping issues @Fred
+x 2012-04-26 +svn2deb test it
+x 2012-05-02 @protectic april sheet
+x 2012-05-02 +migration screen case
+x 2012-05-02 +migration prepare meter migration in testperf2
+x 2012-05-02 +migration append jerome barois demands for screens
+x 2012-05-02 +migration deploy screens
+x 2012-05-02 +plone exception on submit for a plone article @Nadia
+x 2012-05-02 +plone timeout problem, see log

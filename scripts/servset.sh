@@ -1,6 +1,6 @@
 #!/bin/sh
 export https_proxy=http://10.66.243.130:8080
-git clone https://github.com/wezegege/config.git config
+git clone https://wezegege@bitbucket.org/wezegege/config.git
 mv .bashrc .bashrc.old
 ln -s config/bashrc .bashrc
 ln -s config/vimrc .vimrc

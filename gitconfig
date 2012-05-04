@@ -25,6 +25,7 @@ subup = submodule update --init
 subpull = submodule foreach git pull origin master
 subco = submodule foreach git checkout master
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
+remote = remote -v
 
 [help]
 autocorrect = 1

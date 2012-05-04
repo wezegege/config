@@ -108,9 +108,9 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=3 " beginning of line with smarttab
-set tabstop=3 " everything else with smarttab
-set softtabstop=3
+set shiftwidth=4 " beginning of line with smarttab
+set tabstop=4 " everything else with smarttab
+set softtabstop=4
 
 set autochdir
 
@@ -282,7 +282,7 @@ nnoremap <silent><leader>t :TagbarToggle<CR>
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
-      \'passive_filetypes': []}
+      \'passive_filetypes': ['python']}
 noremap <leader>x <Esc>:Errors<CR>
 
 " UltiSnips

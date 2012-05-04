@@ -4,3 +4,5 @@
 (Z) +sqlutils each class should have a reference to a orm container
 (Z) +sqlutils single class making to test and improve
 (C) +svn2deb debug with @Jeremy
+(A) create components for oizilla
+(A) ask for default assignee for oizilla

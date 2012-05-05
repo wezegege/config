@@ -13,3 +13,4 @@ x 2012-05-02 +migration append jerome barois demands for screens
 x 2012-05-02 +migration deploy screens
 x 2012-05-02 +plone exception on submit for a plone article @Nadia
 x 2012-05-02 +plone timeout problem, see log
+x 2012-05-05 +migration merge with syncho algo @Nicolas

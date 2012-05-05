@@ -1,8 +1,10 @@
-
-(B) +migration merge with syncho algo @Nicolas
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +sqlutils each class should have a reference to a orm container
 (Z) +sqlutils single class making to test and improve
 (C) +svn2deb debug with @Jeremy
 (A) create components for oizilla
 (A) ask for default assignee for oizilla
+(B) +migration cleaner code after merge
+(B) +migration create dataset for tests
+(B) +migration test remapping
+(C) +migration make it work for updates

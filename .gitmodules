@@ -13,3 +13,6 @@
 [submodule "scripts/todo.txt-cli"]
 	path = scripts/todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli.git
+[submodule "vim/bundle/quicksilver"]
+	path = vim/bundle/quicksilver
+	url = https://github.com/Bogdanp/quicksilver.vim.git

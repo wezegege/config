@@ -108,9 +108,9 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=4 " beginning of line with smarttab
-set tabstop=4 " everything else with smarttab
-set softtabstop=4
+set shiftwidth=2 " beginning of line with smarttab
+set tabstop=2 " everything else with smarttab
+set softtabstop=2
 
 set autochdir
 
@@ -209,11 +209,11 @@ nmap <C-l> <C-w>l
 
 " tabs
 nmap <C-T> :tabnew<CR>
-nnoremap <C-PageUp> :tabprevious<CR>
-nnoremap <C-PageDown> :tabnext<CR>
+nnoremap gt :tabprevious<CR>
+nnoremap gr :tabnext<CR>
 
 " nmap <BS> X
-nmap <leader>q :b #<cr>:bdelete #<cr>
+nmap <leader>d :bdelete #<cr>
 nmap <leader>b :buffers<cr>:b 
 nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
@@ -223,21 +223,13 @@ nmap <leader>S :bufdo %s#/#
 "paste shortcuts
 nmap <leader>p "+p
 nmap <leader>P "*p
-nmap <leader>0 "0p
-nmap <leader>1 "1p
-nmap <leader>2 "2p
-nmap <leader>3 "3p
-nmap <leader>4 "4p
-nmap <leader>5 "5p
-nmap <leader>6 "6p
-nmap <leader>7 "7p
-nmap <leader>8 "8p
-nmap <leader>9 "9p
 
 " config files
 nmap <leader>av :vsplit ~/.vimrc<cr>
 nmap <leader>ab :vsplit ~/.bashrc<cr>
 nmap <leader>az :vsplit ~/.zshrc<cr>
+nmap <leader>ac :vsplit ~/.commonrc<cr>
+nmap <leader>au :vsplit ~/.uncommonrc<cr>
 
 " allow command line editing like emacs
 cnoremap <C-A>       <Home>
@@ -292,6 +284,10 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:ultisnips_python_style = "sphinx"
 noremap <leader>as :UltiSnipsEdit<cr>
 
+" Quicksilver
+let g:QSMatchFn = "fuzzy"
+let g:QSIgnored = "\\.pyc$;\\.swp$"
+
 " Indent-guides
 "noremap <leader>ig <nop>
 "let g:indent_guides_auto_colors = 0
@@ -305,8 +301,7 @@ noremap <leader>as :UltiSnipsEdit<cr>
 
 function! LoadTemplate()
   silent! 0r ~/.vim/templates/tmpl.%:e
-  syn match Todo "¤\w\+¤" containedIn=ALL
-  silent! /¤w\+¤
+
 endfunction
 
 function! CleanExtraSpaces()
@@ -411,20 +406,8 @@ let &cpo = s:save_cpo | unlet s:save_cpo
 
 """""""""""""""""""""""""""""""""""""
 
-function! Shortcuts()
-  echo ",e : explorer"
-  echo ",c : clean extra spaces"
-  echo ",o : diff with origin"
-  echo ",s : shell"
-  echo ",b : buffers"
-  echo ",t : tags"
-  echo ",f : file explorer"
-  echo ",x : syntax"
-  echo ",l e/f/l : language"
-endfunction
-
 " Shortcuts
-nmap <silent> <leader>e :Explore<CR>
+nmap <silent><leader>f :Explore<CR>
 nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>
 nmap <silent><leader>o <esc>:DiffOrig<CR>
-nmap <leader>h <esc>:call Shortcuts()<CR>
+nmap <silent><leader>h <esc>:nmap <leader><CR>

@@ -7,4 +7,7 @@
 (B) +migration cleaner code after merge
 (B) +migration create dataset for tests
 (B) +migration test remapping
-+migration make it work for updates
+(C) +migration make it work for updates
+(Z) +migration better handling of module matching many-to-many
+(Z) +migration create custom field if not exists
++migration add custom field value if not exists

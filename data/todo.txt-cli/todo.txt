@@ -8,3 +8,6 @@
 (B) +migration create dataset for tests
 (B) +migration test remapping
 (C) +migration make it work for updates
+(Z) +migration better handling of module matching many-to-many
+(Z) +migration create custom field if not exists
+(Z) +migration add custom field value if not exists

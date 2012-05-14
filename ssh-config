@@ -123,6 +123,20 @@ Host screens
    IdentityFile ~/.ssh/keys/screens
 
 #--------------------------------------------------------------
+# Bugzilla
+#--------------------------------------------------------------
+
+Host frontend rmm08066
+   Hostname rmm08066.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/frontend
+
+Host bugzilla_shenzhen
+   Hostname 10.68.1.30
+   User kevin
+   IdentityFile ~/.ssh/keys/bugzilla_shenzhen
+#
+#--------------------------------------------------------------
 # Miscellanous
 #--------------------------------------------------------------
 
@@ -130,11 +144,6 @@ Host biblio
    Hostname forge-biblio.vzy.sagem
    User kevin
    IdentityFile ~/.ssh/keys/biblio
-
-Host frontend
-   Hostname rmm08066.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/frontend
 
 Host services
    Hostname etl-services.rmm.sagem

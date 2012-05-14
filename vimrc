@@ -219,6 +219,7 @@ nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
 nmap <leader>S :bufdo %s#/#
+nmap <silent><F5> :syntax sync fromstart<cr>
 
 "paste shortcuts
 nmap <leader>p "+p

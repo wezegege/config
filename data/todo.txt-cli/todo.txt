@@ -1,10 +1,9 @@
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +sqlutils each class should have a reference to a orm container
 (Z) +sqlutils single class making to test and improve
-(C) +svn2deb debug with @Jeremy
-(A) +migration cleaner code after merge
-(Z) +migration make it work for updates
 (Z) +migration better handling of module matching many-to-many
 (Z) +migration create custom field if not exists
 (Z) +migration add custom field value if not exists
 (Z) +migration add profile when does not exists for cc and shit
+(Z) +migration makes it update cc, see also, activities, ...
+(B) +modulemove implement it

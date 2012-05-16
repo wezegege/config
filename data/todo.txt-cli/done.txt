@@ -17,3 +17,6 @@ x 2012-05-05 +migration merge with syncho algo @Nicolas
 x 2012-05-10 +migration create dataset for tests
 x 2012-05-10 +migration test remapping
 x 2012-05-14 +migration deploy meter
+x 2012-05-15 +migration cleaner code after merge
+x 2012-05-15 +svn2deb debug with @Jeremy
+x 2012-05-16 +migration make it work for updates

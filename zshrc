@@ -131,6 +131,7 @@ alias -g C="| wc -l"
 alias -g X="| xargs"
 alias -g S="| sort"
 alias -g U="| uniq"
+alias -g V="| vim -"
 
 # suffixes
 

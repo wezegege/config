@@ -6,4 +6,11 @@
 (Z) +migration add custom field value if not exists
 (Z) +migration add profile when does not exists for cc and shit
 (Z) +migration makes it update cc, see also, activities, ...
-(B) +modulemove implement it
+
+(A) +modulemove watch shenzhen implementation
+(A) +modulemove watch ldifExport for ldap part
+(C) +modulemove implement mediawiki part
+(B) +modulemove implement bugzilla part depending on migration module
+(B) +modulemove implement svn part
+(C) +modulemove implement gforge part (file release, ...)
+(B) +modulemove migrate components and custom fields for bugzilla

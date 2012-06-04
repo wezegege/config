@@ -1,16 +1,10 @@
 (Z) +sqlutils session proxy for class wide sessions
-(Z) +sqlutils each class should have a reference to a orm container
-(Z) +sqlutils single class making to test and improve
-(Z) +migration better handling of module matching many-to-many
-(Z) +migration create custom field if not exists
-(Z) +migration add custom field value if not exists
-(Z) +migration add profile when does not exists for cc and shit
-(Z) +migration makes it update cc, see also, activities, ...
 
-(A) +modulemove watch shenzhen implementation
-(A) +modulemove watch ldifExport for ldap part
+(Z) +migration create custom field if not exists
+
+(Z) +migration makes it update cc, see also, activities, ...
 (C) +modulemove implement mediawiki part
 (B) +modulemove implement bugzilla part depending on migration module
-(B) +modulemove implement svn part
 (C) +modulemove implement gforge part (file release, ...)
-(B) +modulemove migrate components and custom fields for bugzilla
+(C) +modulemove migrate custom fields for bugzilla
++modulemove implement vulcain part (crpr + module tree)

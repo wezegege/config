@@ -108,9 +108,9 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=4 " beginning of line with smarttab
-set tabstop=4 " everything else with smarttab
-set softtabstop=4
+set shiftwidth=3 " beginning of line with smarttab
+set tabstop=3 " everything else with smarttab
+set softtabstop=3
 
 set autochdir
 
@@ -219,7 +219,7 @@ nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
 nmap <leader>S :bufdo %s#/#
-nmap <silent><F5> :syntax sync fromstart<cr>
+nmap <silent><F5> Refresh<cr>
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -276,6 +276,7 @@ nnoremap <silent><leader>t :TagbarToggle<CR>
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
       \'passive_filetypes': ['python']}
+
 noremap <leader>x <Esc>:Errors<CR>
 
 " UltiSnips
@@ -299,10 +300,17 @@ let g:QSIgnored = "\\.pyc$;\\.swp$"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent><F5> :syntax sync fromstart<cr>
+
+function! Refresh()
+   silent! syntax sync fromstart
+   if &diff
+      diffupdate
+   endif
+endfunction
 
 function! LoadTemplate()
   silent! 0r ~/.vim/templates/tmpl.%:e
-
 endfunction
 
 function! CleanExtraSpaces()

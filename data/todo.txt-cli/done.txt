@@ -20,3 +20,12 @@ x 2012-05-14 +migration deploy meter
 x 2012-05-15 +migration cleaner code after merge
 x 2012-05-15 +svn2deb debug with @Jeremy
 x 2012-05-16 +migration make it work for updates
+x 2012-05-22 +modulemove watch ldifExport for ldap part
+x 2012-05-22 +modulemove watch shenzhen implementation
+x 2012-05-24 create components for urd44
+x 2012-05-31 +sqlutils each class should have a reference to a orm container
+x 2012-05-31 +sqlutils single class making to test and improve
+x 2012-05-31 +migration add profile when does not exists for cc and shit
+x 2012-06-01 create components for sc-bclinux-v1
+x 2012-06-01 +modulemove implement ldap part
+x 2012-06-01 +modulemove implement svn part

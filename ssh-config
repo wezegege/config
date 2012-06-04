@@ -122,6 +122,11 @@ Host screens
    User kevin
    IdentityFile ~/.ssh/keys/screens
 
+Host sysnet urd4
+   Hostname forge-sysnet.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/sysnet
+
 #--------------------------------------------------------------
 # Bugzilla
 #--------------------------------------------------------------
@@ -149,6 +154,11 @@ Host services
    Hostname etl-services.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/services
+
+Host services2
+   Hostname etl-services2.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/services2
 
 Host etl
    Hostname forge-etl.rmm.sagem

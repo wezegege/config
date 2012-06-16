@@ -14,8 +14,10 @@ endif
 
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+if !exists("g:loaded_pathogen")
+  call pathogen#helptags()
+  call pathogen#runtime_append_all_bundles()
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
@@ -84,9 +86,9 @@ if has("autocmd")
           \   exe "normal! g`\"" |
           \ endif
 
-    autocmd! BufWritePost .\?vimrc source ~/.vimrc
   augroup END
 endif
+autocmd! BufWritePost ~/.vimrc bufdo source $MYVIMRC
 
 au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
 au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
@@ -108,9 +110,13 @@ set smartindent
 " Indent management
 set expandtab " uses spaces instead of tabs
 set smarttab
-set shiftwidth=3 " beginning of line with smarttab
-set tabstop=3 " everything else with smarttab
-set softtabstop=3
+function! Indent(size)
+  let &shiftwidth=a:size " beginning of line with smarttab
+  let &tabstop=a:size " everything else with smarttab
+  let &softtabstop=a:size
+endfunction
+
+call Indent(2)
 
 set autochdir
 
@@ -219,7 +225,6 @@ nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
 nmap <leader>S :bufdo %s#/#
-nmap <silent><F5> Refresh<cr>
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -300,13 +305,18 @@ let g:QSIgnored = "\\.pyc$;\\.swp$"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent><F5> :syntax sync fromstart<cr>
 
 function! Refresh()
-   silent! syntax sync fromstart
-   if &diff
-      diffupdate
-   endif
+  syntax on
+  silent! syntax sync fromstart
+  if &diff
+     diffupdate
+  endif
+endfunction
+
+function! PrintMode()
+  set list!
+  set number!
 endfunction
 
 function! LoadTemplate()
@@ -414,9 +424,13 @@ endif
 let &cpo = s:save_cpo | unlet s:save_cpo
 
 """""""""""""""""""""""""""""""""""""
-
 " Shortcuts
+"""""""""""""""""""""""""""""""""""""
+
 nmap <silent><leader>f :Explore<CR>
 nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>
 nmap <silent><leader>o <esc>:DiffOrig<CR>
 nmap <silent><leader>h <esc>:nmap <leader><CR>
+nmap <silent><F5> :call Refresh()<cr>
+nmap <silent><F6> :call PrintMode()<cr>
+nmap ,i :call Indent()<left>

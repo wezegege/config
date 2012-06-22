@@ -1,10 +1,7 @@
 (Z) +sqlutils session proxy for class wide sessions
-
 (Z) +migration create custom field if not exists
-
 (Z) +migration makes it update cc, see also, activities, ...
 (C) +modulemove implement mediawiki part
-(B) +modulemove implement bugzilla part depending on migration module
 (C) +modulemove implement gforge part (file release, ...)
-(C) +modulemove migrate custom fields for bugzilla
-+modulemove implement vulcain part (crpr + module tree)
+
+(C) +modulemove implement vulcain part (crpr + module tree)

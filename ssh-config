@@ -68,6 +68,11 @@ Host valid17
    User kevin
    IdentityFile ~/.ssh/keys/valid17
 
+Host valid18
+   Hostname forge-valid18.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/valid18
+
 Host testperf2
    Hostname forge-testperf2.osn.sagem
    User kevin
@@ -82,40 +87,55 @@ Host test2
 # Prod forges
 #--------------------------------------------------------------
 
-Host urd1modules
+Host urd1modules modules
    Hostname forge-urd1modules.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/urd1modules
 
-Host urd1femto
+Host urd1femto femto
    Hostname forge-urd1femto.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/urd1femto
+
+Host urd1gsmr gsmr
+   Hostname forge-urd1gsmr.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd1gsmr
 
 Host urd2
    Hostname forge-urd2.vzy.sagem
    User kevin
    IdentityFile ~/.ssh/keys/urd2
 
-Host urd31
-   Hostname forge-urd31.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd31
-
-Host urd44
-   Hostname forge-urd44.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd44
-
-Host shenzhen router
-   Hostname forge-router.ads.local
-   User kevin
-   IdentityFile ~/.ssh/keys/shenzhen
-
 Host smartmetering
    Hostname forge-smartmetering.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/smartmetering
+
+Host smarthome
+   Hostname forge-smarthome.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/smarthome
+
+Host metersg1
+   Hostname forge-metersg1.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/metersg1
+
+Host urd31 doc
+   Hostname forge-urd31.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd31
+
+Host urd44 gateway
+   Hostname forge-urd44.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/urd44
+
+Host lignepro
+   Hostname forge-lignepro.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/lignepro
 
 Host screens
    Hostname forge-screens.osn.sagem
@@ -126,6 +146,11 @@ Host sysnet urd4
    Hostname forge-sysnet.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/sysnet
+
+Host shenzhen router
+   Hostname forge-router.ads.local
+   User kevin
+   IdentityFile ~/.ssh/keys/shenzhen
 
 #--------------------------------------------------------------
 # Bugzilla
@@ -145,10 +170,20 @@ Host bugzilla_shenzhen
 # Miscellanous
 #--------------------------------------------------------------
 
+Host etl
+   Hostname forge-etl.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/etl
+
 Host biblio
    Hostname forge-biblio.vzy.sagem
    User kevin
    IdentityFile ~/.ssh/keys/biblio
+
+Host demo
+   Hostname forge-demo.rmm.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/demo
 
 Host services
    Hostname etl-services.rmm.sagem
@@ -160,10 +195,11 @@ Host services2
    User kevin
    IdentityFile ~/.ssh/keys/services2
 
-Host etl
-   Hostname forge-etl.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/etl
+Host socle5
+  Hostname vzy08026.vzy.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/socle5
+  
 
 #--------------------------------------------------------------
 # LDAP

@@ -29,3 +29,9 @@ x 2012-05-31 +migration add profile when does not exists for cc and shit
 x 2012-06-01 create components for sc-bclinux-v1
 x 2012-06-01 +modulemove implement ldap part
 x 2012-06-01 +modulemove implement svn part
+x 2012-06-07 +migration trunk-v2
+x 2012-06-08 +modulemove implement bugzilla part depending on migration module
+x 2012-06-13 +ldapsync deploy
+x 2012-06-19 +modulemove implement export part
+x 2012-06-22 +modulemove implement import part
+x 2012-06-22 +modulemove mark as nda modules that we exports

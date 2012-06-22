@@ -16,3 +16,6 @@
 [submodule "vim/bundle/quicksilver"]
 	path = vim/bundle/quicksilver
 	url = https://github.com/Bogdanp/quicksilver.vim.git
+[submodule "vim/bundle/detectindent"]
+	path = vim/bundle/detectindent
+	url = https://github.com/ciaranm/detectindent.git

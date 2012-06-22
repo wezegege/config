@@ -295,6 +295,11 @@ noremap <leader>as :UltiSnipsEdit<cr>
 let g:QSMatchFn = "fuzzy"
 let g:QSIgnored = "\\.pyc$;\\.swp$"
 
+" detectindent
+autocmd bufReadPost * :DetectIndent
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+
 " Indent-guides
 "noremap <leader>ig <nop>
 "let g:indent_guides_auto_colors = 0

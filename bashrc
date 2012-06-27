@@ -61,7 +61,7 @@ fi
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
-   isremote=${red}
+  isremote=${red}
 fi
 if [ "$USERNAME" == "root" ]; then
   isroot=${red}
@@ -69,6 +69,29 @@ fi
 PS1="${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${yellow}(\t)
 \$\[\e[0m\] "
 
+# Completion
+
+_fab()
+{
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  if [[ ${prev} == -H ]] ; then
+    opts=`\grep "Host " ~/.ssh/config | \grep -v "*" | cut -d" " -f 2-`
+    cur=${cur##*,}
+  elif [[ ${prev} == -R ]] ; then
+    opts=`python -c "import fabfile ; from fabric.api import env ; print '   '.join(env.roledefs.keys())"`
+    cur=${cur##*,}
+  else
+    opts=`fab -l | tail -n +3`
+  fi
+  COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+  return 0
+}
+complete -F _fab fab
+
 if [ -f ~/.commonrc ]; then
   . ~/.commonrc
 fi
+

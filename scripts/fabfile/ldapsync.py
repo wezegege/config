@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from fabric.api import task, run, sudo, local, put, env, hosts, execute
+from fabric.api import task, run, sudo, local, put, env, hosts, execute, parallel
 from fabric.context_managers import cd
 import getpass
 import os
@@ -21,18 +21,16 @@ def make():
     run('svn2deb ldap-sync.conf')
 
 @task
-@parallel
 def restart():
   daemon = '/etc/init.d/ldap-sync'
   sudo('%s restart' % daemon)
 
 @task
-@parallel
 def update():
   install_dir = '/usr/share/LdapSync'
   with cd(install_dir):
     sudo('svn update')
-  ldapsync_restart()
+  restart()
 
 @task
 @parallel

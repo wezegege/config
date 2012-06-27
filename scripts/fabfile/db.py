@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from fabric.api import task, run, get, local
 dump_repo = '~/workspace/sql'
 
 @task

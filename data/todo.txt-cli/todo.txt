@@ -2,6 +2,4 @@
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
 (C) +modulemove implement mediawiki part
-(C) +modulemove implement gforge part (file release, ...)
-
 (C) +modulemove implement vulcain part (crpr + module tree)

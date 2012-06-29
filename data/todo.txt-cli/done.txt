@@ -35,3 +35,5 @@ x 2012-06-13 +ldapsync deploy
 x 2012-06-19 +modulemove implement export part
 x 2012-06-22 +modulemove implement import part
 x 2012-06-22 +modulemove mark as nda modules that we exports
+x 2012-06-28 +modulemove implement gforge part (file release, ...)
+x 2012-06-29 +components create for freesat-m7108-rev1

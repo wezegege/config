@@ -23,7 +23,7 @@ env.roledefs = {
       'urd31', 'lignepro', 'smarthome',
       'urd44',
       ],
-    'sst' : ['forge-sst.sst.sagem'],
+    'sst' : ['sst'],
     'shz' : ['shenzhen'],
     'valid' : ['valid2', 'valid8', 'valid10', 'valid11', 'valid13',
       'valid18', 'testperf2'],
@@ -41,9 +41,10 @@ def config():
   prompts += expect('Password', password)
   with cd('~/config'):
     with prefix('export https_proxy=http://10.66.243.130:8080/'):
-      #with hide('stdout'):
-      with expecting(prompts):
-        erun('git pull')
+      with hide('stdout'):
+        with expecting(prompts):
+          erun('git pull')
+      run('git submodule update --init')
 
 @task
 def create_user(alias):

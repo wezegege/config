@@ -2,6 +2,5 @@
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
 (C) +modulemove implement mediawiki part
-(C) +modulemove implement gforge part (file release, ...)
-(C) +modulemove migrate custom fields for bugzilla
 (C) +modulemove implement vulcain part (crpr + module tree)
+x 2012-06-29 +components create for freesat-m7108-rev1

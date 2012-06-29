@@ -89,7 +89,7 @@ _fab()
   COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
   return 0
 }
-complete -F _fab fab
+complete -F _fab fab gfab
 
 if [ -f ~/.commonrc ]; then
   . ~/.commonrc

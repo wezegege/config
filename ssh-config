@@ -107,6 +107,11 @@ Host urd2
    User kevin
    IdentityFile ~/.ssh/keys/urd2
 
+Host screens
+   Hostname forge-screens.osn.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/screens
+
 Host smartmetering
    Hostname forge-smartmetering.rmm.sagem
    User kevin
@@ -137,11 +142,6 @@ Host lignepro
    User kevin
    IdentityFile ~/.ssh/keys/lignepro
 
-Host screens
-   Hostname forge-screens.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/screens
-
 Host sysnet urd4
    Hostname forge-sysnet.rmm.sagem
    User kevin
@@ -165,6 +165,9 @@ Host bugzilla_shenzhen
    Hostname 10.68.1.30
    User kevin
    IdentityFile ~/.ssh/keys/bugzilla_shenzhen
+
+Host sst
+   Hostname forge-sst.sst.sagem
 #
 #--------------------------------------------------------------
 # Miscellanous

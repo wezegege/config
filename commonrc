@@ -149,6 +149,7 @@ alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
 alias gmake="make -f ${HOME}/config/data/Makefile"
+alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 
 #====================================================================
 # specificities

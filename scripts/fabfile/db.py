@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from fabric.api import task, run, get, local, env, sudo
-from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
+from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo, open_shell as eopen_shell
 from fabric.context_managers import settings
 import os
 import os.path
@@ -21,13 +21,22 @@ def credentials(database, user=None, password=None):
       'wikiuser' if database =='wikidb' else database
   if not password:
     if database == 'gforge':
-      gforge_conf = '/etc/gforge/gforge.cfg'
-      password = sudo('grep password %s | sed' % gforge_conf)
+      gforge_conf = '/etc/gforge/gforge.conf'
+      password = sudo('grep db_password %s | sed "s/[^=]*=//"' % gforge_conf)
     elif database == 'wikidb':
       password = 'wikipass'
     else:
       password = database
   return user, password
+
+@task
+def connect(database, user=None, password=None):
+  if not (user and password):
+    user, password = credentials(database, user, password)
+  prompts = list()
+  prompts += expect('Password', password)
+  with expecting(prompts):
+    eopen_shell('psql -U %s -h localhost %s' % (user, database))
 
 @task
 def getdump(database, user=None, password=None):

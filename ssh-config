@@ -168,6 +168,8 @@ Host bugzilla_shenzhen
 
 Host sst
    Hostname forge-sst.sst.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/sst
 #
 #--------------------------------------------------------------
 # Miscellanous

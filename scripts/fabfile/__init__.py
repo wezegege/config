@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from fabric.api import run, sudo, local, put, get, env, settings, hosts, parallel, task
+from fabric.api import run, sudo, local, put, get, env, settings, hosts, parallel, task, execute
 from fabric.context_managers import cd, prefix, hide
-from fabric.decorators import runs_once
+from fabric.decorators import runs_once, hosts, roles
 from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
 import getpass
 import os
@@ -27,26 +27,11 @@ env.roledefs = {
       ],
     'sst' : ['sst'],
     'shz' : ['shenzhen'],
-    'valid' : ['valid2', 'valid8', 'valid10', 'valid11', 'valid13',
+    'valid' : ['valid2', 'valid10', 'valid11', 'valid13',
       'valid18', 'testperf2'],
     'ldap' : ['ldapprod', 'backup'],
     }
 
-@runs_once
-def ask_password():
-  return getpass.getpass('Git repo password: ')
-
-@task
-def config():
-  password = ask_password()
-  prompts = list()
-  prompts += expect('Password', password)
-  with cd('~/config'):
-    with prefix('export https_proxy=http://10.66.243.130:8080/'):
-      with hide('stdout'):
-        with expecting(prompts):
-          erun('git pull')
-      run('git submodule update --init')
 
 @task
 def create_user(alias):

@@ -3,9 +3,7 @@
 
 from fabric.api import run, sudo, local, put, get, env, settings, hosts, parallel, task, execute
 from fabric.context_managers import cd, prefix, hide
-from fabric.decorators import runs_once, hosts, roles
-from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
-import getpass
+from fabric.decorators import runs_once
 import os
 import os.path
 
@@ -31,6 +29,9 @@ env.roledefs = {
     'ldap' : ['ldapprod', 'backup'],
     }
 
+@runs_once
+def ask_password():
+  return getpass.getpass('User password: ')
 
 @task
 def create_user(alias):

@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from fabric.api import run, task, execute, parallel
+from fabric.context_managers import cd, prefix, hide
+from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
+from fabric.decorators import runs_once, hosts, roles
+import getpass
+
 @runs_once
 def ask_password():
   return getpass.getpass('Git repo password: ')

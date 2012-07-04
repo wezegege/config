@@ -9,8 +9,7 @@ import getpass
 import os
 import os.path
 
-import ldapsync
-import db
+import ldapsync, db, config
 
 env.use_ssh_config = True
 env.colors = True

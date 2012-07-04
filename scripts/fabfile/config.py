@@ -20,7 +20,7 @@ def all():
 @roles('valid', 'rmm', 'main', 'ldap', 'shz')
 @parallel
 def allconfig(password):
-  config(password)
+  update(password)
 
 @task
 def update(password=None):

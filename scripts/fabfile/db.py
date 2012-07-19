@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from fabric.api import task, run, get, local, env, sudo
-from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo, open_shell as eopen_shell
+from fabric.api import task, run, get, local, env, sudo, puts, open_shell
+from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
 from fabric.context_managers import settings
 import os
 import os.path
@@ -33,10 +33,8 @@ def credentials(database, user=None, password=None):
 def connect(database, user=None, password=None):
   if not (user and password):
     user, password = credentials(database, user, password)
-  prompts = list()
-  prompts += expect('Password', password)
-  with expecting(prompts):
-    eopen_shell('psql -U %s -h localhost %s' % (user, database))
+  puts('Password : %s' % password)
+  open_shell('psql -U %s -h localhost %s' % (user, database))
 
 @task
 def getdump(database, user=None, password=None):
@@ -65,7 +63,7 @@ def load(database, dump=None):
   toremove = (item for item in os.listdir(dump_repo) \
       if item.startswith('%s%s' % (prefix, alias)))
   for item in toremove:
-    os.rm(item)
+    os.remove(os.path.join(dump_repo, item))
   now = datetime.now().strftime('%Y%m%d-%H%M%S')
   get(dump, os.path.join(dump_repo, '%s%s_%s.pgdump' % (prefix, alias, now)))
 

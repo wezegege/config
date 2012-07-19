@@ -102,7 +102,7 @@ alias ls="ls --color=auto"
 alias ll="ls -A --group-directories-first"
 alias lq="ls -oh --group-directories-first"
 alias la="ll -oh"
-alias lt="ls -lrt"
+alias lt="ls -lrth"
 alias lg="lt -A"
 
 # grep

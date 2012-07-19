@@ -26,6 +26,11 @@ def restart():
   sudo('%s restart' % daemon)
 
 @task
+def status():
+  daemon = '/etc/init.d/ldap-sync'
+  sudo('%s status' % daemon)
+
+@task
 def update():
   install_dir = '/usr/share/LdapSync'
   with cd(install_dir):

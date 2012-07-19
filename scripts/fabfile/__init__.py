@@ -34,7 +34,7 @@ def ask_password():
   return getpass.getpass('User password: ')
 
 @task
-def create_user(alias):
+def create_user(alias=None):
   key_dir = '~/.ssh/keys'
   config_file = '~/.ssh/config'
   user = 'kevin'
@@ -52,15 +52,9 @@ Host {alias}
 " >> {config_file}""")
   run('mkdir /home/{user}/.ssh')
   put('{key_dir}/{alias}.pub', '/home/{user}/.ssh/authorized_keys')
-  password = ask_password()
-  prompts = list()
-  prompts += expect('Password', password)
   with cd('~'):
     with prefix('export https_proxy=http://10.66.243.130:8080/'):
-      with settings(
-          hide('stdout'),
-          expecting(prompts)):
-        erun('git clone https://wezegege@bitbucket.org/wezegege/config.git')
+      run('git clone https://wezegege@bitbucket.org/wezegege/config.git')
       run('git submodule update --init', dir='~/config')
     for conf in ('bashrc', 'vimrc', 'vim', 'inputrc', 'commonrc', 'gitconfig'):
       with settings(warn_only=True):

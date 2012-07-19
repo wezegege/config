@@ -61,7 +61,11 @@ fi
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
-  isremote=${red}
+  if [ "$SSH_CLIENT" == "*valid*" ]; then
+    isremote=${yellow}
+  else
+    isremote=${red}
+  fi
 fi
 if [ "$USERNAME" == "root" ]; then
   isroot=${red}

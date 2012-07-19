@@ -10,12 +10,14 @@ function CLASSIC_COLOR () { echo -ne "%{\033[1;$1m%}"; }
 
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
-yellow=`COLOR 150`
+yellow=`COLOR 222`
+green=`COLOR 150`
 red=`COLOR 167`
 if [ "$TERM" = "linux" ]; then
   darkblue=`CLASSIC_COLOR 34`
   lightblue=`CLASSIC_COLOR 36`
   yellow=`CLASSIC_COLOR 33`
+  green=`CLASSIC_COLOR 32`
   red=`CLASSIC_COLOR 31`
 fi
 isroot=${lightblue}
@@ -31,7 +33,7 @@ if [ "$USERNAME" = "root" ]; then
   isroot=${red}
 fi
 PROMPT="${darkblue}[${isroot}%n${darkblue}@${isremote}%M${darkblue}"
-PROMPT="$PROMPT:${lightblue}%~${darkblue}]${yellow}(%*)
+PROMPT="$PROMPT:${lightblue}%~${darkblue}]${green}(%*)
 %#%f "
 PROMPT2="${yellow}%_>%f "
 

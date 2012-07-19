@@ -50,12 +50,14 @@ function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }
 function CLASSIC_COLOR () { echo -ne "\[\e[1;$1m\]"; }
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
-yellow=`COLOR 150`
+yellow=`COLOR 222`
+green=`COLOR 150`
 red=`COLOR 167`
 if [ "$TERM" == "linux" ]; then
   darkblue=`CLASSIC_COLOR 34`
   lightblue=`CLASSIC_COLOR 36`
   yellow=`CLASSIC_COLOR 33`
+  green=`CLASSIC_COLOR 32`
   red=`CLASSIC_COLOR 31`
 fi
 isroot=${lightblue}
@@ -70,7 +72,7 @@ fi
 if [ "$USERNAME" == "root" ]; then
   isroot=${red}
 fi
-PS1="${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${yellow}(\t)
+PS1="${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)
 \$\[\e[0m\] "
 
 # Completion

@@ -50,7 +50,7 @@ function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }
 function CLASSIC_COLOR () { echo -ne "\[\e[1;$1m\]"; }
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
-yellow=`COLOR 222`
+yellow=`COLOR 229`
 green=`COLOR 150`
 red=`COLOR 167`
 if [ "$TERM" == "linux" ]; then

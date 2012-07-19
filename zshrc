@@ -10,7 +10,7 @@ function CLASSIC_COLOR () { echo -ne "%{\033[1;$1m%}"; }
 
 darkblue=`COLOR 74`
 lightblue=`COLOR 116`
-yellow=`COLOR 222`
+yellow=`COLOR 229`
 green=`COLOR 150`
 red=`COLOR 167`
 if [ "$TERM" = "linux" ]; then

@@ -107,9 +107,10 @@ alias lg="lt -A"
 
 # grep
 
-alias grep="grep -n --color=auto"
-alias egrep="egrep -n --color=auto"
-alias fgrep="fgrep -n --color=auto"
+GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
+alias grep="grep ${GREP_ARGS}"
+alias egrep="egrep ${GREP_ARGS}"
+alias fgrep="fgrep ${GREP_ARGS}"
 
 # common commands
 
@@ -139,7 +140,7 @@ alias cdd="project_root"
 # applications
 
 alias sudo="sudo -E "
-alias diff="diff -u"
+alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
 

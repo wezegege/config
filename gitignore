@@ -27,5 +27,7 @@
 
 # SVN
 
-/.svn/*
-*/.svn/*
+.svn/
+.svn/
+__pycache__/
+*.egg-info/

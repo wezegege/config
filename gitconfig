@@ -2,6 +2,7 @@
 editor = vim
 autocrlf = input
 whitespace = trailing-spaces,space-before-tab
+excludesfile = ~/.gitignore
 
 [color]
 branch=auto

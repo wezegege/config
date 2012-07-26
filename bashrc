@@ -63,7 +63,7 @@ fi
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
-  if [[ `hostname` == *valid* ]]; then
+  if [[ `hostname` == *valid* || `hostname` == *test* ]]; then
     isremote=${yellow}
   else
     isremote=${red}

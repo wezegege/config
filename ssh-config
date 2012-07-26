@@ -75,7 +75,7 @@ Host valid18
 
 Host testperf2
    Hostname forge-testperf2.osn.sagem
-   User kevin
+   User g179076
    IdentityFile ~/.ssh/keys/testperf2
 
 Host test2

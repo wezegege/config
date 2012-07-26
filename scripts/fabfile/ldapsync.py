@@ -51,4 +51,4 @@ def install():
 @task
 @hosts('socle5')
 def upload():
-  run('~/ldapsync.sh')
+  run('~/ldap_sync.sh')

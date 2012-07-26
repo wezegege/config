@@ -37,3 +37,8 @@ x 2012-06-22 +modulemove implement import part
 x 2012-06-22 +modulemove mark as nda modules that we exports
 x 2012-06-28 +modulemove implement gforge part (file release, ...)
 x 2012-06-29 +components create for freesat-m7108-rev1
+x 2012-07-24 +modulemove implement mediawiki part
+x 2012-07-24 +modulemove implement vulcain part (crpr + module tree)
+x 2012-07-25 +intertag handle release.txt 2616
+x 2012-07-25 @protectic july sheet
+x 2012-07-25 +intertag handle revisions 1848 2191

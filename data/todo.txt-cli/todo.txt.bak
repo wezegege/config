@@ -1,7 +1,6 @@
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
-x 2012-07-25 +intertag handle revisions 1848 2191
-(B) +intertag handles commmits which do not mention bugs 2626
 (B) redesign scmbug pre/post commits 2627
 @protectic august navigo
+x 2012-08-06 +modulemove prepare sst to urd44 migration

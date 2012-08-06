@@ -1,6 +1,5 @@
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
-(B) +intertag handles commmits which do not mention bugs 2626
 (B) redesign scmbug pre/post commits 2627
 @protectic august navigo

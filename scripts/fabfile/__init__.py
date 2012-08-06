@@ -24,7 +24,7 @@ env.roledefs = {
       ],
     'sst' : ['sst'],
     'shz' : ['shenzhen'],
-    'valid' : ['valid2', 'valid10', 'valid11', 'valid13',
+    'valid' : ['valid10', 'valid11', 'valid13',
       'valid18', 'testperf2'],
     'ldap' : ['ldapprod', 'backup'],
     }

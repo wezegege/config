@@ -42,3 +42,7 @@ x 2012-07-24 +modulemove implement vulcain part (crpr + module tree)
 x 2012-07-25 +intertag handle release.txt 2616
 x 2012-07-25 @protectic july sheet
 x 2012-07-25 +intertag handle revisions 1848 2191
+x 2012-08-06 +modulemove clean urd1modules
+x 2012-08-06 +modulemove removed unneeded BPs
+x 2012-08-06 +m2m prepare hudson
+x 2012-08-06 +modulemove prepare sst to urd44 migration

@@ -1,6 +1,6 @@
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
-(C) +modulemove implement mediawiki part
-(C) +modulemove implement vulcain part (crpr + module tree)
-x 2012-06-29 +components create for freesat-m7108-rev1
+(B) redesign scmbug pre/post commits 2627
+@protectic august navigo
+x 2012-08-06 +modulemove prepare sst to urd44 migration

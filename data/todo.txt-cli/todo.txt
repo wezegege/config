@@ -1,5 +1,5 @@
 (Z) +sqlutils session proxy for class wide sessions
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
-(C) +modulemove implement mediawiki part
-(C) +modulemove implement vulcain part (crpr + module tree)
+(B) redesign scmbug pre/post commits 2627
+@protectic august navigo

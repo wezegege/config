@@ -9,6 +9,8 @@ Host *
 
 Host *.sagem 10.66.* 10.68.*
    User sagemuser
+   GssApiAuthentication yes
+   GssApiDelegateCredentials yes
 
 Host michel
    Hostname 10.66.176.72
@@ -40,8 +42,8 @@ Host valid8
 
 Host valid10
    Hostname forge-valid10.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid10
+   User g179076
+   #IdentityFile ~/.ssh/keys/valid10
 
 Host valid11
    Hostname forge-valid11.rmm.sagem
@@ -75,7 +77,7 @@ Host valid18
 
 Host testperf2
    Hostname forge-testperf2.osn.sagem
-   User kevin
+   User g179076
    IdentityFile ~/.ssh/keys/testperf2
 
 Host test2
@@ -152,9 +154,18 @@ Host shenzhen router
    User kevin
    IdentityFile ~/.ssh/keys/shenzhen
 
+Host sst
+   Hostname forge-sst.sst.sagem
+   User kevin
+   IdentityFile ~/.ssh/keys/sst
+
 #--------------------------------------------------------------
 # Bugzilla
 #--------------------------------------------------------------
+
+Host sierra
+   Hostname 10.66.236.42
+   User sagemuser
 
 Host frontend rmm08066
    Hostname rmm08066.rmm.sagem
@@ -165,11 +176,6 @@ Host bugzilla_shenzhen
    Hostname 10.68.1.30
    User kevin
    IdentityFile ~/.ssh/keys/bugzilla_shenzhen
-
-Host sst
-   Hostname forge-sst.sst.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/sst
 #
 #--------------------------------------------------------------
 # Miscellanous

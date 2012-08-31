@@ -138,7 +138,7 @@ set gdefault " substitutes are global by default
 " Folding
 set foldenable
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=99
 
 set timeoutlen=500
 set autoread " Read changes on a file by a different application

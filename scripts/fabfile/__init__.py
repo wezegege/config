@@ -24,8 +24,8 @@ env.roledefs = {
       ],
     'sst' : ['sst'],
     'shz' : ['shenzhen'],
-    'valid' : ['valid10', 'valid11', 'valid13',
-      'valid18', 'testperf2'],
+    'valid' : ['valid8', 'valid9', 'valid10', 'valid11',
+      'valid13', 'valid18', 'testperf2'],
     'ldap' : ['ldapprod', 'backup'],
     }
 
@@ -61,4 +61,3 @@ Host {alias}
         if run('ls .{conf}').failed:
           run('mv .{conf} .{conf}.old')
       run('ln -s config/{conf} .{conf}')
-

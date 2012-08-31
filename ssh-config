@@ -13,8 +13,8 @@ Host *.sagem 10.66.* 10.68.*
    GssApiDelegateCredentials yes
 
 Host michel
-   Hostname 10.66.176.72
-   User kevin
+   Hostname rmm-p1188134f.ads.local
+   User g179076
 
 #--------------------------------------------------------------
 # Valid forges
@@ -171,6 +171,11 @@ Host frontend rmm08066
    Hostname rmm08066.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/frontend
+
+Host ftp
+  Hostname 10.66.3.20
+  User g179076
+  IdentityFile ~/.ssh/keys/ftp
 
 Host bugzilla_shenzhen
    Hostname 10.68.1.30

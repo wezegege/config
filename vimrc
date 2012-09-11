@@ -155,6 +155,7 @@ set whichwrap=b,s,h,l,<,>,[,] " Easier navigation
 set hidden " don't close buffers, just hide them
 set key=
 set nostartofline
+set virtualedit=block
 
 " shutdown error bells
 set noerrorbells

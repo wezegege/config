@@ -2,7 +2,6 @@
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
 (B) redesign scmbug pre/post commits 2627
-+intertag check up
 apache svn patch to allow 'groups-something' modules
 +modulemove BOC branches name bug redeploy
-migratebugscomponents
+x 2012-09-05 migratebugscomponents

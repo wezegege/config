@@ -321,7 +321,7 @@ endfunction
 
 function! PrintMode()
   set list!
-  set number!
+  set relativenumber!
 endfunction
 
 function! LoadTemplate()

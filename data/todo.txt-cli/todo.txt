@@ -2,7 +2,9 @@
 (Z) +migration create custom field if not exists
 (Z) +migration makes it update cc, see also, activities, ...
 (B) redesign scmbug pre/post commits 2627
-
 apache svn patch to allow 'groups-something' modules
 +modulemove BOC branches name bug redeploy
-migratebugscomponents
++vulcain-scripts correct tests
++vulcain-scripts make it use dependencies
++vulcain make it compatible to the library
++workshop write thoughts

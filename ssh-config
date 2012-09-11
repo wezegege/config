@@ -62,7 +62,7 @@ Host valid13
 
 Host valid15
    Hostname forge-valid15.rmm.sagem
-   User kevin
+   User g179076
    IdentityFile ~/.ssh/keys/valid15
 
 Host valid17
@@ -215,15 +215,28 @@ Host socle5
   Hostname vzy08026.vzy.sagem
   User g179076
   IdentityFile ~/.ssh/keys/socle5
-  
+
+#--------------------------------------------------------------
+# Virtual machines
+#--------------------------------------------------------------
+
+Host premox
+  Hostname forge-premox.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/premox
+
+Host prodmox promox
+  Hostname forge-prodmox.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/prodmox
 
 #--------------------------------------------------------------
 # LDAP
 #--------------------------------------------------------------
 
 Host backup ldaptest
-   Hostname 10.66.236.94
-   User kevin
+   Hostname forge-backup.rmm.sagem
+   User g179076
    IdentityFile ~/.ssh/keys/backup
 
 Host ldapprod

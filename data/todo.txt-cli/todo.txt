@@ -8,3 +8,6 @@ apache svn patch to allow 'groups-something' modules
 +vulcain-scripts make it use dependencies
 +vulcain make it compatible to the library
 +workshop write thoughts
+migratebugscomponents only for admin
+ldapsync remake syncing
++intertag review

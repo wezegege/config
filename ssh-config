@@ -47,7 +47,7 @@ Host valid10
 
 Host valid11
    Hostname forge-valid11.rmm.sagem
-   User kevin
+   User g179076
    IdentityFile ~/.ssh/keys/valid11
 
 Host valid12
@@ -63,6 +63,11 @@ Host valid13
 Host valid15
    Hostname forge-valid15.rmm.sagem
    User g179076
+   IdentityFile ~/.ssh/keys/valid15
+
+Host valid16
+   Hostname forge-valid16.rmm.sagem
+   User kevin
    IdentityFile ~/.ssh/keys/valid15
 
 Host valid17

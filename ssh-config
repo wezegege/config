@@ -12,12 +12,20 @@ Host *.sagem 10.66.* 10.68.*
    GssApiAuthentication yes
    GssApiDelegateCredentials yes
 
+#--------------------------------------------------------------
+# Valid forges
+#--------------------------------------------------------------
+
 Host michel
    Hostname rmm-p1188134f.ads.local
    User g179076
 
 Host kevin
   Hostname rmm-p1188377f.ads.local
+  User g179076
+
+Host francois
+  Hostname rmm-p1267084p.ads.local
   User g179076
 
 #--------------------------------------------------------------

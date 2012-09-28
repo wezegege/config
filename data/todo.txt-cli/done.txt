@@ -54,3 +54,4 @@ x 2012-08-30 urd2 slow websvn
 x 2012-08-30 +modulemove BOC branches name bug redeploy
 x 2012-08-30 vulcain validation
 x 2012-09-05 migratebugscomponents
+x 2012-09-28 +intertag review

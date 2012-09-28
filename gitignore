@@ -4,6 +4,7 @@
 
 # Compiled source
 *.pyc
+*.pyo
 *.o
 *.class
 *.dll
@@ -29,5 +30,9 @@
 
 .svn/
 .svn/
+
+# Python
+#
 __pycache__/
 *.egg-info/
+.coverage

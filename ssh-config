@@ -7,6 +7,14 @@ Host *
   ForwardAgent yes
   ForwardX11 yes
 
+Host github github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/keys/github
+
+######################################
+# Sagemcom
+######################################
 Host *.sagem 10.66.* 10.68.*
    User sagemuser
    GssApiAuthentication yes

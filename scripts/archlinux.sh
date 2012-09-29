@@ -47,8 +47,9 @@ dhclient
 # install
 graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm"
 development="git python vim"
+admin="pkgfile"
 utils="chromium terminator"
-core="grub-bios reflector sudo zsh"
+core="grub-bios reflector sudo zsh openssh"
 virtual="virtualbox-guest-utils"
 pacstrap /mnt base  ${core} ${development} ${graphics}
 
@@ -86,7 +87,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # pacman
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist
-pacman -Syyu
+cat << EOF >> /etc/pacman.conf
+[archlinuxfr]
+Server = http://repo.archlinux.fr/\$arch
+EOF
+pacman -Syyu yaourt pacman-color python-pip
+pip install virtualenv virtualenvwrapper pylint nose coverage
+# pip install fabric
 
 # users
 passwd

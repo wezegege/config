@@ -48,9 +48,10 @@ dhclient
 graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm"
 development="git python vim"
 admin="pkgfile"
-utils="chromium terminator"
+utils="chromium terminator flashplugin"
 core="grub-bios reflector sudo zsh openssh"
 virtual="virtualbox-guest-utils"
+build="fakeroot binutils wget"
 pacstrap /mnt base  ${core} ${development} ${graphics}
 
 # mounts
@@ -92,6 +93,7 @@ cat << EOF >> /etc/pacman.conf
 Server = http://repo.archlinux.fr/\$arch
 EOF
 pacman -Syyu yaourt pacman-color python-pip
+yaourt chromium-stable-libpdf
 pip install virtualenv virtualenvwrapper pylint nose coverage
 # pip install fabric
 

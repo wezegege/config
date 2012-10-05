@@ -44,6 +44,11 @@ def getdump(database, user=None, password=None):
   run('rm %s' % remote_dump)
 
 @task
+def copy(database, user=None, password=None):
+  getdump(database, user, password)
+  restore(database)
+
+@task
 def dump(database, user=None, password=None):
   if not (user and password):
     user, password = credentials(database, user, password)

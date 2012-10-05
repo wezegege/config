@@ -15,7 +15,7 @@ env.format = True
 
 env.roledefs = {
     'main' : ['biblio', 'etl', 'demo'],
-    'rmm' : ['modules', 'femto', 'gsmr',
+    'rmm' : ['modules', 'femto',
       'urd2',
       'smartmetering', 'metersg1', 'screens',
       'sysnet',

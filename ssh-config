@@ -40,75 +40,15 @@ Host francois
 # Valid forges
 #--------------------------------------------------------------
 
-Host valid2
-   Hostname forge-valid2.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid2
-
-Host valid5
-   Hostname forge-valid5.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid5
-
-Host valid7
-   Hostname forge-valid7.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid7
-
-Host valid8
-   Hostname forge-valid8.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid8
-
-Host valid10
-   Hostname forge-valid10.rmm.sagem
-   User g179076
-   #IdentityFile ~/.ssh/keys/valid10
-
-Host valid11
-   Hostname forge-valid11.rmm.sagem
-   User g179076
-   IdentityFile ~/.ssh/keys/valid11
-
-Host valid12
-   Hostname forge-valid12.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid12
-
 Host valid13
    Hostname forge-valid13.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid13
-
-Host valid15
-   Hostname forge-valid15.rmm.sagem
    User g179076
-   IdentityFile ~/.ssh/keys/valid15
-
-Host valid16
-   Hostname forge-valid16.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid15
-
-Host valid17
-   Hostname forge-valid17.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid17
-
-Host valid18
-   Hostname forge-valid18.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/valid18
+   IdentityFile ~/.ssh/keys/valid13
 
 Host testperf2
    Hostname forge-testperf2.osn.sagem
    User g179076
    IdentityFile ~/.ssh/keys/testperf2
-
-Host test2
-   Hostname forge-test2.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/test2
 
 #--------------------------------------------------------------
 # Prod forges

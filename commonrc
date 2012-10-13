@@ -155,11 +155,11 @@ alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 #====================================================================
 # specificities
 #====================================================================
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-   source /usr/local/bin/virtualenvwrapper.sh
+if [[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]]; then
+   source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
-if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
-   source /usr/bin/virtualenvwrapper.sh
+if [[ -f /usr/bin/virtualenvwrapper_lazy.sh ]]; then
+   source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
 if [ -f ~/.uncommonrc ]; then

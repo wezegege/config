@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from fabric.api import task, run, sudo, local, put, env, hosts, execute, parallel
+from fabric.api import task, run, sudo, local, put, env, hosts, execute, parallel, settings
 from fabric.context_managers import cd
 import getpass
 import os
@@ -28,7 +28,8 @@ def restart():
 @task
 def status():
   daemon = '/etc/init.d/ldap-sync'
-  sudo('%s status' % daemon)
+  with settings(warn_only=True):
+    sudo('%s status' % daemon)
 
 @task
 def update():
@@ -38,7 +39,6 @@ def update():
   restart()
 
 @task
-@parallel
 def install():
   dpkg_dir = '/var/cache/pbuilder/result'
   tmp_dir = '/tmp'

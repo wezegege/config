@@ -3,9 +3,9 @@
 (Z) +migration makes it update cc, see also, activities, ...
 (B) redesign scmbug pre/post commits 2627
 (Z) apache svn patch to allow 'groups-something' modules
-x 2012-10-05 +modulemove BOC branches name bug redeploy
 (C) +vulcain-scripts correct tests
 (C) +vulcain-scripts make it use dependencies
 (Z) +vulcain make it compatible to the library
 (C) +workshop write thoughts
-(A) ldapsync remake syncing
+(B) +ldapsync deploy
+x 2012-10-10 +crpr javascript handle

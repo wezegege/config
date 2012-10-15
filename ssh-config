@@ -15,6 +15,7 @@ Host github github.com
 ######################################
 # Sagemcom
 ######################################
+#
 Host *.sagem 10.66.* 10.68.*
    User sagemuser
    GssApiAuthentication yes
@@ -63,11 +64,6 @@ Host urd1femto femto
    Hostname forge-urd1femto.rmm.sagem
    User kevin
    IdentityFile ~/.ssh/keys/urd1femto
-
-Host urd1gsmr gsmr
-   Hostname forge-urd1gsmr.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1gsmr
 
 Host urd2
    Hostname forge-urd2.vzy.sagem
@@ -119,7 +115,7 @@ Host shenzhen router
    User kevin
    IdentityFile ~/.ssh/keys/shenzhen
 
-Host sst
+Host sst ldapsst
    Hostname forge-sst.sst.sagem
    User kevin
    IdentityFile ~/.ssh/keys/sst
@@ -204,7 +200,7 @@ Host backup ldaptest
    User g179076
    IdentityFile ~/.ssh/keys/backup
 
-Host ldapprod
+Host ldapprod ldaprmm
    Hostname 10.66.236.67
    User kevin
    IdentityFile ~/.ssh/keys/ldapprod
@@ -213,3 +209,12 @@ Host ldapshenzhen
    Hostname 10.68.1.34
    User kevin
    IdentityFile ~/.ssh/keys/ldapshenzhen
+
+Host valid15
+  Hostname forge-valid15.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/valid15
+Host valid11
+  Hostname forge-valid11.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/valid11

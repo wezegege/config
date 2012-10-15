@@ -94,7 +94,7 @@ Server = http://repo.archlinux.fr/\$arch
 EOF
 pacman -Syyu yaourt pacman-color python-pip
 yaourt chromium-stable-libpdf
-pip install virtualenv virtualenvwrapper pylint nose coverage
+pip install virtualenv virtualenvwrapper
 # pip install fabric
 
 # users

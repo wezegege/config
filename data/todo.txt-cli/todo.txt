@@ -8,3 +8,4 @@
 (Z) +vulcain make it compatible to the library
 (C) +workshop write thoughts
 (B) +ldapsync deploy
+(A) check ldapsync on forge-etl

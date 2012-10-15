@@ -25,6 +25,8 @@ isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
   if [[ `hostname` == *valid* || `hostname` == *test* ]]; then
     isremote=${yellow}
+  elif [[ `hostname` == *wez-* || `hostname` == *rmm-p* ]]; then
+    isremote=${green}
   else
     isremote=${red}
   fi

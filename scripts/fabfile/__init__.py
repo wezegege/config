@@ -94,7 +94,3 @@ Host {1}
 EOF
 """.format(config_file, alias, env.host_string, user, key_dir))
 
-
-@task
-def test():
-  sudo('tail /etc/gforge/local.inc')

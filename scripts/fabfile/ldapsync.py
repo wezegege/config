@@ -35,7 +35,7 @@ def status():
 def update():
   install_dir = '/usr/share/LdapSync'
   with cd(install_dir):
-    sudo('svn update')
+    sudo('svn update --username g179076')
   restart()
 
 @task
@@ -49,6 +49,6 @@ def install():
     run('rm %s' % deb_file)
 
 @task
-@hosts('socle5')
+@hosts('repo-forge')
 def upload():
   run('~/ldap_sync.sh')

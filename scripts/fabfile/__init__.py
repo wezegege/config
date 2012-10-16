@@ -41,7 +41,7 @@ def create_user(alias=None):
   config_file = '~/.ssh/config'
   user = 'g179076'
   with settings(warn_only=True):
-    if sudo('useradd -G sudo {0}'.format(user)):
+    if sudo('useradd -m -s /bin/bash -G sudo {0}'.format(user)):
       sudo('passwd {0}'.format(user))
   with settings(warn_only=True):
     if run('git --version').failed:
@@ -86,6 +86,7 @@ def create_user(alias=None):
   with settings(warn_only=True):
     if local('grep "Host {0}" {1} > /dev/null'.format(alias, config_file)).failed:
       local("""cat << EOF >> {0}
+
 Host {1}
   Hostname {2}
   User {3}

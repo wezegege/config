@@ -24,8 +24,8 @@ env.roledefs = {
       ],
     'sst' : ['sst'],
     'shz' : ['shenzhen'],
-    'valid' : ['valid8', 'valid9', 'valid10', 'valid11',
-      'valid13', 'valid18', 'testperf2'],
+    'valid' : ['valid10', 'valid11', 'valid12',
+      'valid13', 'valid15', 'testperf2'],
     'ldap' : ['ldapprod', 'backup'],
     }
 
@@ -41,19 +41,23 @@ def create_user(alias=None):
   config_file = '~/.ssh/config'
   user = 'g179076'
   with settings(warn_only=True):
-    if sudo('useradd -m -s /bin/bash -G sudo {0}'.format(user)):
+    options = '-m -s /bin/bash -G sudo'
+    if sudo('useradd {0} {1}'.format(options, user)).succeeded:
       sudo('passwd {0}'.format(user))
+    else:
+      sudo('usermod -a -d /home/{0} {1} {0}'.format(user, options))
+      sudo('su - {0} -c cd'.format(user))
   with settings(warn_only=True):
     if run('git --version').failed:
       sudo('apt-get install git-core')
-  local('ssh-keygen -f {0}'.format(os.path.join(key_dir, alias)))
+  #local('ssh-keygen -f {0}'.format(os.path.join(key_dir, alias)))
 
   home_folder = '/home/{0}'.format(user)
   with settings(warn_only=True):
     sudo('mkdir {0}/.ssh'.format(home_folder))
-  put('{0}/{1}.pub'.format(key_dir, alias),
-      '{0}/.ssh/authorized_keys'.format(home_folder), use_sudo=True)
-  sudo('chown {0} {1}/.ssh/authorized_keys'.format(user, home_folder))
+  #put('{0}/{1}.pub'.format(key_dir, alias),
+  #    '{0}/.ssh/authorized_keys'.format(home_folder), use_sudo=True)
+  #sudo('chown {0} {1}/.ssh/authorized_keys'.format(user, home_folder))
 
   # config module checking out
   with prefix('export https_proxy=http://10.66.243.130:8080/'):
@@ -90,7 +94,7 @@ def create_user(alias=None):
 Host {1}
   Hostname {2}
   User {3}
-  IdentityFile {4}/{1}
+  #IdentityFile {4}/{1}
 EOF
 """.format(config_file, alias, env.host_string, user, key_dir))
 

@@ -30,6 +30,7 @@ def status():
   daemon = '/etc/init.d/ldap-sync'
   with settings(warn_only=True):
     sudo('%s status' % daemon)
+    sudo('tail /var/log/ldap-sync.log')
 
 @task
 def update():

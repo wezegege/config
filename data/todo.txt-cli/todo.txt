@@ -7,4 +7,5 @@
 (C) +vulcain-scripts make it use dependencies
 (Z) +vulcain make it compatible to the library
 (C) +workshop write thoughts
-(A) ldapsync remake syncing
+(B) +ldapsync deploy
+(A) check ldapsync on forge-etl

@@ -6,6 +6,8 @@ Host *
 
   ForwardAgent yes
   ForwardX11 yes
+  GssApiAuthentication yes
+  GssApiDelegateCredentials yes
 
 Host github github.com
   Hostname github.com
@@ -20,10 +22,9 @@ Host bitbucket bitbucket.org
 ######################################
 # Sagemcom
 ######################################
-Host *.sagem 10.66.* 10.68.*
+#
+Host *.sagem 10.66.* 10.68.* *.ads.local
    User sagemuser
-   GssApiAuthentication yes
-   GssApiDelegateCredentials yes
 
 #--------------------------------------------------------------
 # Valid forges
@@ -44,6 +45,16 @@ Host francois
 #--------------------------------------------------------------
 # Valid forges
 #--------------------------------------------------------------
+
+Host valid15
+  Hostname forge-valid15.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/valid15
+
+Host valid11
+  Hostname forge-valid11.rmm.sagem
+  User g179076
+  IdentityFile ~/.ssh/keys/valid11
 
 Host valid13
    Hostname forge-valid13.rmm.sagem
@@ -66,28 +77,21 @@ Host urd1modules modules
 
 Host urd1femto femto
    Hostname forge-urd1femto.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1femto
-
-Host urd1gsmr gsmr
-   Hostname forge-urd1gsmr.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1gsmr
+   User g179076
 
 Host urd2
    Hostname forge-urd2.vzy.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd2
+   User g179076
+   #IdentityFile ~/.ssh/keys/urd2
 
 Host screens
    Hostname forge-screens.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/screens
+   User g179076
+   #IdentityFile ~/.ssh/keys/screens
 
 Host smartmetering
    Hostname forge-smartmetering.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/smartmetering
+   User g179076
 
 Host smarthome
    Hostname forge-smarthome.rmm.sagem
@@ -96,35 +100,35 @@ Host smarthome
 
 Host metersg1
    Hostname forge-metersg1.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/metersg1
+   User g179076
+   #IdentityFile ~/.ssh/keys/metersg1
 
 Host urd31 doc
    Hostname forge-urd31.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd31
+   User g179076
+   #IdentityFile ~/.ssh/keys/urd31
 
 Host urd44 gateway
    Hostname forge-urd44.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd44
+   User g179076
+   #IdentityFile ~/.ssh/keys/urd44
 
 Host lignepro
    Hostname forge-lignepro.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/lignepro
+   User g179076
+   #IdentityFile ~/.ssh/keys/lignepro
 
 Host sysnet urd4
    Hostname forge-sysnet.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/sysnet
+   User g179076
+   #IdentityFile ~/.ssh/keys/sysnet
 
 Host shenzhen router
    Hostname forge-router.ads.local
-   User kevin
-   IdentityFile ~/.ssh/keys/shenzhen
+   User g179076
+   #IdentityFile ~/.ssh/keys/shenzhen
 
-Host sst
+Host sst ldapsst
    Hostname forge-sst.sst.sagem
    User kevin
    IdentityFile ~/.ssh/keys/sst
@@ -158,13 +162,11 @@ Host bugzilla_shenzhen
 
 Host etl
    Hostname forge-etl.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/etl
+   User g179076
 
 Host biblio
    Hostname forge-biblio.vzy.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/biblio
+   User g179076
 
 Host demo
    Hostname forge-demo.rmm.sagem
@@ -181,7 +183,7 @@ Host services2
    User kevin
    IdentityFile ~/.ssh/keys/services2
 
-Host socle5
+Host repo-forge
   Hostname vzy08026.vzy.sagem
   User g179076
   IdentityFile ~/.ssh/keys/socle5
@@ -209,7 +211,7 @@ Host backup ldaptest
    User g179076
    IdentityFile ~/.ssh/keys/backup
 
-Host ldapprod
+Host ldapprod ldaprmm
    Hostname 10.66.236.67
    User kevin
    IdentityFile ~/.ssh/keys/ldapprod

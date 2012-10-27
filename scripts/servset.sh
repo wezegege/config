@@ -12,7 +12,6 @@ ln -s config/uncommonrc/sagemcom .uncommonrc
 cd config
 git submodule update --init
 cd ~
-mkdir -p .local/share/vim
 mkdir .ssh
 mv authorized_keys .ssh
 

@@ -12,6 +12,11 @@ Host github github.com
   User git
   IdentityFile ~/.ssh/keys/github
 
+Host bitbucket bitbucket.org
+  Hostname bitbucket.org
+  User git
+  IdentityFile ~/.ssh/keys/bitbucket
+
 ######################################
 # Sagemcom
 ######################################

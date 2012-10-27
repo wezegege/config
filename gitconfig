@@ -43,3 +43,6 @@ default = tracking # defaults push to upstream branch
 
 [rerere]
 enabled = true # record resolved conflicts hunks
+[user]
+	email = wezegege@live.fr
+	name = Wezegege

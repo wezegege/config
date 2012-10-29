@@ -170,13 +170,13 @@ Host demo
 
 Host services
    Hostname etl-services.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/services
+   User g179076
+   #IdentityFile ~/.ssh/keys/services
 
 Host services2
    Hostname etl-services2.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/services2
+   User g179076
+   #IdentityFile ~/.ssh/keys/services2
 
 Host repo-forge
   Hostname vzy08026.vzy.sagem
@@ -215,3 +215,8 @@ Host ldapshenzhen
    Hostname 10.68.1.34
    User kevin
    IdentityFile ~/.ssh/keys/ldapshenzhen
+
+Host valid12
+  Hostname forge-valid12.rmm.sagem
+  User g179076
+  #IdentityFile ~/.ssh/keys/valid12

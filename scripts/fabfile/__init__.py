@@ -24,10 +24,11 @@ env.roledefs = {
       ],
     'sst' : ['sst'],
     'shz' : ['shenzhen'],
-    'valid' : ['valid10', 'valid11', 'valid12',
+    'valid' : ['valid11', 'valid12',
       'valid13', 'valid15', 'testperf2'],
     'ldap' : ['ldapprod', 'backup'],
     }
+
 
 @runs_once
 def ask_password():

@@ -3,7 +3,7 @@
 
 from fabric.api import run, task, execute, parallel
 from fabric.context_managers import cd, prefix, hide, settings
-from ilogue.fexpect import expect, expecting, run as erun, sudo as esudo
+from ilogue.fexpect import expect, expecting, run as erun
 from fabric.decorators import runs_once, hosts, roles
 import getpass
 

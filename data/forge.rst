@@ -3,14 +3,16 @@ Versions
 ========
 
 forge : v12.2
-- gforge : ? + ?
-- bugzilla : v3.4.6 + ?
-- viewvc : ?
-- websvn : ?
-- mediawiki : v1.15.1 + ?
-- vulcain : v1.2.45
-- testlink : ?
-- fai : v1.0.2
+- gforge : v4.5.14 + v1.0.0
+- bugzilla : v3.4.6 + v1.0.0
+- viewvc : ? + v1.0.0
+- websvn : ? + v1.0.0
+- mediawiki : v1.15.1 + v1.0.0
+- vulcain : v1.2.46
+- testlink : ? + v1.0.0
+- fai : v1.0.3
+- server-config : v1.0.0
+- ldap-sync : v2.1.1
 
 =====
 Goals
@@ -27,6 +29,9 @@ Todo
 
 Bugs
 ====
+
+- create products with no source, meant for bugs
+- create products components
 
 ~ 100 bugs in bugzilla, most of them no longer relevant
 

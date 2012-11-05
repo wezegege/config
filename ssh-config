@@ -49,17 +49,14 @@ Host francois
 Host valid15
   Hostname forge-valid15.rmm.sagem
   User g179076
-  IdentityFile ~/.ssh/keys/valid15
 
 Host valid11
   Hostname forge-valid11.rmm.sagem
   User g179076
-  IdentityFile ~/.ssh/keys/valid11
 
 Host valid13
    Hostname forge-valid13.rmm.sagem
    User g179076
-   IdentityFile ~/.ssh/keys/valid13
 
 Host testperf2
    Hostname forge-testperf2.osn.sagem
@@ -73,7 +70,6 @@ Host testperf2
 Host urd1modules modules
    Hostname forge-urd1modules.rmm.sagem
    User kevin
-   IdentityFile ~/.ssh/keys/urd1modules
 
 Host urd1femto femto
    Hostname forge-urd1femto.rmm.sagem
@@ -96,7 +92,6 @@ Host smartmetering
 Host smarthome
    Hostname forge-smarthome.rmm.sagem
    User kevin
-   IdentityFile ~/.ssh/keys/smarthome
 
 Host metersg1
    Hostname forge-metersg1.rmm.sagem
@@ -171,7 +166,6 @@ Host biblio
 Host demo
    Hostname forge-demo.rmm.sagem
    User kevin
-   IdentityFile ~/.ssh/keys/demo
 
 Host services
    Hostname etl-services.rmm.sagem

@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from fabric.api import task, run, sudo, local, put, env, hosts, execute, parallel, settings
-from fabric.context_managers import cd
+from ilogue.fexpect import expect, expecting, sudo as esudo
+from fabric.context_managers import cd, hide
+from fabric.decorators import runs_once
 import getpass
 import os
 import os.path
@@ -12,6 +14,10 @@ def all():
   execute(make)
   execute(install)
   execute(upload)
+
+@runs_once
+def svn_password():
+  return getpass.getpass('SVN password : ')
 
 @task
 @hosts('localhost')
@@ -34,9 +40,17 @@ def status():
 
 @task
 def update():
+  password = svn_password()
   install_dir = '/usr/share/LdapSync'
-  with cd(install_dir):
-    sudo('svn update --username g179076')
+  prompts = list()
+  prompts += expect("Password for", password)
+  prompts += expect('Store password unencrypted', 'no')
+  with settings(
+      cd(install_dir),
+      expecting(prompts),
+      hide('stdout'),
+      ):
+    esudo('svn update --username g179076')
   restart()
 
 @task

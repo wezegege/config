@@ -9,6 +9,10 @@ Host *
   GssApiAuthentication yes
   GssApiDelegateCredentials yes
 
+######################################
+# git repo servers
+######################################
+
 Host github github.com
   Hostname github.com
   User git
@@ -63,7 +67,7 @@ Host valid15 forge-valid15
   Hostname forge-valid15.rmm.sagem
   User g179076
 
-Host testperf forge-testperf2
+Host testperf2 forge-testperf2
    Hostname forge-testperf2.osn.sagem
    User g179076
    IdentityFile ~/.ssh/keys/testperf2
@@ -103,12 +107,12 @@ Host metersg1 forge-metersg1
    User g179076
    #IdentityFile ~/.ssh/keys/metersg1
 
-Host urd31 doc forge-urd31
+Host urd31 forge-urd31
    Hostname forge-urd31.osn.sagem
    User g179076
    #IdentityFile ~/.ssh/keys/urd31
 
-Host urd44 gateway forge-urd44
+Host urd44 forge-urd44
    Hostname forge-urd44.osn.sagem
    User g179076
    #IdentityFile ~/.ssh/keys/urd44

@@ -15,11 +15,11 @@ env.format = True
 
 env.roledefs = {
     'main' : ['biblio', 'etl', 'demo'],
-    'rmm' : ['modules', 'femto',
-      'urd2',
-      'smartmetering', 'metersg1', 'screens',
+    'rmm' : ['femto',
+      'urd2', 'screens',
+      'smartmetering', 'metersg1',
       'sysnet',
-      'urd31', 'lignepro', 'smarthome',
+      'urd31', 'lignepro',
       'urd44',
       ],
     'sst' : ['sst'],

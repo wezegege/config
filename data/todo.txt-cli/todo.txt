@@ -6,6 +6,6 @@
 (C) +vulcain-scripts correct tests
 (C) +vulcain-scripts make it use dependencies
 (Z) +vulcain make it compatible to the library
-(C) +workshop write thoughts
+(Z) +workshop write thoughts
 +forge mediawiki page cut
 +bugzilla repoened state

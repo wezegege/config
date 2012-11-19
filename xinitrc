@@ -1,8 +1,17 @@
 #!/bin/sh
 
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
 # unset bell
 xset b 0
 stty -ixon
 
 setterm -blength 0
 setterm -bfreq 0
+
+setxkbmap fr

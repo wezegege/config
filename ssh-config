@@ -1,24 +1,23 @@
 Host *
-#  ControlMaster auto
-#  ControlPath /tmp/ssh_mux_%h_%p_%r
-#  ControlPersist 1h
   HashKnownHosts yes
-
   ForwardAgent yes
   ForwardX11 yes
+  GssApiAuthentication yes
+  GssApiDelegateCredentials yes
 
 Host github github.com
   Hostname github.com
   User git
   IdentityFile ~/.ssh/keys/github
 
+Host server
+  Hostname 192.168.1.169
+
 ######################################
 # Sagemcom
 ######################################
 Host *.sagem 10.66.* 10.68.*
    User sagemuser
-   GssApiAuthentication yes
-   GssApiDelegateCredentials yes
 
 #--------------------------------------------------------------
 # Valid forges

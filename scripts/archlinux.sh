@@ -104,7 +104,7 @@ pip install virtualenv virtualenvwrapper
 
 # users
 passwd
-sed -i.ori '/# %wheel ALL=(ALL) NOPASSWD: ALL/s/#//' /etc/sudoers
+sed -i '/# %wheel ALL=(ALL) NOPASSWD: ALL/s/#//' /etc/sudoers
 
 read user
 useradd -m -g users -G wheel -s /bin/zsh ${user}
@@ -119,6 +119,8 @@ vboxvideo
 EOF
 
 # desktop environment
+
+# install video driver
 systemctl enable gdm
 systemctl enable dhcpd@eth0.service
 

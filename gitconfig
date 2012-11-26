@@ -17,6 +17,7 @@ pretty=oneline # display one line per log entry
 st = status
 ci = commit
 co = checkout
+cl = clone
 br = branch -avv
 pull = pull --recurse-submodules=yes
 difff = diff --staged
@@ -43,3 +44,6 @@ default = tracking # defaults push to upstream branch
 
 [rerere]
 enabled = true # record resolved conflicts hunks
+[user]
+	email = wezegege@live.fr
+	name = Wezegege

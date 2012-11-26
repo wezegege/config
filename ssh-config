@@ -5,33 +5,47 @@ Host *
   GssApiAuthentication yes
   GssApiDelegateCredentials yes
 
-Host github github.com
-  Hostname github.com
-  User git
-  IdentityFile ~/.ssh/keys/github
+######################################
+# home
+######################################
 
 Host server
   Hostname 192.168.1.169
 
 ######################################
+# git repo servers
+######################################
+
+Host github github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/keys/github
+
+Host bitbucket bitbucket.org
+  Hostname bitbucket.org
+  User git
+  IdentityFile ~/.ssh/keys/bitbucket
+
+######################################
 # Sagemcom
 ######################################
-Host *.sagem 10.66.* 10.68.*
+#
+Host *.sagem 10.66.* 10.68.* *.ads.local 10.206.*
    User sagemuser
 
 #--------------------------------------------------------------
-# Valid forges
+# Computers
 #--------------------------------------------------------------
 
-Host michel
+Host michel rmm-p1188134f
    Hostname rmm-p1188134f.ads.local
    User g179076
 
-Host kevin
+Host kevin rmm-p1188377f
   Hostname rmm-p1188377f.ads.local
   User g179076
 
-Host francois
+Host francois rmm-p1267084p
   Hostname rmm-p1267084p.ads.local
   User g179076
 
@@ -39,12 +53,24 @@ Host francois
 # Valid forges
 #--------------------------------------------------------------
 
-Host valid13
+Host valid11 forge-valid11
+  Hostname forge-valid11.rmm.sagem
+  User g179076
+
+Host valid12 forge-valid12
+  Hostname forge-valid12.rmm.sagem
+  User g179076
+  #IdentityFile ~/.ssh/keys/valid12
+
+Host valid13 forge-valid13
    Hostname forge-valid13.rmm.sagem
    User g179076
-   IdentityFile ~/.ssh/keys/valid13
 
-Host testperf2
+Host valid15 forge-valid15
+  Hostname forge-valid15.rmm.sagem
+  User g179076
+
+Host testperf2 forge-testperf2
    Hostname forge-testperf2.osn.sagem
    User g179076
    IdentityFile ~/.ssh/keys/testperf2
@@ -53,83 +79,53 @@ Host testperf2
 # Prod forges
 #--------------------------------------------------------------
 
-Host urd1modules modules
-   Hostname forge-urd1modules.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1modules
-
-Host urd1femto femto
+Host urd1femto femto forge-urd1femto
    Hostname forge-urd1femto.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1femto
+   User g179076
 
-Host urd1gsmr gsmr
-   Hostname forge-urd1gsmr.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd1gsmr
-
-Host urd2
+Host urd2 forge-urd2
    Hostname forge-urd2.vzy.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd2
+   User g179076
 
-Host screens
+Host screens forge-screens
    Hostname forge-screens.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/screens
+   User g179076
 
-Host smartmetering
+Host smartmetering forge-smartmetering
    Hostname forge-smartmetering.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/smartmetering
+   User g179076
 
-Host smarthome
-   Hostname forge-smarthome.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/smarthome
-
-Host metersg1
+Host metersg1 forge-metersg1
    Hostname forge-metersg1.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/metersg1
+   User g179076
 
-Host urd31 doc
+Host urd31 forge-urd31
    Hostname forge-urd31.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd31
+   User g179076
 
-Host urd44 gateway
+Host urd44 forge-urd44
    Hostname forge-urd44.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/urd44
+   User g179076
 
-Host lignepro
+Host lignepro forge-lignepro
    Hostname forge-lignepro.osn.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/lignepro
+   User g179076
 
-Host sysnet urd4
+Host sysnet urd4 forge-sysnet
    Hostname forge-sysnet.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/sysnet
+   User g179076
 
-Host shenzhen router
+Host shenzhen router forge-router
    Hostname forge-router.ads.local
-   User kevin
-   IdentityFile ~/.ssh/keys/shenzhen
+   User g179076
 
-Host sst
+Host sst ldapsst forge-sst
    Hostname forge-sst.sst.sagem
    User kevin
-   IdentityFile ~/.ssh/keys/sst
 
 #--------------------------------------------------------------
 # Bugzilla
 #--------------------------------------------------------------
-
-Host sierra
-   Hostname 10.66.236.42
-   User sagemuser
 
 Host frontend rmm08066
    Hostname rmm08066.rmm.sagem
@@ -150,32 +146,29 @@ Host bugzilla_shenzhen
 # Miscellanous
 #--------------------------------------------------------------
 
-Host etl
+Host etl forge-etl
    Hostname forge-etl.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/etl
+   User g179076
 
-Host biblio
+Host biblio forge-biblio
    Hostname forge-biblio.vzy.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/biblio
+   User g179076
 
-Host demo
+Host demo forge-demo
    Hostname forge-demo.rmm.sagem
    User kevin
-   IdentityFile ~/.ssh/keys/demo
 
-Host services
+Host services etl-services
    Hostname etl-services.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/services
+   User g179076
+   #IdentityFile ~/.ssh/keys/services
 
-Host services2
+Host services2 etl-services2
    Hostname etl-services2.rmm.sagem
-   User kevin
-   IdentityFile ~/.ssh/keys/services2
+   User g179076
+   #IdentityFile ~/.ssh/keys/services2
 
-Host socle5
+Host repo-forge vzy08026
   Hostname vzy08026.vzy.sagem
   User g179076
   IdentityFile ~/.ssh/keys/socle5
@@ -184,12 +177,12 @@ Host socle5
 # Virtual machines
 #--------------------------------------------------------------
 
-Host premox
+Host premox forge-premox
   Hostname forge-premox.rmm.sagem
   User g179076
   IdentityFile ~/.ssh/keys/premox
 
-Host prodmox promox
+Host prodmox promox forge-prodmox
   Hostname forge-prodmox.rmm.sagem
   User g179076
   IdentityFile ~/.ssh/keys/prodmox
@@ -198,12 +191,12 @@ Host prodmox promox
 # LDAP
 #--------------------------------------------------------------
 
-Host backup ldaptest
+Host backup ldaptest Forge-backup
    Hostname forge-backup.rmm.sagem
    User g179076
    IdentityFile ~/.ssh/keys/backup
 
-Host ldapprod
+Host ldapprod ldaprmm ldap-v121-prod
    Hostname 10.66.236.67
    User kevin
    IdentityFile ~/.ssh/keys/ldapprod

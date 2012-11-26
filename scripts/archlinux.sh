@@ -35,7 +35,7 @@ mkswap /dev/sda2
 mkfs -t ext4 /dev/sda3
 mkfs -t ext4 /dev/sda4
 
-swapon /dev/sda
+swapon /dev/sda2
 mount /dev/sda3 /mnt
 mkdir /mnt/home /mnt/boot
 mount /dev/sda1 /mnt/boot
@@ -52,20 +52,20 @@ utils="chromium terminator flashplugin"
 core="grub-bios reflector sudo zsh openssh"
 virtual="virtualbox-guest-utils"
 build="fakeroot binutils wget"
-pacstrap /mnt base  ${core} ${development} ${graphics}
+pacstrap /mnt base  ${core} ${development} ${graphics} ${admin} ${utils} ${core} ${virtual} ${build}
 
 # mounts
 genfstab -p /mnt >> /mnt/etc/fstab
-sed 's/,data=ordered//' /mnt/etc/fstab
+sed -i.ori 's/,data=ordered//' /mnt/etc/fstab
 arch-chroot /mnt
 
 #core config
-sed 's/#fr_FR UTF-8 UTF8/fr_FR UTF-8 UTF8' /etc/locale.gen
+sed -i.ori '/#fr_FR.UTF-8 UTF-8/s/#//' /etc/locale.gen
 locale-gen
 echo LANG=fr_FR.UTF-8 > /etc/locale.conf
 export LANG=fr_FR.UTF-8
 loadkeys fr-latin1
-echo << EOF > /etc/vconsole.conf
+cat << EOF > /etc/vconsole.conf
 KEYMAP="fr-latin1"
 FONT="Lat2-Terminus16"
 FONT_MAP=
@@ -93,13 +93,18 @@ cat << EOF >> /etc/pacman.conf
 Server = http://repo.archlinux.fr/\$arch
 EOF
 pacman -Syyu yaourt pacman-color python-pip
-yaourt chromium-stable-libpdf
+yaourt chromium-stable-libpdf << EOF
+1
+n
+y
+EOF
+
 pip install virtualenv virtualenvwrapper
 # pip install fabric
 
 # users
 passwd
-sed 's/# %wheel/%wheel/' /etc/sudoers
+sed -i.ori '/# %wheel ALL=(ALL) NOPASSWD: ALL/s/#//' /etc/sudoers
 
 read user
 useradd -m -g users -G wheel -s /bin/zsh ${user}
@@ -114,8 +119,8 @@ vboxvideo
 EOF
 
 # desktop environment
-sed 's/DAEMONS=(/DAEMONS=(dbus /' /etc/rc.conf
-sed 's/id:3:initdefault:/#id:3:initdefault:/;s/#id:5:initdefault:/id:5:initdefault:/;s/x:5:respawn:/usr/bin/xdm -nodaemon/#x:5:respawn:/usr/bin/xdm -nodaemon/;s/#x:5:respawn:/usr/sbin/gdm -nodaemon/x:5:respawn:/usr/sbin/gdm -nodaemon/' /etc/inittab
+systemctl enable gdm
+systemctl enable dhcpd@eth0.service
 
 # finish
 exit

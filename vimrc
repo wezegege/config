@@ -116,7 +116,7 @@ function! Indent(size)
   let &softtabstop=a:size
 endfunction
 
-call Indent(2)
+call Indent(4)
 
 set autochdir
 

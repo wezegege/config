@@ -14,12 +14,12 @@ if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion   # --> Read /etc/bashrc, if present.
 fi
 
-HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd"
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILESIZE=20000
-HISTCONTROL=ignoreboth
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd"
+export HISTFILE=~/.histfile
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+export HISTFILESIZE=2000000
+export HISTCONTROL=ignoreboth
 set APPEND_HISTORY
 set AUTO_CD
 

@@ -29,7 +29,6 @@ env.roledefs = {
     'ldap' : ['ldapprod', 'backup'],
     }
 
-
 @runs_once
 def ask_password():
   return getpass.getpass('User password: ')

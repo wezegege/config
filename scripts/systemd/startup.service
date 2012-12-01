@@ -1,0 +1,9 @@
+[Unit]
+Description=Startup Script
+
+[Service]
+Type=oneshot
+ExecStart=/etc/scripts/startup
+
+[Install]
+WantedBy=multi-user.target

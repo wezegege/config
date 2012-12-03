@@ -53,6 +53,10 @@ Host francois rmm-p1267084p
 # Valid forges
 #--------------------------------------------------------------
 
+Host test
+  Hostname 10.66.176.204
+  User g179076
+
 Host valid11 forge-valid11
   Hostname forge-valid11.rmm.sagem
   User g179076

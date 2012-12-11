@@ -12,6 +12,16 @@ Host *
 Host server
   Hostname 192.168.1.169
 
+Host poc
+  Hostname 10.66.176.68
+  User g179076
+  IdentityFile ~/.ssh/keys/poc
+
+Host lucid
+  Hostname 10.66.176.132
+  User g179076
+  IdentityFile ~/.ssh/keys/lucid
+
 ######################################
 # git repo servers
 ######################################

@@ -15,6 +15,6 @@ ln -sf ~/config/config-terminator-config ~/.config/terminator/config
 ln -sf ~/config/ssh-config ~/.ssh/config
 ln -sf ~/config/subversion-config ~/.subversion/config
 ln -sf ~/config/subversion-servers ~/.subversion/servers
-ln -sf ~/config/uncommonrc/sagemcom .uncommonrc
+ln -sf ~/config/uncommonrc/sagemcom ~/.uncommonrc
 
 source ~/.bashrc

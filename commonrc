@@ -115,6 +115,13 @@ function extract {     # Handy Extract Program.
      fi
 }
 
+function undeb {
+  TMP=${1/.deb/}
+  mkdir -p ${TMP}/DEBIAN
+  dpkg -e $1 ${TMP}/DEBIAN
+  dpkg -x $1 ${TMP}
+}
+
 #====================================================================
 # aliases
 #====================================================================

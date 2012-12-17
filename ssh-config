@@ -18,7 +18,7 @@ Host poc
   IdentityFile ~/.ssh/keys/poc
 
 Host lucid
-  Hostname 10.66.176.132
+  Hostname 10.66.176.127
   User g179076
   IdentityFile ~/.ssh/keys/lucid
 

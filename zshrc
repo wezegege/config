@@ -101,8 +101,8 @@ set autocorrect
 
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd .."
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS

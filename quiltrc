@@ -1,0 +1,4 @@
+#!/bin/sh
+
+QUILT_DIFF_ARGS="--color=auto -u"
+QUILT_REFRESH_ARGS="-u"

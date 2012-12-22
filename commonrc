@@ -8,34 +8,34 @@
 #====================================================================
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+if [ -d "${HOME}/.local/bin" ] ; then
+    PATH="${HOME}/.local/bin:${PATH}"
 fi
-PATH="$HOME/config/scripts:$PATH"
-if [ -d "$HOME/.local/lib/python" ] ; then
-    PYTHONPATH="$HOME/.local/lib/python:$PYTHONPATH"
+PATH="${HOME}/config/scripts:${PATH}"
+if [ -d "${HOME}/.local/lib/python" ] ; then
+    PYTHONPATH="${HOME}/.local/lib/python:${PYTHONPATH}"
 fi
 
 # PROJECTPATH
 
-PROJECTPATH="$HOME/.local/lib/python:$HOME/.local/lib"
-PROJECTPATH="$PROJECTPATH:$HOME/workspace/cpp:$HOME/workspace/python"
-PROJECTPATH="$PROJECTPATH:$HOME/workspace/perl:$HOME/workspace/php"
-PROJECTPATH="$PROJECTPATH:$HOME/workspace/sh:$HOME/workspace/eclipse"
-PROJECTPATH="$PROJECTPATH:$HOME/workspace/wiki:$HOME/workspace"
-PROJECTPATH="$PROJECTPATH:/usr/local/lib:/usr/local/share:/usr/local"
-PROJECTPATH="$PROJECTPATH:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
-PROJECTPATH="$PROJECTPATH:/usr/include:/usr/share"
-PROJECTPATH="$PROJECTPATH:/var/lib:/var/www"
-PROJECTPATH="$PROJECTPATH:/etc"
+PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/cpp:${HOME}/workspace/python"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/perl:${HOME}/workspace/php"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/sh:${HOME}/workspace/eclipse"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/wiki:${HOME}/workspace"
+PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share:/usr/local"
+PROJECTPATH="${PROJECTPATH}:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
+PROJECTPATH="${PROJECTPATH}:/usr/include:/usr/share"
+PROJECTPATH="${PROJECTPATH}:/var/lib:/var/www"
+PROJECTPATH="${PROJECTPATH}:/etc"
 export PROJECTPATH
 
 # Set default editor
 if [[ -x $(which vim) ]]
 then
   export EDITOR="vim"
-  export USE_EDITOR=$EDITOR
-  export VISUAL=$EDITOR
+  export USE_EDITOR=${EDITOR}
+  export VISUAL=${EDITOR}
 fi
 
 export LC_ALL="fr_FR.UTF-8"
@@ -49,10 +49,10 @@ function parent_dir {
   count=1
   [ -z $1 ] || count=$1
   dir=""
-  for i in `seq $count`; do
-    dir="$dir../"
+  for i in `seq ${count}`; do
+    dir="${dir}../"
   done
-  cd $dir
+  cd ${dir}
 }
 
 
@@ -62,64 +62,70 @@ function project_root {
   # svn project ?
   dest=""
   parent="."
-  while [ -d "$parent/.svn" ]; do
-    dest=$parent
-    parent="$parent/.."
+  while [ -d "${parent}/.svn" ]; do
+    dest=${parent}
+    parent="${parent}/.."
   done
-  [[ $dest == "" ]] && root=`git rev-parse --show-cdup 2>/dev/null` && dest="$root."
-  if [[ $dest == "" ]]; then
+  [[ ${dest} == "" ]] && root=`git rev-parse --show-cdup 2>/dev/null` && dest="${root}."
+  if [[ ${dest} == "" ]]; then
     current_dir=`pwd`
-    for folder in $(echo $PROJECTPATH | tr ":" "\n"); do
-      if [[ $current_dir == "${folder}/"* ]]; then
-        dest=`echo $current_dir | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#"`
+    for folder in $(echo ${PROJECTPATH} | tr ":" "\n"); do
+      if [[ ${current_dir} == "${folder}/"* ]]; then
+        dest=`echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#"`
         break
       fi
     done
   fi
-  [[ $dest == "" ]] && dest=~
-  cd $dest
+  [[ ${dest} == "" ]] && dest=~
+  cd ${dest}
 }
 
-function pkg-install {
+function install {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get install
+   [ $? -eq 0 ] && apt-get install $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -S
+   [ $? -eq 0 ] && pacman -S $@
 }
 
-function pkg-upgrade {
+function upgrade {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get update && apt-get upgrade
+   [ $? -eq 0 ] && apt-get update && apt-get upgrade $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -Syu
+   [ $? -eq 0 ] && pacman -Syu $@
+}
+
+function remove {
+   hash apt-get 2>/dev/null
+   [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && pacman -Rsn $(pacman -Qqdt) $@
 }
 
 function extract {     # Handy Extract Program.
-     if [ -f $1 ] ; then
-         case $1 in
-             *.tar.bz2)   tar xvjf $1     ;;
-             *.tar.gz)    tar xvzf $1     ;;
-             *.bz2)       bunzip2 $1      ;;
-             *.rar)       unrar x $1      ;;
-             *.gz)        gunzip $1       ;;
-             *.tar)       tar xvf $1      ;;
-             *.tbz2)      tar xvjf $1     ;;
-             *.tgz)       tar xvzf $1     ;;
-             *.zip)       unzip $1        ;;
-             *.Z)         uncompress $1   ;;
-             *.7z)        7z x $1         ;;
-             *)           echo "'$1' cannot be extracted via >extract<" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
-}
-
-function undeb {
-  TMP=${1/.deb/}
-  mkdir -p ${TMP}/DEBIAN
-  dpkg -e $1 ${TMP}/DEBIAN
-  dpkg -x $1 ${TMP}
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2) tar xvjf $1 ;;
+      *.tar.gz) tar xvzf $1 ;;
+      *.bz2) bunzip2 $1 ;;
+      *.rar) unrar x $1 ;;
+      *.gz) gunzip $1 ;;
+      *.tar) tar xvf $1 ;;
+      *.tbz2) tar xvjf $1 ;;
+      *.tgz) tar xvzf $1 ;;
+      *.zip) unzip $1 ;;
+      *.Z) uncompress $1 ;;
+      *.7z) 7z x $1 ;;
+      *.deb)
+        TMP=${1/.deb/}
+        mkdir -p ${TMP}/debian
+        dpkg -e $1 ${TMP}/debian
+        dpkg -x $1 ${TMP}
+      ;;
+      *) echo "'$1' cannot be extracted via >extract<" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
 
 #====================================================================
@@ -156,11 +162,6 @@ alias df="df -h"
 alias dotar="tar pczf"
 alias untar="tar xvf"
 alias seetar="tar ztvf"
-
-# debian packages
-
-alias seepack="dpkg -c"
-alias instpack="dpkg -i"
 
 # functions
 

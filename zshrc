@@ -154,10 +154,10 @@ alias -s svg="eog"
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
-alias -s xls="oocalc"
-alias -s ods="oocalc"
-alias -s doc="oowriter"
-alias -s odt="oowriter"
+alias -s xls="localc"
+alias -s ods="localc"
+alias -s doc="lowriter"
+alias -s odt="lowriter"
 
 # applications
 

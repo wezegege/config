@@ -147,6 +147,7 @@ GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"
+alias grec="grep ${GREP_ARGS} --color=always"
 
 # common commands
 

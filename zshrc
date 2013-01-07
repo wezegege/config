@@ -101,8 +101,8 @@ set autocorrect
 
 HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd .."
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -154,10 +154,10 @@ alias -s svg="eog"
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
-alias -s xls="oocalc"
-alias -s ods="oocalc"
-alias -s doc="oowriter"
-alias -s odt="oowriter"
+alias -s xls="localc"
+alias -s ods="localc"
+alias -s doc="lowriter"
+alias -s odt="lowriter"
 
 # applications
 

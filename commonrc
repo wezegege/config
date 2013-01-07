@@ -108,18 +108,17 @@ function extract {     # Handy Extract Program.
              *.zip)       unzip $1        ;;
              *.Z)         uncompress $1   ;;
              *.7z)        7z x $1         ;;
+             *.deb)
+                          TMP=${1/.deb/}
+                          mkdir -p ${TMP}/DEBIAN
+                          dpkg -e $1 ${TMP}/DEBIAN
+                          dpkg -x $1 ${TMP}
+                          ;;
              *)           echo "'$1' cannot be extracted via >extract<" ;;
          esac
      else
          echo "'$1' is not a valid file"
      fi
-}
-
-function undeb {
-  TMP=${1/.deb/}
-  mkdir -p ${TMP}/DEBIAN
-  dpkg -e $1 ${TMP}/DEBIAN
-  dpkg -x $1 ${TMP}
 }
 
 #====================================================================

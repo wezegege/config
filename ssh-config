@@ -79,6 +79,7 @@ Host valid12 forge-valid12
 Host valid13 forge-valid13
    Hostname forge-valid13.rmm.sagem
    User g179076
+   IdentityFile ~/.ssh/keys/valid13
 
 Host valid15 forge-valid15
   Hostname forge-valid15.rmm.sagem

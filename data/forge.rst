@@ -15,6 +15,7 @@ administration
 - CFEngine
 - Precise
 - FAIDB
+- schema LDAP
 
 Bugzilla
 ========
@@ -34,6 +35,7 @@ Paquets
 - DTag
 - Mailbox
 - Backup
+- Snapvault
 
 Merge sources
 =============

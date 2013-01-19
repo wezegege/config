@@ -82,20 +82,17 @@ function project_root {
   if [[ ${dest} == "" ]]; then
     # projectpath
     projectpath="${HOME}/.local/lib/python:${HOME}/.local/lib"
-    projectpath="${projectpath}:${HOME}/workspace/cpp:${HOME}/workspace/python"
-    projectpath="${projectpath}:${HOME}/workspace/perl:${HOME}/workspace/php"
-    projectpath="${projectpath}:${HOME}/workspace/sh:${HOME}/workspace/eclipse"
-    projectpath="${projectpath}:${HOME}/workspace/wiki:${HOME}/workspace"
-    projectpath="${projectpath}:/usr/local/lib:/usr/local/share:/usr/local"
-    projectpath="${projectpath}:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
-    projectpath="${projectpath}:/usr/include:/usr/share"
-    projectpath="${projectpath}:/var/lib:/var/www"
-    projectpath="${projectpath}:/etc:/srv"
+    projectpath="${projectpath}:${HOME}/workspace/*:${HOME}/workspace"
+    projectpath="${projectpath}:/usr/local/lib:/usr/local/share"
+    projectpath="${projectpath}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr/local:/usr/share:/usr/lib"
+    projectpath="${projectpath}:/lib:/var/*:/etc:/srv"
 
     current_dir=$(pwd)
     for folder in $(echo ${projectpath} | tr ":" "\n"); do
-      if [[ ${current_dir} == "${folder}/"* ]]; then
+      if eval "[[ ${current_dir} == ${folder}/* ]]"; then
+        folder=${folder/\*/[^\/]*}
         dest=$(echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#")
+        dest=$(eval "echo $dest")
         break
       fi
     done

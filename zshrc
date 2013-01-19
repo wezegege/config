@@ -93,6 +93,7 @@ fi
 
 setopt completeinword
 setopt extendedglob
+setopt kshglob
 set autocorrect
 
 #====================================================================
@@ -135,7 +136,7 @@ autoload zmv
 alias -g L="| less"
 alias -g _="2>/dev/null"
 alias -g G="| grep"
-alias -g C="| wc -l"
+alias -g W="| wc -l"
 alias -g X="| xargs"
 alias -g S="| sort"
 alias -g U="| uniq"
@@ -143,27 +144,21 @@ alias -g V="| vim -"
 
 # suffixes
 
-if hash vlc 2>/dev/null; then
-  alias -s mkv="vlc"
-  alias -s avi="vlc"
-fi
-if hash evince 2>/dev/null; then
-  alias -s pdf="evince"
-  alias -s png="eog"
-  alias -s jpg="eog"
-  alias -s jpeg="eog"
-  alias -s gif="eog"
-  alias -s svg="eog"
-fi
+alias -s mkv="vlc"
+alias -s avi="vlc"
+alias -s pdf="evince"
+alias -s png="eog"
+alias -s jpg="eog"
+alias -s jpeg="eog"
+alias -s gif="eog"
+alias -s svg="eog"
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
-if hash localc 2>/dev/null; then
-  alias -s xls="localc"
-  alias -s ods="localc"
-  alias -s doc="lowriter"
-  alias -s odt="lowriter"
-fi
+alias -s xls="localc"
+alias -s ods="localc"
+alias -s doc="lowriter"
+alias -s odt="lowriter"
 
 # applications
 

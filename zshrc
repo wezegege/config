@@ -143,21 +143,27 @@ alias -g V="| vim -"
 
 # suffixes
 
-alias -s mkv="vlc"
-alias -s avi="vlc"
-alias -s pdf="evince"
-alias -s png="eog"
-alias -s jpg="eog"
-alias -s jpeg="eog"
-alias -s gif="eog"
-alias -s svg="eog"
+if hash vlc 2>/dev/null; then
+  alias -s mkv="vlc"
+  alias -s avi="vlc"
+fi
+if hash evince 2>/dev/null; then
+  alias -s pdf="evince"
+  alias -s png="eog"
+  alias -s jpg="eog"
+  alias -s jpeg="eog"
+  alias -s gif="eog"
+  alias -s svg="eog"
+fi
 alias -s py="python"
 alias -s rb="ruby"
 alias -s pl="perl"
-alias -s xls="localc"
-alias -s ods="localc"
-alias -s doc="lowriter"
-alias -s odt="lowriter"
+if hash localc 2>/dev/null; then
+  alias -s xls="localc"
+  alias -s ods="localc"
+  alias -s doc="lowriter"
+  alias -s odt="lowriter"
+fi
 
 # applications
 

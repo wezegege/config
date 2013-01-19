@@ -16,20 +16,6 @@ if [ -d "${HOME}/.local/lib/python" ] ; then
     PYTHONPATH="${HOME}/.local/lib/python:${PYTHONPATH}"
 fi
 
-# PROJECTPATH
-
-PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/cpp:${HOME}/workspace/python"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/perl:${HOME}/workspace/php"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/sh:${HOME}/workspace/eclipse"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/wiki:${HOME}/workspace"
-PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share:/usr/local"
-PROJECTPATH="${PROJECTPATH}:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
-PROJECTPATH="${PROJECTPATH}:/usr/include:/usr/share"
-PROJECTPATH="${PROJECTPATH}:/var/lib:/var/www"
-PROJECTPATH="${PROJECTPATH}:/etc"
-export PROJECTPATH
-
 # Set default editor
 if [[ -x $(which vim) ]]
 then
@@ -59,46 +45,84 @@ function parent_dir {
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
 function project_root {
-  # svn project ?
   dest=""
-  parent="."
-  while [ -d "${parent}/.svn" ]; do
-    dest=${parent}
-    parent="${parent}/.."
+
+  # svn project ?
+  hash  svn 2>/dev/null && root=${$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2)##*( )} && [[ -e ${root} ]] && dest=${root}
+
+  # git project ?
+  [[ ${dest} == "" ]] && hash git 2>/dev/null && root="$(git rev-parse --show-cdup 2>/dev/null)." && dest=${root}
+
+  # particular root folder
+  filemark="debian:.pc:.bzr:.hg"
+  current=$(pwd)
+  parent=$(dirname ${current})
+  while [[ ${current} != $(dirname ${current}) || ${current} == ${HOME} ]]; do
+    for folder in $(echo ${filemark} | tr ':' '\n'); do
+      if [[ -e ${current}/${folder} ]]; then
+        dest=${current}
+        break
+      fi
+      current=$(dirname ${current})
+    done
   done
-  [[ ${dest} == "" ]] && root=`git rev-parse --show-cdup 2>/dev/null` && dest="${root}."
+
+  # particular tree folder
+  recursefile="CVS:.svn"
+  for folder in $(echo ${recursefile} | tr ':' '\n'); do
+    parent="."
+    while [[ -e "${parent}/${folder}" ]]; do
+      dest=${parent}
+      parent="${parent}/.."
+    done
+    [[ ${dest} != "" ]] && break
+  done
+
+  # common parent folder
   if [[ ${dest} == "" ]]; then
-    current_dir=`pwd`
-    for folder in $(echo ${PROJECTPATH} | tr ":" "\n"); do
+    # projectpath
+    projectpath="${HOME}/.local/lib/python:${HOME}/.local/lib"
+    projectpath="${projectpath}:${HOME}/workspace/cpp:${HOME}/workspace/python"
+    projectpath="${projectpath}:${HOME}/workspace/perl:${HOME}/workspace/php"
+    projectpath="${projectpath}:${HOME}/workspace/sh:${HOME}/workspace/eclipse"
+    projectpath="${projectpath}:${HOME}/workspace/wiki:${HOME}/workspace"
+    projectpath="${projectpath}:/usr/local/lib:/usr/local/share:/usr/local"
+    projectpath="${projectpath}:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
+    projectpath="${projectpath}:/usr/include:/usr/share"
+    projectpath="${projectpath}:/var/lib:/var/www"
+    projectpath="${projectpath}:/etc:/srv"
+
+    current_dir=$(pwd)
+    for folder in $(echo ${projectpath} | tr ":" "\n"); do
       if [[ ${current_dir} == "${folder}/"* ]]; then
-        dest=`echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#"`
+        dest=$(echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#")
         break
       fi
     done
   fi
-  [[ ${dest} == "" ]] && dest=~
+  [[ ${dest} == "" ]] && dest=${HOME}
   cd ${dest}
 }
 
 function install {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get install $@
+   [ $? -eq 0 ] && sudo apt-get install $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -S $@
+   [ $? -eq 0 ] && sudo pacman -S $@
 }
 
-function upgrade {
+function update {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get update && apt-get upgrade $@
+   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -Syu $@
+   [ $? -eq 0 ] && sudo pacman -Syu $@
 }
 
 function remove {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -Rsn $(pacman -Qqdt) $@
+   [ $? -eq 0 ] && sudo pacman -Rsn $(pacman -Qqdt) $@
 }
 
 function extract {     # Handy Extract Program.
@@ -146,7 +170,11 @@ GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"
+alias zgrep="fgrep ${GREP_ARGS}"
 alias grec="grep ${GREP_ARGS} --color=always"
+alias egrec="grep ${GREP_ARGS} --color=always"
+alias fgrec="grep ${GREP_ARGS} --color=always"
+alias zgrec="grep ${GREP_ARGS} --color=always"
 
 # common commands
 
@@ -167,6 +195,7 @@ alias seetar="tar ztvf"
 
 alias ..="parent_dir"
 alias cdd="project_root"
+alias upgrade="update"
 
 # applications
 

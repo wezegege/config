@@ -37,8 +37,8 @@ export LC_ALL="fr_FR.UTF-8"
 # functions
 #====================================================================
 
-# cd.. 3 -> ../../../
-function cd.. {
+# up 3 -> ../../../
+function up {
   count=1
   [ -z $1 ] || count=$1
   dir=""
@@ -48,10 +48,10 @@ function cd.. {
   echo ${dir}
 }
 
-export -f cd.. >/dev/null
+export -f up >/dev/null
 
 function .. {
-  result=$(cd.. $@)
+  result=$(up $@)
   echo "cd ${result}"
   cd ${result}
 }

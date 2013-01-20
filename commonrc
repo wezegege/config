@@ -71,6 +71,7 @@ function project_root {
 
   # particular root folder
   filemark="debian:.pc:.bzr:.hg:Makefile:setup.py:README"
+  filemark="${filemark}:manage.py:requirements.txt"
   current=$(pwd)
   parent=$(dirname ${current})
   while [[ ${current} != $(dirname ${current}) || ${current} == ${HOME} ]]; do

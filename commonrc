@@ -24,6 +24,13 @@ then
   export VISUAL=${EDITOR}
 fi
 
+PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/*:${HOME}/workspace"
+PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share"
+PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr/local:/usr/share:/usr/lib"
+PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv"
+
+
 export LC_ALL="fr_FR.UTF-8"
 
 #====================================================================
@@ -41,11 +48,15 @@ function parent_dir {
   echo ${dir}
 }
 
+export -f parent_dir >/dev/null
+
 function .. {
   result=$(parent_dir $@)
   echo "cd ${result}"
   cd ${result}
 }
+
+export -f .. >/dev/null
 
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
@@ -86,11 +97,7 @@ function project_root {
   # common parent folder
   if [[ ${dest} == "" ]]; then
     # projectpath
-    projectpath="${HOME}/.local/lib/python:${HOME}/.local/lib"
-    projectpath="${projectpath}:${HOME}/workspace/*:${HOME}/workspace"
-    projectpath="${projectpath}:/usr/local/lib:/usr/local/share"
-    projectpath="${projectpath}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr/local:/usr/share:/usr/lib"
-    projectpath="${projectpath}:/lib:/var/*:/etc:/srv"
+    projectpath=${CDPATH}
 
     current_dir=$(pwd)
     for folder in $(echo ${projectpath} | tr ":" "\n"); do
@@ -107,10 +114,14 @@ function project_root {
   echo ${dest}
 }
 
+export -f project_root >/dev/null
+
 function cdd {
   result=$(project_root $@)
   cd ${result}
 }
+
+export -f cdd >/dev/null
 
 function install {
    hash apt-get 2>/dev/null
@@ -173,14 +184,14 @@ function extract {     # Handy Extract Program.
 
 alias ls="ls --color=auto"
 alias ll="ls -A --group-directories-first"
-alias lq="ls -oh --group-directories-first"
-alias la="ll -oh"
+alias lq="ls -ohF --group-directories-first"
+alias la="ll -ohF"
 alias lt="ls -lrth"
 alias lg="lt -A"
 
 # grep
 
-GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
+GREP_ARGS="-Inr --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"
@@ -215,12 +226,13 @@ alias sudo="sudo -E "
 alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
-
-alias sqlite="sqlite3"
-alias fmake="make -j 4"
+alias scp="scp -pr"
 alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
+alias sqlite="sqlite3"
+
+alias fmake="make -j 4"
 alias gmake="make -f ${HOME}/config/data/Makefile"
 alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 

@@ -119,6 +119,7 @@ bindkey "OF" end-of-line # End
 bindkey "[5~" beginning-of-history # PageUp
 bindkey "[6~" end-of-history # PageDown
 bindkey "[3~" delete-char # Del
+bindkey " " magic-space
 
 setopt AUTO_CD
 

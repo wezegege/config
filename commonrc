@@ -38,9 +38,14 @@ function parent_dir {
   for i in `seq ${count}`; do
     dir="${dir}../"
   done
-  cd ${dir}
+  echo ${dir}
 }
 
+function .. {
+  result=$(parent_dir $@)
+  echo "cd ${result}"
+  cd ${result}
+}
 
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
@@ -54,7 +59,7 @@ function project_root {
   [[ ${dest} == "" ]] && hash git 2>/dev/null && root="$(git rev-parse --show-cdup 2>/dev/null)." && dest=${root}
 
   # particular root folder
-  filemark="debian:.pc:.bzr:.hg"
+  filemark="debian:.pc:.bzr:.hg:Makefile:setup.py:README"
   current=$(pwd)
   parent=$(dirname ${current})
   while [[ ${current} != $(dirname ${current}) || ${current} == ${HOME} ]]; do
@@ -98,12 +103,20 @@ function project_root {
     done
   fi
   [[ ${dest} == "" ]] && dest=${HOME}
-  cd ${dest}
+
+  echo ${dest}
+}
+
+function cdd {
+  result=$(project_root $@)
+  cd ${result}
 }
 
 function install {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get install $@
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -S $@
    hash pacman 2>/dev/null
    [ $? -eq 0 ] && sudo pacman -S $@
 }
@@ -111,6 +124,8 @@ function install {
 function update {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -Syu $@
    hash pacman 2>/dev/null
    [ $? -eq 0 ] && sudo pacman -Syu $@
 }
@@ -118,6 +133,8 @@ function update {
 function remove {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@
    hash pacman 2>/dev/null
    [ $? -eq 0 ] && sudo pacman -Rsn $(pacman -Qqdt) $@
 }
@@ -190,8 +207,6 @@ alias seetar="tar ztvf"
 
 # functions
 
-alias ..="parent_dir"
-alias cdd="project_root"
 alias upgrade="update"
 
 # applications

@@ -37,8 +37,8 @@ export LC_ALL="fr_FR.UTF-8"
 # functions
 #====================================================================
 
-# parent_dir 3 -> cd ../../../
-function parent_dir {
+# p.. 3 -> cd ../../../
+function p.. {
   count=1
   [ -z $1 ] || count=$1
   dir=""
@@ -48,10 +48,10 @@ function parent_dir {
   echo ${dir}
 }
 
-export -f parent_dir >/dev/null
+export -f p.. >/dev/null
 
 function .. {
-  result=$(parent_dir $@)
+  result=$(p.. $@)
   echo "cd ${result}"
   cd ${result}
 }
@@ -60,7 +60,7 @@ export -f .. >/dev/null
 
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
-function project_root {
+function proot {
   dest=""
 
   # svn project ?
@@ -112,13 +112,13 @@ function project_root {
   fi
   [[ ${dest} == "" ]] && dest=${HOME}
 
-  echo ${dest}
+  echo $(realpath ${dest})
 }
 
-export -f project_root >/dev/null
+export -f proot >/dev/null
 
 function cdd {
-  result=$(project_root $@)
+  result=$(proot $@)
   cd ${result}
 }
 

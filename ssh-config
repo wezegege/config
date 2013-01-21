@@ -18,7 +18,7 @@ Host poc
   IdentityFile ~/.ssh/keys/poc
 
 Host lucid
-  Hostname 10.66.176.127
+  Hostname 10.66.176.83
   User g179076
   IdentityFile ~/.ssh/keys/lucid
 
@@ -220,3 +220,8 @@ Host ldapshenzhen
    Hostname 10.68.1.34
    User kevin
    IdentityFile ~/.ssh/keys/ldapshenzhen
+
+Host g179076
+  Hostname sagemuser@forge-sysnet.rmm.sagem
+  User g179076
+  #IdentityFile ~/.ssh/keys/g179076

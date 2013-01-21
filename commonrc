@@ -16,20 +16,6 @@ if [ -d "${HOME}/.local/lib/python" ] ; then
     PYTHONPATH="${HOME}/.local/lib/python:${PYTHONPATH}"
 fi
 
-# PROJECTPATH
-
-PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/cpp:${HOME}/workspace/python"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/perl:${HOME}/workspace/php"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/sh:${HOME}/workspace/eclipse"
-PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/wiki:${HOME}/workspace"
-PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share:/usr/local"
-PROJECTPATH="${PROJECTPATH}:/usr/lib/python2.7/site-packages:/usr/lib/python2.7:/usr/lib"
-PROJECTPATH="${PROJECTPATH}:/usr/include:/usr/share"
-PROJECTPATH="${PROJECTPATH}:/var/lib:/var/www"
-PROJECTPATH="${PROJECTPATH}:/etc"
-export PROJECTPATH
-
 # Set default editor
 if [[ -x $(which vim) ]]
 then
@@ -38,67 +24,131 @@ then
   export VISUAL=${EDITOR}
 fi
 
+PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
+PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/*:${HOME}/workspace"
+PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share"
+PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr/local:/usr/share:/usr/lib"
+PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv"
+
+
 export LC_ALL="fr_FR.UTF-8"
 
 #====================================================================
 # functions
 #====================================================================
 
-# parent_dir 3 -> cd ../../../
-function parent_dir {
+# up 3 -> ../../../
+function up {
   count=1
   [ -z $1 ] || count=$1
   dir=""
   for i in `seq ${count}`; do
     dir="${dir}../"
   done
-  cd ${dir}
+  echo ${dir}
 }
 
+export -f up >/dev/null
+
+function .. {
+  result=$(up $@)
+  echo "cd ${result}"
+  cd ${result}
+}
+
+export -f .. >/dev/null
 
 # goes to root of a svn or git project, or root of a project given its
 # folder, or to home
-function project_root {
-  # svn project ?
+function proot {
   dest=""
-  parent="."
-  while [ -d "${parent}/.svn" ]; do
-    dest=${parent}
-    parent="${parent}/.."
+
+  # svn project ?
+  hash  svn 2>/dev/null && root=${$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2)##*( )} && [[ -e ${root} ]] && dest=${root}
+
+  # git project ?
+  [[ ${dest} == "" ]] && hash git 2>/dev/null && root="$(git rev-parse --show-cdup 2>/dev/null)." && dest=${root}
+
+  # particular root folder
+  filemark="debian:.pc:.bzr:.hg:Makefile:setup.py:README"
+  filemark="${filemark}:manage.py:requirements.txt"
+  current=$(pwd)
+  parent=$(dirname ${current})
+  while [[ ${current} != $(dirname ${current}) || ${current} == ${HOME} ]]; do
+    for folder in $(echo ${filemark} | tr ':' '\n'); do
+      if [[ -e ${current}/${folder} ]]; then
+        dest=${current}
+        break
+      fi
+      current=$(dirname ${current})
+    done
   done
-  [[ ${dest} == "" ]] && root=`git rev-parse --show-cdup 2>/dev/null` && dest="${root}."
+
+  # particular tree folder
+  recursefile="CVS:.svn"
+  for folder in $(echo ${recursefile} | tr ':' '\n'); do
+    parent="."
+    while [[ -e "${parent}/${folder}" ]]; do
+      dest=${parent}
+      parent="${parent}/.."
+    done
+    [[ ${dest} != "" ]] && break
+  done
+
+  # common parent folder
   if [[ ${dest} == "" ]]; then
-    current_dir=`pwd`
-    for folder in $(echo ${PROJECTPATH} | tr ":" "\n"); do
-      if [[ ${current_dir} == "${folder}/"* ]]; then
-        dest=`echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#"`
+    # projectpath
+    projectpath=${CDPATH}
+
+    current_dir=$(pwd)
+    for folder in $(echo ${projectpath} | tr ":" "\n"); do
+      if eval "[[ ${current_dir} == ${folder}/* ]]"; then
+        folder=${folder/\*/[^\/]*}
+        dest=$(echo ${current_dir} | sed -e "s#${folder}/\([^/]\+\).*#${folder}/\1#")
+        dest=$(eval "echo $dest")
         break
       fi
     done
   fi
-  [[ ${dest} == "" ]] && dest=~
-  cd ${dest}
+  [[ ${dest} == "" ]] && dest=${HOME}
+
+  echo $(realpath ${dest})
 }
+
+export -f proot >/dev/null
+
+function cdd {
+  result=$(proot $@)
+  cd ${result}
+}
+
+export -f cdd >/dev/null
 
 function install {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get install $@
+   [ $? -eq 0 ] && sudo apt-get install $@
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -S $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -S $@
+   [ $? -eq 0 ] && sudo pacman -S $@
 }
 
-function upgrade {
+function update {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && apt-get update && apt-get upgrade $@
+   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -Syu $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -Syu $@
+   [ $? -eq 0 ] && sudo pacman -Syu $@
 }
 
 function remove {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
+   hash pacman-color 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@
    hash pacman 2>/dev/null
-   [ $? -eq 0 ] && pacman -Rsn $(pacman -Qqdt) $@
+   [ $? -eq 0 ] && sudo pacman -Rsn $(pacman -Qqdt) $@
 }
 
 function extract {     # Handy Extract Program.
@@ -135,18 +185,22 @@ function extract {     # Handy Extract Program.
 
 alias ls="ls --color=auto"
 alias ll="ls -A --group-directories-first"
-alias lq="ls -oh --group-directories-first"
-alias la="ll -oh"
+alias lq="ls -ohF --group-directories-first"
+alias la="ll -ohF"
 alias lt="ls -lrth"
 alias lg="lt -A"
 
 # grep
 
-GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
+GREP_ARGS="-Inr --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"
+alias zgrep="fgrep ${GREP_ARGS}"
 alias grec="grep ${GREP_ARGS} --color=always"
+alias egrec="grep ${GREP_ARGS} --color=always"
+alias fgrec="grep ${GREP_ARGS} --color=always"
+alias zgrec="grep ${GREP_ARGS} --color=always"
 
 # common commands
 
@@ -165,8 +219,7 @@ alias seetar="tar ztvf"
 
 # functions
 
-alias ..="parent_dir"
-alias cdd="project_root"
+alias upgrade="update"
 
 # applications
 
@@ -178,9 +231,13 @@ alias tree="tree -C"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"
+alias scp="scp -pr"
 alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
+alias sqlite="sqlite3"
+
+alias fmake="make -j 4"
 alias gmake="make -f ${HOME}/config/data/Makefile"
 alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 

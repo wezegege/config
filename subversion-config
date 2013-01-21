@@ -42,7 +42,7 @@ store-passwords = no
 ### It defaults to 'yes'.  Note that this option only prevents
 ### saving of *new* credentials;  it doesn't invalidate existing
 ### caches.  (To do that, remove the cache files by hand.)
-#store-auth-creds = yes
+store-auth-creds = no
 
 ### Section for configuring external helper applications.
 [helpers]
@@ -51,6 +51,7 @@ store-passwords = no
 ###   examines by default to find this information ($EDITOR, 
 ###   et al).
 # editor-cmd = editor (vi, emacs, notepad, etc.)
+editor-cmd = vim
 ### Set diff-cmd to the absolute path of your 'diff' program.
 ###   This will override the compile-time default, which is to use
 ###   Subversion's internal diff implementation.
@@ -65,7 +66,7 @@ diff-cmd = diff
 ### Set merge-tool-cmd to the command used to invoke your external
 ### merging tool of choice. Subversion will pass 4 arguments to
 ### the specified command: base theirs mine merged
-# merge-tool-cmd = merge_command
+merge-tool-cmd = meld
 
 ### Section for configuring tunnel agents.
 [tunnels]
@@ -99,8 +100,8 @@ diff-cmd = diff
 ### which Subversion will ignore in its 'status' output, and
 ### while importing or adding files and directories.
 ### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
-# global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo
-#   *.rej *~ #*# .#* .*.swp .DS_Store
+global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo
+  *.rej *~ #*# .#* .*.swp .DS_Store
 ### Set log-encoding to the default encoding for log messages
 # log-encoding = latin1
 ### Set use-commit-times to make checkout/update/switch/revert
@@ -121,7 +122,7 @@ diff-cmd = diff
 ### Set enable-auto-props to 'yes' to enable automatic properties
 ### for 'svn add' and 'svn import', it defaults to 'no'.
 ### Automatic properties are defined in the section 'auto-props'.
-# enable-auto-props = yes
+enable-auto-props = yes
 ### Set interactive-conflicts to 'no' to disable interactive
 ### conflict resolution prompting.  It defaults to 'yes'.
 # interactive-conflicts = no
@@ -135,15 +136,64 @@ diff-cmd = diff
 ### applied to the file.  Note that auto-props functionality
 ### must be enabled, which is typically done by setting the
 ### 'enable-auto-props' option.
-# *.c = svn:eol-style=native
-# *.cpp = svn:eol-style=native
-# *.h = svn:keywords=Author Date Id Rev URL;svn:eol-style=native
-# *.dsp = svn:eol-style=CRLF
-# *.dsw = svn:eol-style=CRLF
-# *.sh = svn:eol-style=native;svn:executable
-# *.txt = svn:eol-style=native;svn:keywords=Author Date Id Rev URL;
-# *.png = svn:mime-type=image/png
-# *.jpg = svn:mime-type=image/jpeg
-# Makefile = svn:eol-style=native
-
-
+*.bat = svn:eol-style=native
+*.c = svn:eol-style=native
+*.cat = svn:eol-style=native;svn:mime-type=text/plain
+*.cmd = svn:eol-style=native
+*.cpp = svn:eol-style=native
+*.css = svn:eol-style=native
+*.dsp = svn:eol-style=CRLF
+*.dsw = svn:eol-style=CRLF
+*.eot = svn:mime-type=application/vnd.ms-fontobject
+*.gif = svn:mime-type=image/gif
+*.h = svn:eol-style=native
+*.htm* = svn:eol-style=native;svn:mime-type=text/html
+*.ico = svn:mime-type=image/vnd.microsoft.icon
+*.inc = svn:eol-style=native
+*.info = svn:eol-style=native
+*.install=svn:eol-style=native
+*.java = svn:eol-style=native
+*.jpeg = svn:mime-type=image/jpeg
+*.jpg = svn:mime-type=image/jpeg
+*.js = svn:eol-style=native
+*.jsx = svn:eol-style=native
+*.jsp = svn:eol-style=native
+*.module = svn:eol-style=native
+*.php5 = svn:eol-style=native
+*.php = svn:eol-style=native
+*.pl = svn:eol-style=native
+*.pm = svn:eol-style=native
+*.png = svn:mime-type=image/png
+*.properties = svn:mime-type=text/plain;svn:eol-style=native
+*.py = svn:eol-style=native
+*.rb = svn:eol-style=native
+*.sh = svn:eol-style=native;svn:executable
+*.sql = svn:eol-style=native
+*.svg = svn:mime-type=image/svg+xml
+*.tpl = svn:eol-style=native
+*.ttf = svn:mime-type=application/x-font-ttf
+*.txt = svn:eol-style=native;svn:mime-type=text/plain
+*.woff = svn:mime-type=application/x-woff
+*.xcf = svn:mime-type=image/x-xcf
+*.xml = svn:mime-type=text/xml;svn:eol-style=native
+*.xsl = svn:mime-type=text/xml;svn:eol-style=native
+*.xsd = svn:mime-type=text/xml;svn:eol-style=native
+*.xjb = svn:mime-type=text/xml;svn:eol-style=native
+*.wsdl = svn:mime-type=text/xml;svn:eol-style=native
+.checkstyle = svn:mime-type=text/xml;svn:eol-style=native
+.pmd = svn:mime-type=text/xml;svn:eol-style=native
+.ruleset = svn:mime-type=text/xml;svn:eol-style=native
+ChangeLog = svn:eol-style=native;svn:mime-type=text/plain
+COPYING = svn:eol-style=native;svn:mime-type=text/plain
+INSTALL* = svn:eol-style=native;svn:mime-type=text/plain
+KEYS* = svn:eol-style=native;svn:mime-type=text/plain
+LICENSE* = svn:eol-style=native;svn:mime-type=text/plain
+Makefile = svn:eol-style=native
+NEWS* = svn:eol-style=native;svn:mime-type=text/plain
+NOTICE* = svn:eol-style=native;svn:mime-type=text/plain
+README* = svn:eol-style=native;svn:mime-type=text/plain
+SConscript = svn:eol-style=native
+SConstruct = svn:eol-style=native
+TODO* = svn:eol-style=native;svn:mime-type=text/plain
+USERINFO = svn:eol-style=native
+WHATSNEW* = svn:eol-style=native;svn:mime-type=text/plain

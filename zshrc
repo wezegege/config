@@ -93,6 +93,7 @@ fi
 
 setopt completeinword
 setopt extendedglob
+setopt kshglob
 set autocorrect
 
 #====================================================================
@@ -118,6 +119,7 @@ bindkey "OF" end-of-line # End
 bindkey "[5~" beginning-of-history # PageUp
 bindkey "[6~" end-of-history # PageDown
 bindkey "[3~" delete-char # Del
+bindkey " " magic-space
 
 setopt AUTO_CD
 
@@ -135,7 +137,7 @@ autoload zmv
 alias -g L="| less"
 alias -g _="2>/dev/null"
 alias -g G="| grep"
-alias -g C="| wc -l"
+alias -g W="| wc -l"
 alias -g X="| xargs"
 alias -g S="| sort"
 alias -g U="| uniq"

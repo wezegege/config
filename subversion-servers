@@ -147,14 +147,13 @@
 # http-proxy-password = defaultpassword
 # http-compression = no
 # http-auth-types = basic;digest;negotiate
-#http-auth-types = negotiate;basic;digest
-http-auth-types = basic;digest;negotiate
+http-auth-types = negotiate;basic;digest
 # No http-timeout, so just use the builtin default.
 # No neon-debug-mask, so neon debugging is disabled.
 # ssl-authority-files = /path/to/CAcert.pem;/path/to/CAcert2.pem
 #
 # Password / passphrase caching parameters:
-# store-passwords = no
-# store-plaintext-passwords = no
-# store-ssl-client-cert-pp = no
-# store-ssl-client-cert-pp-plaintext = no
+store-passwords = no
+store-plaintext-passwords = no
+store-ssl-client-cert-pp = no
+store-ssl-client-cert-pp-plaintext = no

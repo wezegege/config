@@ -43,6 +43,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 shopt -s cdspell
 shopt -s nocaseglob
 shopt -s expand_aliases
+shopt -s extglob
 
 # prompt
 

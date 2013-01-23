@@ -52,7 +52,6 @@ export -f up >/dev/null
 
 function .. {
   result=$(up $@)
-  echo "cd ${result}"
   cd ${result}
 }
 
@@ -64,7 +63,7 @@ function proot {
   dest=""
 
   # svn project ?
-  hash  svn 2>/dev/null && root=${$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2)##*( )} && [[ -e ${root} ]] && dest=${root}
+  hash  svn 2>/dev/null && root=$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2) 2>/dev/null && [[ -e ${root} ]] && dest=${root}
 
   # git project ?
   [[ ${dest} == "" ]] && hash git 2>/dev/null && root="$(git rev-parse --show-cdup 2>/dev/null)." && dest=${root}
@@ -112,7 +111,8 @@ function proot {
   fi
   [[ ${dest} == "" ]] && dest=${HOME}
 
-  echo $(realpath ${dest})
+  #echo $(realpath ${dest})
+  echo ${dest}
 }
 
 export -f proot >/dev/null
@@ -192,7 +192,7 @@ alias lg="lt -A"
 
 # grep
 
-GREP_ARGS="-Inr --color=auto --exclude-dir=.svn --exclude-dir=.git"
+GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"

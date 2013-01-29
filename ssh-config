@@ -85,6 +85,10 @@ Host valid15 forge-valid15
   Hostname forge-valid15.rmm.sagem
   User g179076
 
+Host valid18 forge-valid18
+  Hostname forge-valid18.rmm.sagem
+  User g179076
+
 Host testperf2 forge-testperf2
    Hostname forge-testperf2.osn.sagem
    User g179076

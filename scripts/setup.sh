@@ -1,12 +1,13 @@
 #!/bin/bash
+# -*- coding: utf-8 -*-
 
-folder=`pwd`/$0
-folder=`dirname $folder`
-name=`basename $0`
-files=`ls -A -I $name`
-
-cd ~
-for file in $files; do
-  mv .$file .$file.old
-  ln -s $folder/$file .$file
+config_folder="${HOME}/config/config"
+for config_file in $(ls ${config_folder}); do
+    path="${HOME}/.$(echo ${config_file} | tr '-' '/')"
+    [[ -e $(dirname ${path}) ]] || mkdir -p $(dirname ${path})
+    if [[ -e ${path} && $(readlink ${path}) == ${config_folder}/${config_file} ]] ; then
+        ln -sf ${config_folder}/${config_file} ${path}
+    else
+        ln -sbf ${config_folder}/${config_file} ${path}
+    fi
 done

@@ -12,16 +12,6 @@ Host *
 Host server
   Hostname 192.168.1.169
 
-Host poc
-  Hostname 10.66.176.68
-  User g179076
-  IdentityFile ~/.ssh/keys/poc
-
-Host lucid
-  Hostname 10.66.176.83
-  User g179076
-  IdentityFile ~/.ssh/keys/lucid
-
 ######################################
 # git repo servers
 ######################################
@@ -47,43 +37,18 @@ Host *.sagem 10.66.* 10.68.* *.ads.local 10.206.*
 # Computers
 #--------------------------------------------------------------
 
-Host michel rmm-p1188134f
-   Hostname rmm-p1188134f.ads.local
-   User g179076
-
 Host kevin rmm-p1188377f
   Hostname rmm-p1188377f.ads.local
-  User g179076
-
-Host francois rmm-p1267084p
-  Hostname rmm-p1267084p.ads.local
   User g179076
 
 #--------------------------------------------------------------
 # Valid forges
 #--------------------------------------------------------------
 
-Host poc109
-  Hostname forge-poc109.rmm.sagem
-  User g179076
-
-Host valid11 forge-valid11
-  Hostname forge-valid11.rmm.sagem
-  User g179076
-
-Host valid12 forge-valid12
-  Hostname forge-valid12.rmm.sagem
-  User g179076
-  #IdentityFile ~/.ssh/keys/valid12
-
 Host valid13 forge-valid13
    Hostname forge-valid13.rmm.sagem
    User g179076
    IdentityFile ~/.ssh/keys/valid13
-
-Host valid15 forge-valid15
-  Hostname forge-valid15.rmm.sagem
-  User g179076
 
 Host valid18 forge-valid18
   Hostname forge-valid18.rmm.sagem
@@ -155,11 +120,6 @@ Host ftp
   Hostname 10.66.3.20
   User g179076
   IdentityFile ~/.ssh/keys/ftp
-
-Host bugzilla_shenzhen
-   Hostname 10.68.1.30
-   User kevin
-   IdentityFile ~/.ssh/keys/bugzilla_shenzhen
 #
 #--------------------------------------------------------------
 # Miscellanous
@@ -187,25 +147,6 @@ Host services2 etl-services2
    User g179076
    #IdentityFile ~/.ssh/keys/services2
 
-Host repo-forge vzy08026
-  Hostname vzy08026.vzy.sagem
-  User g179076
-  IdentityFile ~/.ssh/keys/socle5
-
-#--------------------------------------------------------------
-# Virtual machines
-#--------------------------------------------------------------
-
-Host premox forge-premox
-  Hostname forge-premox.rmm.sagem
-  User g179076
-  IdentityFile ~/.ssh/keys/premox
-
-Host prodmox promox forge-prodmox
-  Hostname forge-prodmox.rmm.sagem
-  User g179076
-  IdentityFile ~/.ssh/keys/prodmox
-
 #--------------------------------------------------------------
 # LDAP
 #--------------------------------------------------------------
@@ -224,8 +165,3 @@ Host ldapshenzhen
    Hostname 10.68.1.34
    User kevin
    IdentityFile ~/.ssh/keys/ldapshenzhen
-
-Host sysnet
-  Hostname sagemuser@forge-sysnet.rmm.sagem
-  User g179076
-  #IdentityFile ~/.ssh/keys/g179076

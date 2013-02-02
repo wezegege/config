@@ -63,7 +63,7 @@ function proot {
   dest=""
 
   # svn project ?
-  hash  svn 2>/dev/null && root=${$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2)##*( )} && [[ -e ${root} ]] && dest=${root}
+  hash svn 2>/dev/null && root=$(svn info 2>/dev/null | sed -n 2p | cut -d':' -f 2 | tr -d ' ') && [[ -e ${root} ]] && dest=${root}
 
   # git project ?
   [[ ${dest} == "" ]] && hash git 2>/dev/null && root="$(git rev-parse --show-cdup 2>/dev/null)." && dest=${root}
@@ -109,19 +109,19 @@ function proot {
       fi
     done
   fi
+
   [[ ${dest} == "" ]] && dest=${HOME}
 
-  echo $(realpath ${dest})
+  if hash realpath 2>/dev/null ; then
+    echo $(realpath ${dest})
+  else
+    echo ${dest}
+  fi
 }
 
 export -f proot >/dev/null
 
-function cdd {
-  result=$(proot $@)
-  cd ${result}
-}
-
-export -f cdd >/dev/null
+alias cdd='cd $(proot)'
 
 function install {
    hash apt-get 2>/dev/null

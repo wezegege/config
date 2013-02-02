@@ -36,7 +36,7 @@ set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
 set showmode
-set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}\ (%l\/%L,%c%V)\ #%n\ %P
+set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)\ #%n\ %P
 set lazyredraw
 set ttyfast
 set scrolloff=2
@@ -322,7 +322,11 @@ endfunction
 
 function! PrintMode()
   set list!
-  set relativenumber!
+  if exists('+relativenumber')
+    set relativenumber!
+  else
+    set number!
+  endif
 endfunction
 
 function! LoadTemplate()

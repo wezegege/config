@@ -2,7 +2,6 @@ set bell-style none
 set completion-ignore-case on
 set show-all-if-unmodified on
 set show-all-if-ambiguous on
-set completion-map-case on
 set visible-stats on
 
 "\M-s": menu-complete
@@ -12,4 +11,4 @@ set visible-stats on
 "n": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char
-Space: magic-space
+

@@ -63,8 +63,8 @@ Host francois rmm-p1267084p
 # Valid forges
 #--------------------------------------------------------------
 
-Host test
-  Hostname 10.66.176.204
+Host poc109
+  Hostname forge-poc109.rmm.sagem
   User g179076
 
 Host valid11 forge-valid11
@@ -83,6 +83,10 @@ Host valid13 forge-valid13
 
 Host valid15 forge-valid15
   Hostname forge-valid15.rmm.sagem
+  User g179076
+
+Host valid18 forge-valid18
+  Hostname forge-valid18.rmm.sagem
   User g179076
 
 Host testperf2 forge-testperf2
@@ -221,7 +225,7 @@ Host ldapshenzhen
    User kevin
    IdentityFile ~/.ssh/keys/ldapshenzhen
 
-Host g179076
+Host sysnet
   Hostname sagemuser@forge-sysnet.rmm.sagem
   User g179076
   #IdentityFile ~/.ssh/keys/g179076

@@ -12,4 +12,4 @@ set visible-stats on
 "n": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char
-Space: magic-space
+#Space: magic-space

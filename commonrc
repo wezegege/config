@@ -52,7 +52,6 @@ export -f up >/dev/null
 
 function .. {
   result=$(up $@)
-  echo "cd ${result}"
   cd ${result}
 }
 
@@ -129,8 +128,6 @@ function install {
    [ $? -eq 0 ] && sudo apt-get install $@
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -S $@
-   hash pacman 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman -S $@
 }
 
 function update {
@@ -138,8 +135,6 @@ function update {
    [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -Syu $@
-   hash pacman 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman -Syu $@
 }
 
 function remove {
@@ -147,8 +142,6 @@ function remove {
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@
-   hash pacman 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman -Rsn $(pacman -Qqdt) $@
 }
 
 function extract {     # Handy Extract Program.
@@ -192,7 +185,7 @@ alias lg="lt -A"
 
 # grep
 
-GREP_ARGS="-Inr --color=auto --exclude-dir=.svn --exclude-dir=.git"
+GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"

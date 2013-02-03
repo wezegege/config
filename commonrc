@@ -222,6 +222,7 @@ alias lns="ln -s"
 alias tree="tree -C"
 
 alias gitrmall="git st -s | \egrep '^ D' | cut -d' ' -f 3 | xargs git rm"
+alias gitrmall="svn st -s | \egrep '^!' | cut -d' ' -f 3 | xargs svn rm"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"

@@ -219,10 +219,10 @@ alias sudo="sudo -E "
 alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
-alias tree="tree -C"
+alias tree="tree -C -I '*.pyc|__pycache__'"
 
-alias gitrmall="git st -s | \egrep '^ D' | cut -d' ' -f 3 | xargs git rm"
-alias gitrmall="svn st -s | \egrep '^!' | cut -d' ' -f 3 | xargs svn rm"
+alias gitrmall="git st -s | \egrep '^.D' | awk '{ print \$NF }' | xargs git rm"
+alias svnrmall="svn st -s | \egrep '^!' | awk '{ print \$NF }' | xargs svn rm"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"
@@ -239,11 +239,11 @@ alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 #====================================================================
 # specificities
 #====================================================================
-if [[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]]; then
-   source /usr/local/bin/virtualenvwrapper_lazy.sh
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+   source /usr/local/bin/virtualenvwrapper.sh
 fi
-if [[ -f /usr/bin/virtualenvwrapper_lazy.sh ]]; then
-   source /usr/bin/virtualenvwrapper_lazy.sh
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
+   source /usr/bin/virtualenvwrapper.sh
 fi
 
 if [ -f ~/.uncommonrc ]; then

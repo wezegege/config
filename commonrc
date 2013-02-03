@@ -121,8 +121,6 @@ function proot {
 
 export -f proot >/dev/null
 
-alias cdd='cd $(proot)'
-
 function install {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get install $@
@@ -213,6 +211,7 @@ alias seetar="tar ztvf"
 # functions
 
 alias upgrade="update"
+alias cdd='cd $(proot)'
 
 # applications
 
@@ -221,6 +220,8 @@ alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
 alias tree="tree -C"
+
+alias gitrmall="git st -s | \egrep '^ D' | cut -d' ' -f 3 | xargs git rm"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"

@@ -232,6 +232,9 @@ alias perl="perl -w"
 alias shutdown="shutdown -h"
 alias sqlite="sqlite3"
 
+alias ldapsearch="ldapsearch -LLL"
+alias ldapmodify="ldapmodify -c"
+
 alias fmake="make -j 4"
 alias gmake="make -f ${HOME}/config/data/Makefile"
 alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"

@@ -1,1 +1,49 @@
-../gitconfig
+[core]
+editor = vim
+autocrlf = input
+whitespace = trailing-spaces,space-before-tab
+excludesfile = ~/.gitignore
+
+[color]
+branch=auto
+diff=auto
+interactive=auto
+status=auto
+
+[format]
+pretty=oneline # display one line per log entry
+
+[alias]
+st = status
+ci = commit
+co = checkout
+cl = clone
+br = branch -avv
+pull = pull --recurse-submodules=yes
+difff = diff --staged
+addd = add --patch
+sub = submodule
+subup = submodule update --init
+subpull = submodule foreach git pull origin master
+subco = submodule foreach git checkout master
+lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
+remote = remote -v
+
+[help]
+autocorrect = 1
+
+[diff]
+renames = copies # detects file moving and copying
+mnemonicprefix = true
+
+[branch]
+autosetupmerge = true # auto track remote branch
+
+[push]
+default = tracking # defaults push to upstream branch
+
+[rerere]
+enabled = true # record resolved conflicts hunks
+[user]
+	email = wezegege@live.fr
+	name = Wezegege

@@ -1,1 +1,38 @@
-../gitignore
+# Linux
+*.swp
+*~
+
+# Compiled source
+*.pyc
+*.pyo
+*.o
+*.class
+*.dll
+*.exe
+*.so
+*.a
+
+# Archive
+*.7z
+*.gz
+*.tgz
+*.tar
+*.iso
+*.jar
+*.rar
+*.bzip
+
+# Log and databases
+*.log
+*.sqlite
+
+# SVN
+
+.svn/
+.svn/
+
+# Python
+#
+__pycache__/
+*.egg-info/
+.coverage

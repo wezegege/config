@@ -1,1 +1,14 @@
-../inputrc
+set bell-style none
+set completion-ignore-case on
+set show-all-if-unmodified on
+set show-all-if-ambiguous on
+set visible-stats on
+
+"\M-s": menu-complete
+"[1;5A": history-search-backward
+"[1;5B": history-search-forward
+"p": history-search-backward
+"n": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+#Space: magic-space

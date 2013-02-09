@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export QUILT_DIFF_ARGS="--color=auto -u"
-export QUILT_REFRESH_ARG="-u"
-export QUILT_PATCHES="debian/patches"

@@ -60,3 +60,7 @@ x 2012-10-05 ldapsync remake syncing
 x 2012-10-10 +crpr javascript handle
 x 2012-10-25 check ldapsync on forge-etl
 x 2012-10-25 +ldapsync deploy
+x 2013-02-12 redesign scmbug pre/post commits 2627
+x 2013-02-12 +bugzilla repoened state
+x 2013-02-12 +forge mediawiki page cut
+x 2013-02-13 params rights change

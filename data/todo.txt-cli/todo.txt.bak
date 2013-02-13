@@ -1,11 +1,4 @@
-(Z) +sqlutils session proxy for class wide sessions
-(Z) +migration create custom field if not exists
-(Z) +migration makes it update cc, see also, activities, ...
-(B) redesign scmbug pre/post commits 2627
-(Z) apache svn patch to allow 'groups-something' modules
-(C) +vulcain-scripts correct tests
-(C) +vulcain-scripts make it use dependencies
-(Z) +vulcain make it compatible to the library
-(C) +workshop write thoughts
-+forge mediawiki page cut
-+bugzilla repoened state
+valid12 commit ldap not found
+remove nda bugs not seen
+x 2013-02-13 params rights change
+bug extraction add field description

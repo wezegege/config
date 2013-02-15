@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/wezegege/config/.git'
+let g:netrw_dirhist_2='/home/wezegege/workspace/python/elohim/resources/games/pig/rules'
+let g:netrw_dirhist_3='/home/wezegege/workspace/python/elohim/elohim'
+let g:netrw_dirhist_4='/home/wezegege/workspace/python/elohim/elohim/action'
+let g:netrw_dirhist_5='/home/wezegege/workspace/python/elohim'
+let g:netrw_dirhist_6='/home/wezegege/workspace/python/elohim/elohim'
+let g:netrw_dirhist_7='/home/wezegege/workspace/python/elohim/elohim/action'
+let g:netrw_dirhist_8='/home/wezegege/workspace/python/elohim/elohim'
+let g:netrw_dirhist_9='/home/wezegege/workspace/python/elohim/elohim/engine'

@@ -30,8 +30,7 @@
       </repositories>
     </iu>
     <iu id='org.eclipse.sdk.ide' name='Eclipse SDK' version='4.2.1.M20120914-1800'>
-      <repositories size='2'>
-        <repository location='http://download.eclipse.org/eclipse/updates/4.2'/>
+      <repositories size='1'>
         <repository location='http://download.eclipse.org/releases/juno'/>
       </repositories>
     </iu>

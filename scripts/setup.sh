@@ -19,7 +19,7 @@ for config_file in $(ls ${config_folder}); do
     put_link ${config_folder}/${config_file} ${path}
 done
 
-if [[ $# >= 1 ]] ; then
+if [[ $# -ge 1 ]] ; then
     uncommonrc=${HOME}/config/uncommonrc/$1
     put_link ${uncommonrc} ${HOME}/.uncommonrc
 fi

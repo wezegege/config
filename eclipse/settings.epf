@@ -1,4 +1,4 @@
-#Sat Feb 16 21:05:43 CET 2013
+#Sun Feb 17 14:56:29 CET 2013
 /instance/org.jboss.ide.eclipse.freemarker/color.string=236,118,0
 /instance/org.eclipse.team.ui/org.eclipse.team.ui.first_time=false
 /instance/org.eclipse.jdt.ui/java_operator=232,226,183
@@ -55,12 +55,12 @@
 /instance/org.eclipse.cdt.make.ui/org.eclipse.cdt.make.ui.editor.function=103,140,177
 /instance/org.cfeclipse.cfml/SQLTextColor=224,226,228
 /instance/de.walware.statet.r.ui/text_R_rOtherOperators.color=232,226,183
-/instance/org.eclipse.rse.ui/org.eclipse.rse.preferences.order.connections=Wez-PC.Local
+/instance/org.eclipse.rse.ui/org.eclipse.rse.preferences.order.connections=wez-laptop.Local
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.TopLevelFunction_enabled=true
 /instance/org.eclipse.dltk.tcl.ui/DLTK_function_definition=103,140,177
 /instance/org.eclipse.wst.jsdt.ui/java_doc_default=125,140,147
 /instance/org.eclipse.jdt.ui/semanticHighlighting.parameterVariable.enabled=true
-/instance/net.sourceforge.shelled.ui/sourceHoverBackgroundColor=255,255,225
+/instance/net.sourceforge.shelled.ui/sourceHoverBackgroundColor=52,52,52
 /instance/org.eclipse.pde.ui/editor.color.tag=224,226,228
 /instance/org.eclipse.datatools.sqltools.sqleditor/Double\ quoted\ string=0,0,0,0,0,236,118,0
 /instance/org.eclipse.pde.ui/editor.color.header_osgi=147,199,99
@@ -82,6 +82,7 @@
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.parameterVariable.color=224,226,228
 /instance/org.eclipse.cdt.ui/content_assist_proposals_background=41,49,52
 /instance/org.eclipse.cdt.ui/semanticHighlighting.function.color=103,140,177
+/instance/org.eclipse.ui.editors/showWhitespaceCharacters=true
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.StaticGetter_color=224,226,228
 /instance/org.eclipse.datatools.sqltools.sqleditor/Keyword=0,0,0,0,0,147,199,99
 /instance/org.eclipse.wst.html.ui/xmlContent=\#E0E2E4 | null | null | null | null | null
@@ -104,6 +105,7 @@
 /instance/org.eclipse.jdt.ui/semanticHighlighting.enum.color=224,226,228
 /instance/ccw.core/ccw.preferences.editor_color.keyword.bold=false
 /instance/org.eclipse.cdt.ui/c_braces=232,226,183
+/instance/org.eclipse.jsch.core/org.eclipse.jsch.core.hasMigratedSsh2Preferences=true
 /instance/org.python.pydev/USE_CONSOLE=false
 /instance/ccw.core/ccw.preferences.editor_color.callableFUNCTION.bold=false
 /instance/com.adobe.flexide.as.core/asCommentColor=\#7D8C93
@@ -188,6 +190,7 @@
 /instance/org.eclipse.jdt.ui/semanticHighlighting.staticField.color=103,140,177
 /instance/org.eclipse.ui.editors/searchResultIndicationColor=97,97,97
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FieldHighlighting.enabled=true
+/instance/net.sourceforge.sqlexplorer/Drivers.DefaultDriverName=PostgreSQL
 /instance/com.adobe.flexide.as.core/asOperatorColor=\#E8E2B7
 /instance/org.eclipse.wst.jsdt.ui/semanticHighlighting.methodDeclarationName.color=232,226,183
 /instance/goclipse/syntax_highlighting_string_color=236,118,0
@@ -249,8 +252,8 @@
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.localVariableDeclaration.enabled=true
 /instance/org.erlide.ui/editor/colors/keyword/color=147,199,99
 /instance/org.eclipse.jdt.ui/semanticHighlighting.inheritedMethodInvocation.enabled=true
-/instance/org.codehaus.groovy.eclipse.ui/groovy.editor.highlight.javatypes.color=103,140,177
 /instance/org.eclipse.wst.css.ui/ATTRIBUTE_VALUE=\#678CB1 | null | null | null | null | null
+/instance/org.codehaus.groovy.eclipse.ui/groovy.editor.highlight.javatypes.color=103,140,177
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.XMLTagName_color=224,226,228
 /instance/ccw.core/ccw.preferences.editor_color.comment=125,140,147
 /instance/org.eclipse.jdt.ui/semanticHighlighting.localVariable.color=224,226,228
@@ -289,8 +292,9 @@
 /instance/org.eclipse.dltk.tcl.ui/tcl_variable=224,226,228
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.NamespaceModifier_color=103,140,177
 /instance/org.cfeclipse.cfml/SQLKeywordColor=147,199,99
-/instance/org.eclipse.rse.core/org.eclipse.rse.systemtype.local.systemType.defaultUserId=Wez
+/instance/org.eclipse.rse.core/org.eclipse.rse.systemtype.local.systemType.defaultUserId=wezegege
 /instance/org.cfeclipse.cfml/cfscriptKeywordColor=147,199,99
+@org.eclipse.dltk.launching=4.0.0.201206120848
 /instance/org.eclipse.php.ui/editorColorKeyword=\#93C763 | null | null | null | null | null
 /instance/org.erlide.ui/editor/colors/float/style=0
 @org.eclipse.jsch.core=1.1.400.v20120522-1148
@@ -309,7 +313,7 @@
 /instance/eclihx.ui/hx_editor_template_color=236,118,0
 @org.eclipse.cdt.ui=5.5.0.201209170703
 /instance/org.eclipse.jst.jsp.ui/tagAttributeValue=\#EC7600 | null | null | null | null | null
-/configuration/org.tigris.subversion.subclipse.tools.usage/last_visit=1361045082343
+/configuration/org.tigris.subversion.subclipse.tools.usage/last_visit=1361108588306
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 /instance/org.eclipse.php.ui/editorColorTask=\#FF8BFF | null | null | null | null | null
 /instance/org.erlide.ui/editor/colors/char/style=0
@@ -328,6 +332,7 @@
 /instance/net.sourceforge.texlipse/slc.BibColor=125,140,147
 /instance/org.eclipse.cdt.ui/semanticHighlighting.localVariableDeclaration.color=224,226,228
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
+/instance/org.eclipse.dltk.launching/org.eclipse.dltk.launching.PREF_INTERPRETER_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<interpreterSettings>\n<defaultInterpreter environment\="org.eclipse.dltk.core.environment.localEnvironment" id\="61,net.sourceforge.shelled.ui.interpreter.ShellScriptInstallType46,net.sourceforge.shelled.ui.interpreter.default" nature\="net.sourceforge.shelled.core.nature"/>\n<interpreterType id\="net.sourceforge.shelled.ui.interpreter.ShellScriptInstallType">\n<interpreter environmentId\="org.eclipse.dltk.core.environment.localEnvironment" id\="net.sourceforge.shelled.ui.interpreter.default" name\="/bin/sh" path\="/usr/bin/bash"/>\n<interpreter environmentId\="org.eclipse.dltk.core.environment.localEnvironment" id\="1361109239289" name\="zsh" path\="/bin/zsh"/>\n</interpreterType>\n</interpreterSettings>\n
 /instance/org.eclipse.dltk.ruby.ui/DLTK_keyword_return=147,199,99
 /instance/net.sourceforge.texlipse/key.BibColor=147,199,99
 /instance/goclipse/syntax_highlighting_multiline_string_color=236,118,0
@@ -346,6 +351,7 @@
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.mxml.mxmlHighlightGenerator.AS3.MXMLInlineAS3_enabled=true
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FunctionHighlighting.color=\#678CB1
 /instance/org.erlide.ui/editor/colors/variable/style=0
+/instance/org.eclipse.ui.editors/lineNumberRuler=true
 /instance/org.erlide.ui/editor/colors/string/color=236,118,0
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.StaticField_color=103,140,177
 /instance/org.scala-ide.sdt.core/syntaxColouring.singleLineComment.colour=125,140,147
@@ -388,7 +394,7 @@
 /instance/org.eclipse.jst.jsp.ui/tagAttributeName=\#93C763 | null | null | null | null | null
 /instance/org.eclipse.wst.html.ui/tagAttributeValue=\#EC7600 | null | null | null | null | null
 /instance/org.cfeclipse.cfml/cfscriptTextColor=224,226,228
-/configuration/org.tigris.subversion.subclipse.tools.usage/visit_count=14
+/configuration/org.tigris.subversion.subclipse.tools.usage/visit_count=17
 /instance/org.eclipse.dltk.ruby.ui/DLTK_doc.topic=224,226,228
 /instance/org.eclipse.jdt.ui/semanticHighlighting.enum.enabled=true
 /instance/com.adobe.flexide.css.core/cssNamespaceColor=\#E0E2E4
@@ -400,7 +406,7 @@
 /instance/org.epic.perleditor/literal1Color=236,118,0
 /instance/org.eclipse.ui.editors/secondaryIPColor=47,57,60
 /instance/org.eclipse.wst.html.ui/commentText=\#7D8C93 | null | null | null | null | null
-/instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+/instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives/>\n
 /instance/org.scala-ide.sdt.core/syntaxColouring.default.colour=224,226,228
 /instance/org.eclipse.wst.jsdt.ui/semanticHighlighting.localVariableDeclaration.color=224,226,228
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.TopLevelFunction_color=103,140,177
@@ -481,7 +487,7 @@
 /instance/ccw.core/ccw.preferences.editor_color.string=236,118,0
 /instance/org.epic.perleditor/keyword1Color=147,199,99
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.SuperGlobalHighlighting.color=\#E0E2E4
-/instance/org.python.pydev/INTERPRETER_PATH_NEW=<xml>\n<name>python 3.3</name>\n<version>3.3</version>\n<executable>C\:\\Python33\\python.exe</executable>\n<lib>C\:\\Python33\\DLLs</lib>\n<lib>C\:\\Python33\\lib</lib>\n<lib>C\:\\Python33</lib>\n<lib>C\:\\Python33\\lib\\site-packages</lib>\n<forced_lib>Image</forced_lib>\n<forced_lib>OpenGL</forced_lib>\n<forced_lib>_ast</forced_lib>\n<forced_lib>_bisect</forced_lib>\n<forced_lib>_bytesio</forced_lib>\n<forced_lib>_codecs</forced_lib>\n<forced_lib>_codecs_cn</forced_lib>\n<forced_lib>_codecs_hk</forced_lib>\n<forced_lib>_codecs_iso2022</forced_lib>\n<forced_lib>_codecs_jp</forced_lib>\n<forced_lib>_codecs_kr</forced_lib>\n<forced_lib>_codecs_tw</forced_lib>\n<forced_lib>_collections</forced_lib>\n<forced_lib>_csv</forced_lib>\n<forced_lib>_datetime</forced_lib>\n<forced_lib>_fileio</forced_lib>\n<forced_lib>_functools</forced_lib>\n<forced_lib>_heapq</forced_lib>\n<forced_lib>_hotshot</forced_lib>\n<forced_lib>_imp</forced_lib>\n<forced_lib>_io</forced_lib>\n<forced_lib>_json</forced_lib>\n<forced_lib>_locale</forced_lib>\n<forced_lib>_lsprof</forced_lib>\n<forced_lib>_md5</forced_lib>\n<forced_lib>_multibytecodec</forced_lib>\n<forced_lib>_pickle</forced_lib>\n<forced_lib>_random</forced_lib>\n<forced_lib>_sha</forced_lib>\n<forced_lib>_sha1</forced_lib>\n<forced_lib>_sha256</forced_lib>\n<forced_lib>_sha512</forced_lib>\n<forced_lib>_sre</forced_lib>\n<forced_lib>_string</forced_lib>\n<forced_lib>_struct</forced_lib>\n<forced_lib>_subprocess</forced_lib>\n<forced_lib>_symtable</forced_lib>\n<forced_lib>_thread</forced_lib>\n<forced_lib>_warnings</forced_lib>\n<forced_lib>_weakref</forced_lib>\n<forced_lib>_winapi</forced_lib>\n<forced_lib>_winreg</forced_lib>\n<forced_lib>array</forced_lib>\n<forced_lib>atexit</forced_lib>\n<forced_lib>audioop</forced_lib>\n<forced_lib>binascii</forced_lib>\n<forced_lib>builtins</forced_lib>\n<forced_lib>cPickle</forced_lib>\n<forced_lib>cStringIO</forced_lib>\n<forced_lib>cmath</forced_lib>\n<forced_lib>datetime</forced_lib>\n<forced_lib>email</forced_lib>\n<forced_lib>errno</forced_lib>\n<forced_lib>exceptions</forced_lib>\n<forced_lib>faulthandler</forced_lib>\n<forced_lib>future_builtins</forced_lib>\n<forced_lib>gc</forced_lib>\n<forced_lib>hashlib</forced_lib>\n<forced_lib>imageop</forced_lib>\n<forced_lib>imp</forced_lib>\n<forced_lib>itertools</forced_lib>\n<forced_lib>marshal</forced_lib>\n<forced_lib>math</forced_lib>\n<forced_lib>mmap</forced_lib>\n<forced_lib>msvcrt</forced_lib>\n<forced_lib>nt</forced_lib>\n<forced_lib>numpy</forced_lib>\n<forced_lib>operator</forced_lib>\n<forced_lib>os</forced_lib>\n<forced_lib>os.path</forced_lib>\n<forced_lib>parser</forced_lib>\n<forced_lib>pytest</forced_lib>\n<forced_lib>scipy</forced_lib>\n<forced_lib>signal</forced_lib>\n<forced_lib>socket</forced_lib>\n<forced_lib>strop</forced_lib>\n<forced_lib>sys</forced_lib>\n<forced_lib>thread</forced_lib>\n<forced_lib>time</forced_lib>\n<forced_lib>winreg</forced_lib>\n<forced_lib>wx</forced_lib>\n<forced_lib>wxPython</forced_lib>\n<forced_lib>xxsubtype</forced_lib>\n<forced_lib>zipimport</forced_lib>\n<forced_lib>zlib</forced_lib>\n</xml>&&&&&<xml>\n<name>C\:\\Python27\\python.exe</name>\n<version>2.7</version>\n<executable>C\:\\Python27\\python.exe</executable>\n<lib>C\:\\Python27\\DLLs</lib>\n<lib>C\:\\Python27\\lib</lib>\n<lib>C\:\\Python27\\lib\\plat-win</lib>\n<lib>C\:\\Python27\\lib\\lib-tk</lib>\n<lib>C\:\\Python27</lib>\n<lib>C\:\\Python27\\lib\\site-packages</lib>\n<forced_lib>Image</forced_lib>\n<forced_lib>OpenGL</forced_lib>\n<forced_lib>__builtin__</forced_lib>\n<forced_lib>__main__</forced_lib>\n<forced_lib>_ast</forced_lib>\n<forced_lib>_bisect</forced_lib>\n<forced_lib>_bytesio</forced_lib>\n<forced_lib>_codecs</forced_lib>\n<forced_lib>_codecs_cn</forced_lib>\n<forced_lib>_codecs_hk</forced_lib>\n<forced_lib>_codecs_iso2022</forced_lib>\n<forced_lib>_codecs_jp</forced_lib>\n<forced_lib>_codecs_kr</forced_lib>\n<forced_lib>_codecs_tw</forced_lib>\n<forced_lib>_collections</forced_lib>\n<forced_lib>_csv</forced_lib>\n<forced_lib>_fileio</forced_lib>\n<forced_lib>_functools</forced_lib>\n<forced_lib>_heapq</forced_lib>\n<forced_lib>_hotshot</forced_lib>\n<forced_lib>_io</forced_lib>\n<forced_lib>_json</forced_lib>\n<forced_lib>_locale</forced_lib>\n<forced_lib>_lsprof</forced_lib>\n<forced_lib>_md5</forced_lib>\n<forced_lib>_multibytecodec</forced_lib>\n<forced_lib>_random</forced_lib>\n<forced_lib>_sha</forced_lib>\n<forced_lib>_sha256</forced_lib>\n<forced_lib>_sha512</forced_lib>\n<forced_lib>_sre</forced_lib>\n<forced_lib>_struct</forced_lib>\n<forced_lib>_subprocess</forced_lib>\n<forced_lib>_symtable</forced_lib>\n<forced_lib>_warnings</forced_lib>\n<forced_lib>_weakref</forced_lib>\n<forced_lib>_winreg</forced_lib>\n<forced_lib>array</forced_lib>\n<forced_lib>audioop</forced_lib>\n<forced_lib>binascii</forced_lib>\n<forced_lib>cPickle</forced_lib>\n<forced_lib>cStringIO</forced_lib>\n<forced_lib>cmath</forced_lib>\n<forced_lib>datetime</forced_lib>\n<forced_lib>email</forced_lib>\n<forced_lib>errno</forced_lib>\n<forced_lib>exceptions</forced_lib>\n<forced_lib>future_builtins</forced_lib>\n<forced_lib>gc</forced_lib>\n<forced_lib>hashlib</forced_lib>\n<forced_lib>imageop</forced_lib>\n<forced_lib>imp</forced_lib>\n<forced_lib>itertools</forced_lib>\n<forced_lib>marshal</forced_lib>\n<forced_lib>math</forced_lib>\n<forced_lib>mmap</forced_lib>\n<forced_lib>msvcrt</forced_lib>\n<forced_lib>nt</forced_lib>\n<forced_lib>numpy</forced_lib>\n<forced_lib>operator</forced_lib>\n<forced_lib>os</forced_lib>\n<forced_lib>os.path</forced_lib>\n<forced_lib>parser</forced_lib>\n<forced_lib>pytest</forced_lib>\n<forced_lib>scipy</forced_lib>\n<forced_lib>signal</forced_lib>\n<forced_lib>socket</forced_lib>\n<forced_lib>strop</forced_lib>\n<forced_lib>sys</forced_lib>\n<forced_lib>thread</forced_lib>\n<forced_lib>time</forced_lib>\n<forced_lib>wx</forced_lib>\n<forced_lib>wxPython</forced_lib>\n<forced_lib>xxsubtype</forced_lib>\n<forced_lib>zipimport</forced_lib>\n<forced_lib>zlib</forced_lib>\n</xml>&&&&&
+/instance/org.python.pydev/INTERPRETER_PATH_NEW=<xml>\n<name>python</name>\n<version>3.3</version>\n<executable>/usr/bin/python3.3</executable>\n<lib>/usr/lib/python33.zip</lib>\n<lib>/usr/lib/python3.3</lib>\n<lib>/usr/lib/python3.3/plat-linux</lib>\n<lib>/usr/lib/python3.3/lib-dynload</lib>\n<lib>/usr/lib/python3.3/site-packages</lib>\n<lib>/usr/lib/python3.3/site-packages/setuptools-0.6c11.egg-info</lib>\n<forced_lib>Image</forced_lib>\n<forced_lib>OpenGL</forced_lib>\n<forced_lib>_ast</forced_lib>\n<forced_lib>_bisect</forced_lib>\n<forced_lib>_bytesio</forced_lib>\n<forced_lib>_codecs</forced_lib>\n<forced_lib>_codecs_cn</forced_lib>\n<forced_lib>_codecs_hk</forced_lib>\n<forced_lib>_codecs_iso2022</forced_lib>\n<forced_lib>_codecs_jp</forced_lib>\n<forced_lib>_codecs_kr</forced_lib>\n<forced_lib>_codecs_tw</forced_lib>\n<forced_lib>_collections</forced_lib>\n<forced_lib>_csv</forced_lib>\n<forced_lib>_fileio</forced_lib>\n<forced_lib>_functools</forced_lib>\n<forced_lib>_heapq</forced_lib>\n<forced_lib>_hotshot</forced_lib>\n<forced_lib>_imp</forced_lib>\n<forced_lib>_io</forced_lib>\n<forced_lib>_json</forced_lib>\n<forced_lib>_locale</forced_lib>\n<forced_lib>_lsprof</forced_lib>\n<forced_lib>_md5</forced_lib>\n<forced_lib>_multibytecodec</forced_lib>\n<forced_lib>_random</forced_lib>\n<forced_lib>_sha</forced_lib>\n<forced_lib>_sha256</forced_lib>\n<forced_lib>_sha512</forced_lib>\n<forced_lib>_sre</forced_lib>\n<forced_lib>_string</forced_lib>\n<forced_lib>_struct</forced_lib>\n<forced_lib>_subprocess</forced_lib>\n<forced_lib>_symtable</forced_lib>\n<forced_lib>_thread</forced_lib>\n<forced_lib>_warnings</forced_lib>\n<forced_lib>_weakref</forced_lib>\n<forced_lib>_winreg</forced_lib>\n<forced_lib>array</forced_lib>\n<forced_lib>audioop</forced_lib>\n<forced_lib>binascii</forced_lib>\n<forced_lib>builtins</forced_lib>\n<forced_lib>cPickle</forced_lib>\n<forced_lib>cStringIO</forced_lib>\n<forced_lib>cmath</forced_lib>\n<forced_lib>datetime</forced_lib>\n<forced_lib>email</forced_lib>\n<forced_lib>errno</forced_lib>\n<forced_lib>exceptions</forced_lib>\n<forced_lib>faulthandler</forced_lib>\n<forced_lib>future_builtins</forced_lib>\n<forced_lib>gc</forced_lib>\n<forced_lib>hashlib</forced_lib>\n<forced_lib>imageop</forced_lib>\n<forced_lib>imp</forced_lib>\n<forced_lib>itertools</forced_lib>\n<forced_lib>marshal</forced_lib>\n<forced_lib>math</forced_lib>\n<forced_lib>mmap</forced_lib>\n<forced_lib>msvcrt</forced_lib>\n<forced_lib>nt</forced_lib>\n<forced_lib>numpy</forced_lib>\n<forced_lib>operator</forced_lib>\n<forced_lib>os</forced_lib>\n<forced_lib>os.path</forced_lib>\n<forced_lib>parser</forced_lib>\n<forced_lib>posix</forced_lib>\n<forced_lib>pwd</forced_lib>\n<forced_lib>pytest</forced_lib>\n<forced_lib>scipy</forced_lib>\n<forced_lib>signal</forced_lib>\n<forced_lib>socket</forced_lib>\n<forced_lib>strop</forced_lib>\n<forced_lib>sys</forced_lib>\n<forced_lib>thread</forced_lib>\n<forced_lib>time</forced_lib>\n<forced_lib>wx</forced_lib>\n<forced_lib>wxPython</forced_lib>\n<forced_lib>xxsubtype</forced_lib>\n<forced_lib>zipimport</forced_lib>\n<forced_lib>zlib</forced_lib>\n</xml>&&&&&<xml>\n<name>elohim</name>\n<version>3.3</version>\n<executable>/home/wezegege/.virtualenvs/elohim/bin/python</executable>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3/site-packages/distribute-0.6.31-py3.3.egg</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3/site-packages/pip-1.2.1-py3.3.egg</lib>\n<lib>/home/wezegege/workspace/python/elohim</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python33.zip</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3/plat-linux</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3/lib-dynload</lib>\n<lib>/home/wezegege/.virtualenvs/elohim/lib/python3.3/site-packages</lib>\n<forced_lib>Image</forced_lib>\n<forced_lib>OpenGL</forced_lib>\n<forced_lib>_ast</forced_lib>\n<forced_lib>_bisect</forced_lib>\n<forced_lib>_bytesio</forced_lib>\n<forced_lib>_codecs</forced_lib>\n<forced_lib>_codecs_cn</forced_lib>\n<forced_lib>_codecs_hk</forced_lib>\n<forced_lib>_codecs_iso2022</forced_lib>\n<forced_lib>_codecs_jp</forced_lib>\n<forced_lib>_codecs_kr</forced_lib>\n<forced_lib>_codecs_tw</forced_lib>\n<forced_lib>_collections</forced_lib>\n<forced_lib>_csv</forced_lib>\n<forced_lib>_fileio</forced_lib>\n<forced_lib>_functools</forced_lib>\n<forced_lib>_heapq</forced_lib>\n<forced_lib>_hotshot</forced_lib>\n<forced_lib>_imp</forced_lib>\n<forced_lib>_io</forced_lib>\n<forced_lib>_json</forced_lib>\n<forced_lib>_locale</forced_lib>\n<forced_lib>_lsprof</forced_lib>\n<forced_lib>_md5</forced_lib>\n<forced_lib>_multibytecodec</forced_lib>\n<forced_lib>_random</forced_lib>\n<forced_lib>_sha</forced_lib>\n<forced_lib>_sha256</forced_lib>\n<forced_lib>_sha512</forced_lib>\n<forced_lib>_sre</forced_lib>\n<forced_lib>_string</forced_lib>\n<forced_lib>_struct</forced_lib>\n<forced_lib>_subprocess</forced_lib>\n<forced_lib>_symtable</forced_lib>\n<forced_lib>_thread</forced_lib>\n<forced_lib>_warnings</forced_lib>\n<forced_lib>_weakref</forced_lib>\n<forced_lib>_winreg</forced_lib>\n<forced_lib>array</forced_lib>\n<forced_lib>audioop</forced_lib>\n<forced_lib>binascii</forced_lib>\n<forced_lib>builtins</forced_lib>\n<forced_lib>cPickle</forced_lib>\n<forced_lib>cStringIO</forced_lib>\n<forced_lib>cmath</forced_lib>\n<forced_lib>datetime</forced_lib>\n<forced_lib>email</forced_lib>\n<forced_lib>errno</forced_lib>\n<forced_lib>exceptions</forced_lib>\n<forced_lib>faulthandler</forced_lib>\n<forced_lib>future_builtins</forced_lib>\n<forced_lib>gc</forced_lib>\n<forced_lib>hashlib</forced_lib>\n<forced_lib>imageop</forced_lib>\n<forced_lib>imp</forced_lib>\n<forced_lib>itertools</forced_lib>\n<forced_lib>marshal</forced_lib>\n<forced_lib>math</forced_lib>\n<forced_lib>mmap</forced_lib>\n<forced_lib>msvcrt</forced_lib>\n<forced_lib>nt</forced_lib>\n<forced_lib>numpy</forced_lib>\n<forced_lib>operator</forced_lib>\n<forced_lib>os</forced_lib>\n<forced_lib>os.path</forced_lib>\n<forced_lib>parser</forced_lib>\n<forced_lib>posix</forced_lib>\n<forced_lib>pwd</forced_lib>\n<forced_lib>pytest</forced_lib>\n<forced_lib>scipy</forced_lib>\n<forced_lib>signal</forced_lib>\n<forced_lib>socket</forced_lib>\n<forced_lib>strop</forced_lib>\n<forced_lib>sys</forced_lib>\n<forced_lib>thread</forced_lib>\n<forced_lib>time</forced_lib>\n<forced_lib>wx</forced_lib>\n<forced_lib>wxPython</forced_lib>\n<forced_lib>xxsubtype</forced_lib>\n<forced_lib>zipimport</forced_lib>\n<forced_lib>zlib</forced_lib>\n</xml>&&&&&
 /instance/net.sourceforge.shelled.ui/useAnnotationsPrefPage=true
 /instance/org.eclipse.dltk.tcl.ui/sourceHoverBackgroundColor.SystemDefault=false
 /instance/org.eclipse.pde.ui/editor.color.default=224,226,228
@@ -510,6 +516,7 @@
 /instance/ccw.core/ccw.preferences.editor_color.SPECIAL_FORM.italic=false
 /instance/ccw.core/ccw.preferences.editor_color.whitespace.bold=false
 /instance/org.eclipse.wst.css.ui/COMMENT=\#7D8C93 | null | null | null | null | null
+/instance/org.eclipse.ui.browser/browsers=<?xml version\="1.0" encoding\="UTF-8"?>\n<web-browsers current\="0">\n<system/>\n</web-browsers>
 /instance/org.eclipse.help.base/window_infopop=false
 /instance/org.eclipse.jdt.ui/tabWidthPropagated=true
 /instance/org.eclipse.jdt.ui/semanticHighlighting.method.enabled=true
@@ -575,6 +582,7 @@
 /instance/org.cfeclipse.cfml/cfkeywordColor=147,199,99
 /instance/org.eclipse.php.ui/editorColorPhpdoc=\#7D8C93 | null | null | null | null | null
 /instance/ccw.core/ccw.preferences.editor_color.whitespace.italic=false
+/instance/org.eclipse.jdt.ui/content_assist_number_of_computers=13
 /instance/org.erlide.ui/editor/colors/atom/style=0
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.XMLTagName_enabled=true
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ConstantHighlighting.enabled=true
@@ -589,6 +597,7 @@
 /instance/org.eclipse.cdt.ui/semanticHighlighting.staticMethod.color=224,226,228
 /instance/org.eclipse.cdt.ui/pp_header=236,118,0
 /instance/org.eclipse.wst.jsdt.ui/java_doc_tag=224,226,228
+@org.eclipse.search=3.8.0.v20120523-1540
 /instance/org.eclipse.wst.jsdt.ui/semanticHighlighting.localVariable.color=224,226,228
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.deprecatedMember.enabled=true
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.mxml.mxmlHighlightGenerator.AS3.MXMLOtherTag_enabled=true
@@ -618,7 +627,7 @@
 @org.eclipse.rse.core=3.3.0.201209191030
 /instance/com.adobe.flexide.mxml.core/mxmlComponentTagColor=\#678CB1
 /instance/ccw.core/ccw.preferences.editor_color.JAVA_CLASS.bold=false
-/instance/org.eclipse.egit.core/RepositorySearchDialogSearchPath=/home/wezegege/config
+/instance/org.eclipse.egit.core/RepositorySearchDialogSearchPath=/home/wezegege/workspace/python/elohim
 /instance/org.eclipse.cdt.ui/semanticHighlighting.typeParameter.enabled=true
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.XMLText_enabled=true
 /instance/org.eclipse.cdt.ui/content_assist_proposals_foreground=224,226,228
@@ -683,7 +692,7 @@ file_export_version=3.0
 /instance/org.eclipse.jst.jsp.ui/jsp_content=\#E0E2E4 | null | null | null | null | null
 /instance/org.eclipse.cdt.ui/pp_directive=147,199,99
 /instance/org.eclipse.cdt.ui/semanticHighlighting.enumerator.enabled=true
-/configuration/org.eclipse.ui.ide/RECENT_WORKSPACES=/home/wezegege/workspace/eclipse
+/configuration/org.eclipse.ui.ide/RECENT_WORKSPACES=/home/wezegege/workspace/eclipse\nD\:\\Documents\\eclipse
 /instance/org.eclipse.cdt.ui/semanticHighlighting.method.enabled=true
 /instance/org.epic.perleditor/comment1Color=125,140,147
 /instance/org.eclipse.cdt.ui/sourceHoverBackgroundColor.SystemDefault=false
@@ -717,6 +726,7 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.ui/semanticHighlighting.deprecatedMember.color=224,226,228
 /instance/net.sourceforge.texlipse/def.BibColor=224,226,228
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.StaticGetter_enabled=true
+/instance/net.sourceforge.shelled.ui/org.eclipse.dltk.coretasks.tags=FIXME;HIGH,TODO;NORMAL,XXX;NORMAL
 /instance/org.eclipse.pde.ui/editor.color.header_attributes=224,226,228
 /instance/org.eclipse.php.ui/editorColorVariable=\#E0E2E4 | null | null | null | null | null
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.class.color=103,140,177
@@ -820,7 +830,7 @@ file_export_version=3.0
 /instance/org.eclipse.jdt.ui/semanticHighlighting.staticFinalField.enabled=true
 /instance/org.erlide.ui/editor/colors/keyword/style=0
 /instance/org.epic.perleditor/bookmarkIndicationColor=103,140,177
-/instance/org.eclipse.egit.core/GitRepositoriesView.GitDirectories=
+/instance/org.eclipse.egit.core/GitRepositoriesView.GitDirectories=D\:\\Documents\\eclipse\\config\\.git;\:/home/wezegege/config/.git\:/home/wezegege/workspace/python/elohim/.git\:
 /instance/ccw.core/ccw.preferences.editor_color.callableJAVA_INSTANCE_METHOD=103,140,177
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.mxml.mxmlHighlightGenerator.AS3.MXMLEventName_color=255,205,34
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.Interface_enabled=true
@@ -869,6 +879,7 @@ file_export_version=3.0
 /instance/org.eclipse.ui.ide/tipsAndTricks=true
 /instance/org.eclipse.dltk.ui/sourceHoverBackgroundColor.SystemDefault=true
 /instance/de.walware.statet.r.ui/text_Rd_rdUnlistedTag.color=103,140,177
+/instance/org.eclipse.search/org.eclipse.search.defaultPerspective=org.eclipse.search.defaultPerspective.none
 /instance/org.eclipse.tm.terminal/TerminalPref.migrated=true
 /instance/org.apache.directory.studio.ldifeditor/templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 /instance/org.eclipse.cdt.ui/semanticHighlighting.enum.color=224,226,228
@@ -910,6 +921,7 @@ file_export_version=3.0
 /instance/org.erlide.ui/editor/colors/macro/style=0
 /instance/ccw.core/ccw.preferences.editor_color.regex.bold=false
 /instance/ccw.core/ccw.preferences.editor_color.string.italic=false
+@org.eclipse.ui.browser=3.4.0.v20120716-173435
 /instance/eclihx.ui/hx_editor_comment_color=125,140,147
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.RegEx_color=236,118,0
 /instance/com.adobe.flexide.css.core/cssStringColor=\#EC7600
@@ -931,6 +943,7 @@ file_export_version=3.0
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.MethodHighlighting.enabled=true
 /instance/org.eclipse.wst.css.ui/ATMARK_RULE=\#678CB1 | null | null | null | null | null
 /instance/org.scala-ide.sdt.core/syntaxColouring.multiLineComment.colour=125,140,147
+@net.sourceforge.sqlexplorer=3.6.1.v20120708_SR6
 /instance/de.walware.statet.r.ui/text_R_rAssignment.Equalsign.color=232,226,183
 /instance/org.eclipse.dltk.tcl.ui/DLTK_keyword=147,199,99
 /instance/goclipse/syntax_highlighting_builtin_function_color=103,140,177

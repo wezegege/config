@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?p2f version='1.0.0'?>
+<p2f version='1.0.0'>
+  <ius size='15'>
+    <iu id='org.apache.directory.studio.ldapbrowser.feature.feature.group' name='Apache Directory Studio LDAP Browser' version='2.0.0.v20130131'>
+      <repositories size='1'>
+        <repository location='http://directory.apache.org/studio/update/2.x'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.cdt.autotools.feature.group' name='Autotools support for CDT' version='3.0.1.201209170703'>
+      <repositories size='2'>
+        <repository location='http://download.eclipse.org/tools/cdt/releases/juno'/>
+        <repository location='http://download.eclipse.org/releases/juno'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.cdt.msw.feature.group' name='CDT Visual C++ Support' version='1.0.0.201209170703'>
+      <repositories size='2'>
+        <repository location='http://download.eclipse.org/tools/cdt/releases/juno'/>
+        <repository location='http://download.eclipse.org/releases/juno'/>
+      </repositories>
+    </iu>
+    <iu id='com.github.eclipsecolortheme.feature.feature.group' name='Eclipse Color Theme' version='0.12.0.201207240713'>
+      <repositories size='1'>
+        <repository location='http://eclipse-color-theme.github.com/update/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.egit.feature.group' name='Eclipse EGit' version='2.1.0.201209190230-r'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/releases/juno'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.sdk.ide' name='Eclipse SDK' version='4.2.1.M20120914-1800'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/releases/juno'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.sqlexplorer.feature.group' name='Eclipse SQL Explorer' version='3.6.1.v20120708_SR6'>
+      <repositories size='1'>
+        <repository location='http://eclipsesql.sourceforge.net/'/>
+      </repositories>
+    </iu>
+    <iu id='org.python.pydev.feature.feature.group' name='PyDev for Eclipse' version='2.7.1.2012100913'>
+      <repositories size='1'>
+        <repository location='http://pydev.org/updates'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.rse.feature.group' name='Remote System Explorer End-User Runtime' version='3.4.1.201209191030-7L7IFBY83omx__z0RFpKdWB-r5MS'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/releases/juno'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.shelled.feature.group' name='ShellEd' version='2.0.2'>
+      <repositories size='1'>
+        <repository location='https://downloads.sourceforge.net/project/shelled/shelled/ShellEd%202.0.2/update'/>
+      </repositories>
+    </iu>
+    <iu id='org.tigris.subversion.subclipse.feature.group' name='Subclipse (Required)' version='1.8.18'>
+      <repositories size='1'>
+        <repository location='http://subclipse.tigris.org/update_1.8.x'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.feature.group' name='Vrapper' version='0.28.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.eclipse.cdt.feature.feature.group' name='Vrapper - C/C++ Extensions (Optional, requires CDT)' version='0.28.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.eclipse.jdt.feature.feature.group' name='Vrapper - Java Extensions (Optional, requires JDT)' version='0.28.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+    <iu id='net.sourceforge.vrapper.eclipse.pydev.feature.feature.group' name='Vrapper - Python Extensions (Optional, requires PyDev)' version='0.28.0'>
+      <repositories size='1'>
+        <repository location='http://vrapper.sourceforge.net/update-site/stable'/>
+      </repositories>
+    </iu>
+  </ius>
+</p2f>

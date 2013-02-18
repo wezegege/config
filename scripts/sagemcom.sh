@@ -4,6 +4,6 @@ git clone https://wezegege@bitbucket.org/wezegege/config.git
 cd ~/config
 git submodule update --init
 
-. ~/config/scripts/setup.sh
+. ~/config/scripts/setup.sh sagemcom
 
 source ${HOME}/.bashrc

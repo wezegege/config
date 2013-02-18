@@ -223,6 +223,7 @@ alias tree="tree -C -I '*.pyc|__pycache__'"
 
 alias gitrmall="git st -s | \egrep '^.D' | awk '{ print \$NF }' | xargs git rm"
 alias svnrmall="svn st -s | \egrep '^!' | awk '{ print \$NF }' | xargs svn rm"
+alias svnaddall="svn st -s | \egrep '^?' | awk '{ print \$NF }' | xargs svn add"
 
 alias sqlite="sqlite3"
 alias fmake="make -j 4"

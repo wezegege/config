@@ -1,3 +1,2 @@
-valid12 commit ldap not found
-remove nda bugs not seen
 bug extraction add field description
+test module move on biblio + mediawiki

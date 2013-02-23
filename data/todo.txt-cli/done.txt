@@ -64,3 +64,7 @@ x 2013-02-12 redesign scmbug pre/post commits 2627
 x 2013-02-12 +bugzilla repoened state
 x 2013-02-12 +forge mediawiki page cut
 x 2013-02-13 params rights change
+x 2013-02-13 valid12 commit ldap not found
+x 2013-02-13 remove nda bugs not seen
+x 2013-02-15 member list on gforge where is it ?
+x 2013-02-15 third party case for discovered by

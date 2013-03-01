@@ -68,3 +68,4 @@ x 2013-02-13 valid12 commit ldap not found
 x 2013-02-13 remove nda bugs not seen
 x 2013-02-15 member list on gforge where is it ?
 x 2013-02-15 third party case for discovered by
+x 2013-02-25 bug extraction add field description

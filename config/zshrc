@@ -121,6 +121,11 @@ bindkey "[6~" end-of-history # PageDown
 bindkey "[3~" delete-char # Del
 bindkey " " magic-space
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 setopt AUTO_CD
 
 export REPORTTIME=30

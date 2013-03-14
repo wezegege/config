@@ -147,7 +147,7 @@ function update {
    [ $? -eq 0 ] && sudo pacman-color -Syu $@
 }
 
-function remove {
+function uninstall {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
    hash pacman-color 2>/dev/null

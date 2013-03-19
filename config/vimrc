@@ -225,6 +225,7 @@ nmap <leader>b :buffers<cr>:b
 nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
+vnoremap <leader>s :s#/#
 nmap <leader>S :bufdo %s#/#
 
 "paste shortcuts

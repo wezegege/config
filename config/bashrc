@@ -7,11 +7,11 @@
 [[ $- != *i* ]] && return
 
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc   # --> Read /etc/bashrc, if present.
+    . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
 if [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion   # --> Read /etc/bashrc, if present.
+    . /etc/bash_completion   # --> Read /etc/bashrc, if present.
 fi
 
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd"

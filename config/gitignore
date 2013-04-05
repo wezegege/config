@@ -1,6 +1,7 @@
 # Linux
 *.swp
 *~
+nohup.out
 
 # Compiled source
 *.pyc
@@ -15,12 +16,14 @@
 # Archive
 *.7z
 *.gz
+*.xz
 *.tgz
 *.tar
 *.iso
 *.jar
 *.rar
 *.bzip
+*.zip
 
 # Log and databases
 *.log

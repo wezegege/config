@@ -135,23 +135,29 @@ export -f proot >/dev/null
 
 function install {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get install $@
+   [ $? -eq 0 ] && sudo apt-get install $@ && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -S $@
+   [ $? -eq 0 ] && sudo pacman-color -S $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum install $@ && return
 }
 
 function update {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
+   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -Syu $@
+   [ $? -eq 0 ] && sudo pacman-color -Syu $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum upgrade $@ && return
 }
 
 function uninstall {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
+   [ $? -eq 0 ] && sudo apt-get autoremove --purge $@ && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@
+   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum erase $@ && return
 }
 
 function extract {     # Handy Extract Program.

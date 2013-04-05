@@ -80,10 +80,10 @@ fi
 if [ "$USERNAME" == "root" ]; then
   isroot=${red}
 fi
-previous='$(result=$? && [[ ${result} -ne 0 ]] && echo "|${result}| ")'
+previous='$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}| ")'
 branch='$(git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<{}>")'
-PS1="${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)${yellow}${branch}
-${red}${previous}${green}\$\[\e[0m\] "
+PS1="${red}${previous}${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)${yellow}${branch}
+${green}\$\[\e[0m\] "
 
 # Completion
 

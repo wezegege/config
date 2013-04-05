@@ -1,2 +1,3 @@
-vim/.netrwhist
+config/vim/.netrwhist
 *.pyc
+uncommonrc

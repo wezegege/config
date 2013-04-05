@@ -1,5 +1,4 @@
 [global]
 timeout = 10
 index-url =
-  http://pypimirror.rmm.sagem/simple/
   http://pypi.python.org/simple/

@@ -43,8 +43,6 @@ PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr
 PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv"
 
 
-export LC_ALL="fr_FR.UTF-8"
-
 #====================================================================
 # functions
 #====================================================================
@@ -135,23 +133,29 @@ export -f proot >/dev/null
 
 function install {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get install $@
+   [ $? -eq 0 ] && sudo apt-get install $@ && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -S $@
+   [ $? -eq 0 ] && sudo pacman-color -S $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum install $@ && return
 }
 
 function update {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean
+   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -Syu $@
+   [ $? -eq 0 ] && sudo pacman-color -Syu $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum upgrade $@ && return
 }
 
-function remove {
+function uninstall {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get autoremove --purge $@
+   [ $? -eq 0 ] && sudo apt-get autoremove --purge $@ && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@
+   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@ && return
+   hash yum 2>/dev/null
+   [ $? -eq 0 ] && sudo yum erase $@ && return
 }
 
 function extract {     # Handy Extract Program.
@@ -159,6 +163,7 @@ function extract {     # Handy Extract Program.
     case $1 in
       *.tar.bz2) tar xvjf $1 ;;
       *.tar.gz) tar xvzf $1 ;;
+      *.tar.xz) tar xvJf $1 ;;
       *.bz2) bunzip2 $1 ;;
       *.rar) unrar x $1 ;;
       *.gz) gunzip $1 ;;
@@ -244,6 +249,7 @@ alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
 alias sqlite="sqlite3"
+alias nw="netstat -tupln"
 
 alias ldapsearch="ldapsearch -LLL"
 alias ldapmodify="ldapmodify -c"

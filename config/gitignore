@@ -12,6 +12,16 @@
 *.so
 *.a
 
+# Archive
+*.7z
+*.gz
+*.tgz
+*.tar
+*.iso
+*.jar
+*.rar
+*.bzip
+
 # Log and databases
 *.log
 *.sqlite

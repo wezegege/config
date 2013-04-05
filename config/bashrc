@@ -66,6 +66,7 @@ if [ "$TERM" == "linux" ]; then
   green=$(CLASSIC_COLOR 32)
   red=$(CLASSIC_COLOR 31)
 fi
+reset='\[\e[0m\]'
 isroot=${lightblue}
 isremote=${lightblue}
 if [ "a$SSH_CLIENT" != "a" ]; then
@@ -82,8 +83,8 @@ if [ "$USERNAME" == "root" ]; then
 fi
 previous='$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}| ")'
 branch='$(git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<{}>")'
-PS1="${red}${previous}${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)${yellow}${branch}
-${green}\$\[\e[0m\] "
+PS1="${red}${previous}${reset}${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)${yellow}${branch}
+${green}\$${reset} "
 
 # Completion
 

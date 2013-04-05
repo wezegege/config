@@ -43,8 +43,6 @@ PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr
 PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv"
 
 
-export LC_ALL="fr_FR.UTF-8"
-
 #====================================================================
 # functions
 #====================================================================

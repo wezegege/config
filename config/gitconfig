@@ -19,7 +19,7 @@ ci = commit
 co = checkout
 cl = clone
 br = branch -avv
-pull = pull --recurse-submodules=yes
+pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
 addd = add --patch
 sub = submodule

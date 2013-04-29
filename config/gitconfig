@@ -21,6 +21,7 @@ cl = clone
 br = branch -avv
 pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
+wdiff = diff --word-diff
 addd = add --patch
 sub = submodule
 subup = submodule update --init
@@ -44,7 +45,7 @@ renames = copies # detects file moving and copying
 mnemonicprefix = true
 
 [branch]
-autosetupmerge = true # auto track remote branch
+autosetuprebase = always # auto track remote branch
 
 [push]
 default = tracking # defaults push to upstream branch

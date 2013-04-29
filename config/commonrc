@@ -136,8 +136,12 @@ function install {
    [ $? -eq 0 ] && sudo apt-get install $@ && return
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -S $@ && return
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman -S $@ && return
    hash yum 2>/dev/null
    [ $? -eq 0 ] && sudo yum install $@ && return
+   echo "No package manager found"
+   return 1
 }
 
 function update {
@@ -145,17 +149,25 @@ function update {
    [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean && return
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -Syu $@ && return
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman -Syu $@ && return
    hash yum 2>/dev/null
    [ $? -eq 0 ] && sudo yum upgrade $@ && return
+   echo "No package manager found"
+   return 1
 }
 
 function uninstall {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get autoremove --purge $@ && return
    hash pacman-color 2>/dev/null
-   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman-color -Qqdt) $@ && return
+   [ $? -eq 0 ] && sudo pacman-color -Rsn $(pacman -Qqdt) $@ && return
+   hash pacman 2>/dev/null
+   [ $? -eq 0 ] && sudo pacman -Rsn $(pacman -Qqdt) $@ && return
    hash yum 2>/dev/null
    [ $? -eq 0 ] && sudo yum erase $@ && return
+   echo "No package manager found"
+   return 1
 }
 
 function extract {     # Handy Extract Program.

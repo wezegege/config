@@ -192,9 +192,9 @@ function extract {     # Handy Extract Program.
 # ls
 
 alias ls="ls --color=auto"
-alias ll="ls -A --group-directories-first"
-alias lq="ls -ohF --group-directories-first"
-alias la="ll -ohF"
+alias ll="ls -lhF --group-directories-first"
+alias lq="ls -A --group-directories-first"
+alias la="lq -lhF"
 alias lt="ls -lrth"
 alias lg="lt -A"
 
@@ -212,9 +212,8 @@ alias zgrec="grep ${GREP_ARGS} --color=always"
 
 # common commands
 
-alias less="less -R"
-alias mkdir="mkdir -p"
-alias ps="ps aux"
+alias less="less --RAW-CONTROL-CHARS --quiet"
+alias mkdir="mkdir --parents"
 alias du="du -h"
 alias duu="du -skh *"
 alias df="df -h"
@@ -242,7 +241,6 @@ alias gitrmall="git st -s | \egrep '^.D' | awk '{ print \$NF }' | xargs git rm"
 alias svnrmall="svn st -s | \egrep '^!' | awk '{ print \$NF }' | xargs svn rm"
 alias svnaddall="svn st -s | \egrep '^?' | awk '{ print \$NF }' | xargs svn add"
 
-alias sqlite="sqlite3"
 alias fmake="make -j 4"
 alias scp="scp -pr"
 alias vi="vim"

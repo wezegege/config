@@ -54,37 +54,52 @@ shopt -s extglob
 
 function COLOR () { echo -ne "\[\e[38;5;$1m\]"; }
 function CLASSIC_COLOR () { echo -ne "\[\e[1;$1m\]"; }
-darkblue=$(COLOR 74)
-lightblue=$(COLOR 116)
-yellow=$(COLOR 229)
-green=$(COLOR 150)
-red=$(COLOR 167)
-if [ "$TERM" == "linux" ]; then
-  darkblue=$(CLASSIC_COLOR 34)
-  lightblue=$(CLASSIC_COLOR 36)
-  yellow=$(CLASSIC_COLOR 33)
-  green=$(CLASSIC_COLOR 32)
-  red=$(CLASSIC_COLOR 31)
-fi
-reset='\[\e[0m\]'
-isroot=${lightblue}
-isremote=${lightblue}
-if [ "a$SSH_CLIENT" != "a" ]; then
-  if [[ $(hostname) == lx* ]]; then
-    isremote=${yellow}
-  elif [[ $(hostname) == *wez-* || $(hostname) == pc* ]]; then
-    isremote=${green}
-  else
-    isremote=${red}
-  fi
-fi
-if [ "$USERNAME" == "root" ]; then
-  isroot=${red}
-fi
-previous='$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}| ")'
-branch='$(git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<{}>")'
-PS1="${red}${previous}${reset}${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]${green}(\t)${yellow}${branch}
-${green}\$${reset} "
+bash_prompt_command () {
+    PREVIOUS=$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}| ")
+    BRANCH=$(git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<{}>")
+}
+
+function set_prompt () {
+    darkblue=$(COLOR 74)
+    lightblue=$(COLOR 116)
+    yellow=$(COLOR 229)
+    green=$(COLOR 150)
+    red=$(COLOR 167)
+    if [ "$TERM" == "linux" ]; then
+      darkblue=$(CLASSIC_COLOR 34)
+      lightblue=$(CLASSIC_COLOR 36)
+      yellow=$(CLASSIC_COLOR 33)
+      green=$(CLASSIC_COLOR 32)
+      red=$(CLASSIC_COLOR 31)
+    fi
+    reset='\[\e[0m\]'
+    isroot=${lightblue}
+    isremote=${lightblue}
+    if [ "a$SSH_CLIENT" != "a" ]; then
+      if [[ $(hostname) == lx* ]]; then
+        isremote=${yellow}
+      elif [[ $(hostname) == *wez-* || $(hostname) == pc* ]]; then
+        isremote=${green}
+      else
+        isremote=${red}
+      fi
+    fi
+    if [ "$USERNAME" == "root" ]; then
+      isroot=${red}
+    elif [[ "${SUDO_USER}" != "" ]]; then
+      isroot=${yellow}
+    fi
+
+    PS1="${debian_chroot:+($debian_chroot)}"
+    PS1="${PS1}${darkblue}[${isroot}\u${darkblue}@${isremote}\h${darkblue}:${lightblue}\w${darkblue}]"
+    PS1="${PS1}${green}(\t)"
+    PS1="${PS1}${yellow}\${BRANCH}${reset}"
+    PS1="${PS1}\n${red}\${PREVIOUS}"
+    PS1="${PS1}${green}\$${reset} "
+}
+
+PROMPT_COMMAND=bash_prompt_command
+set_prompt
 
 # Completion
 

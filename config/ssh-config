@@ -1,0 +1,10 @@
+Host *
+  HashKnownHosts yes
+  ForwardAgent yes
+  ForwardX11 yes
+  GssApiAuthentication yes
+  GssApiDelegateCredentials yes
+  ControlMaster auto
+  ControlPath ~/.ssh/cm_socket/ssh-%r@%h:%p
+  ControlPersist 600
+

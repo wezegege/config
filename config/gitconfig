@@ -45,6 +45,7 @@ renames = copies # detects file moving and copying
 mnemonicprefix = true
 
 [branch]
+autosetupmerge = always # auto track remote branch
 autosetuprebase = always # auto track remote branch
 
 [push]

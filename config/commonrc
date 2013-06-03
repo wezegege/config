@@ -212,7 +212,7 @@ alias lg="lt -A"
 
 # grep
 
-GREP_ARGS="-In --color=auto --exclude-dir=.svn --exclude-dir=.git"
+GREP_ARGS="-I --color=auto --exclude-dir=.svn --exclude-dir=.git"
 alias grep="grep ${GREP_ARGS}"
 alias egrep="egrep ${GREP_ARGS}"
 alias fgrep="fgrep ${GREP_ARGS}"
@@ -260,6 +260,7 @@ alias perl="perl -w"
 alias shutdown="shutdown -h"
 alias sqlite="sqlite3"
 alias nw="netstat -tupln"
+alias process="ps -weo user,group,pid,%cpu,%mem,stat,time,args"
 
 alias ldapsearch="ldapsearch -LLL"
 alias ldapmodify="ldapmodify -c"

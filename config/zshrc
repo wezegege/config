@@ -46,8 +46,6 @@ prompt_previous='$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}| ")'
 function prompt_branch() {
   git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<±{}>"
 }
-#PROMPT="${red}${prompt_previous}%f${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}%n${darkblue}@${isremote}%M${darkblue}"
-#PROMPT="$PROMPT:${lightblue}%~${darkblue}]${green}(%*)${yellow}\$(prompt_branch)
 PROMPT="${debian_chroot:+($debian_chroot)}${darkblue}[${isroot}%n${darkblue}@${isremote}%M${darkblue}"
 PROMPT="$PROMPT:${lightblue}%~${darkblue}]${green}(%*)
 %#%f "

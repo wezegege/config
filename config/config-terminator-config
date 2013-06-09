@@ -4,6 +4,7 @@
   title_transmit_fg_color = "#AAAAAA"
   title_inactive_fg_color = "#222222"
   title_transmit_bg_color = "#444444"
+  inactive_color_offset = 1.13
   title_inactive_bg_color = "#666666"
 [keybindings]
   go_left = <Ctrl><Shift>h
@@ -12,8 +13,9 @@
   go_up = <Ctrl><Shift>k
 [profiles]
   [[default]]
-    scrollbar_position = hidden
+    background_image = None
     scrollback_lines = 5000
+    scrollbar_position = hidden
     split_to_group = True
     foreground_color = "#e0e0e0"
     icon_bell = False

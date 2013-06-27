@@ -234,7 +234,7 @@ alias df="df -h"
 
 alias dotar="tar pczf"
 alias untar="tar xvf"
-alias seetar="tar ztvf"
+alias seetar="tar tvf"
 
 # functions
 
@@ -248,6 +248,7 @@ alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
 alias tree="tree -C -I '*.pyc|__pycache__'"
+alias tmux="tmux -2"
 
 alias gitrmall="git st -s | \egrep '^.D' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs git rm"
 alias svnrmall="svn st -s | \egrep '^!' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs svn rm"

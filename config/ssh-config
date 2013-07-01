@@ -8,3 +8,12 @@ Host *
   ControlPath ~/.ssh/cm_socket/ssh-%r@%h:%p
   ControlPersist 600
 
+Host bitbucket bitbucket.org
+  Host bitbucket.org
+  User git
+  IdentityFile ~/.ssh/keys/bitbucket
+
+Host github github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/keys/github

@@ -182,12 +182,6 @@ alias -s ods="localc"
 alias -s doc="lowriter"
 alias -s odt="lowriter"
 
-# applications
-
-alias pacman='pacman-color'
-alias pacin='pacman -S'
-alias pacup='pacman -Syu'
-alias pacclean='pacman -Rsn $(pacman -Qqdt)'
 
 #====================================================================
 # Extra config files

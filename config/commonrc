@@ -40,7 +40,7 @@ PROJECTPATH="${HOME}/.local/lib/python:${HOME}/.local/lib"
 PROJECTPATH="${PROJECTPATH}:${HOME}/workspace/*:${HOME}/workspace"
 PROJECTPATH="${PROJECTPATH}:/usr/local/lib:/usr/local/share"
 PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr/local:/usr/share:/usr/lib"
-PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv"
+PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv:/opt"
 
 
 #====================================================================

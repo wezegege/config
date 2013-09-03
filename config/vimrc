@@ -31,7 +31,9 @@ else
 endif
 
 set number
-set relativenumber
+if version >= 703
+  set relativenumber
+endif
 set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
@@ -130,7 +132,9 @@ set nobackup
 set incsearch    " do incremental searching
 set smartcase
 set infercase
-set wildignorecase " file name case insensitive completion
+if version >= 703
+  set wildignorecase " file name case insensitive completion
+endif
 set showmatch
 set showfulltag
 set gdefault " substitutes are global by default

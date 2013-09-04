@@ -131,6 +131,10 @@ function proot {
 
 export -f proot >/dev/null
 
+function bd {
+  cd $(pwd | sed 's#\(.*/'$1'[^/]*/\).*#\1#')
+}
+
 function install {
    hash apt-get 2>/dev/null
    [ $? -eq 0 ] && sudo apt-get install $@ && return
@@ -172,17 +176,32 @@ function uninstall {
 
 function extract {     # Handy Extract Program.
   if [ -f $1 ] ; then
+    tarext='.(tgz|tbz2|tbz|txz|tar(.(bz2|gz|xz))?)'
+    zipext='.(zip|nar)'
     case $1 in
-      *.tar.bz2) tar xvjf $1 ;;
-      *.tar.gz) tar xvzf $1 ;;
-      *.tar.xz) tar xvJf $1 ;;
+      *.(tgz|tbz2|tbz|txz|tar(.(bz2|gz|xz))?) )
+        rootfilecount=$(tar -tf $1 | cut -d / -f 1 | sort | uniq | wc -l)
+        if [ $rootfilecount -gt 1 ]; then
+          TMP=$(echo $1 | sed -r 's#'$tarext'##g')
+          mkdir $TMP
+          tar -xvf $1 -C $TMP
+        else
+          tar -xvf $1
+        fi
+        ;;
       *.bz2) bunzip2 $1 ;;
       *.rar) unrar x $1 ;;
       *.gz) gunzip $1 ;;
-      *.tar) tar xvf $1 ;;
-      *.tbz2) tar xvjf $1 ;;
-      *.tgz) tar xvzf $1 ;;
-      *.zip) unzip $1 ;;
+      *.(zip|nar) )
+        rootfilecount=$(unzip -l $1 | head -n -2 | tail -n +4 | awk '{ print $4 }' | cut -d '/' -f 1 | sort | uniq | wc -l)
+        if [ $rootfilecount -gt 1 ]; then
+          TMP=$(echo $1 | sed -r 's#'$zipext'##g')
+          mkdir $TMP
+          unzip $1 -d $TMP
+        else
+          unzip $1
+        fi
+        ;;
       *.Z) uncompress $1 ;;
       *.7z) 7z x $1 ;;
       *.deb)
@@ -250,7 +269,6 @@ alias lns="ln -s"
 alias tree="tree -C -I '*.pyc|__pycache__'"
 alias tmux="tmux -2"
 
-alias gitrmall="git st -s | \egrep '^.D' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs git rm"
 alias svnrmall="svn st -s | \egrep '^!' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs svn rm"
 alias svnaddall="svn st -s | \egrep '^?' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs svn add"
 

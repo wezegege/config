@@ -150,7 +150,7 @@ function install {
 
 function update {
    hash apt-get 2>/dev/null
-   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get upgrade $@ && sudo apt-get clean && return
+   [ $? -eq 0 ] && sudo apt-get update && sudo apt-get dist-upgrade $@ && sudo apt-get clean && return
    hash pacman-color 2>/dev/null
    [ $? -eq 0 ] && sudo pacman-color -Syu $@ && return
    hash pacman 2>/dev/null
@@ -179,7 +179,7 @@ function extract {     # Handy Extract Program.
     tarext='.(tgz|tbz2|tbz|txz|tar(.(bz2|gz|xz))?)'
     zipext='.(zip|nar)'
     case $1 in
-      *.(tgz|tbz2|tbz|txz|tar(.(bz2|gz|xz))?) )
+      *.tgz|*.tbz2|*.tbz|*.txz|*.tar|.tar.bz2|.tar.gz|.tar.xz )
         rootfilecount=$(tar -tf $1 | cut -d / -f 1 | sort | uniq | wc -l)
         if [ $rootfilecount -gt 1 ]; then
           TMP=$(echo $1 | sed -r 's#'$tarext'##g')
@@ -192,7 +192,7 @@ function extract {     # Handy Extract Program.
       *.bz2) bunzip2 $1 ;;
       *.rar) unrar x $1 ;;
       *.gz) gunzip $1 ;;
-      *.(zip|nar) )
+      *.zip|*.nar )
         rootfilecount=$(unzip -l $1 | head -n -2 | tail -n +4 | awk '{ print $4 }' | cut -d '/' -f 1 | sort | uniq | wc -l)
         if [ $rootfilecount -gt 1 ]; then
           TMP=$(echo $1 | sed -r 's#'$zipext'##g')

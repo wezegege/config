@@ -19,3 +19,6 @@
 [submodule "scripts/todo.txt-cli"]
 	path = scripts/todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli.git
+[submodule "config/vim/bundle/autotag"]
+	path = config/vim/bundle/autotag
+	url = https://github.com/vim-scripts/AutoTag.git

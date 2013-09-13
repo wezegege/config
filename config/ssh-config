@@ -2,11 +2,12 @@ Host *
   HashKnownHosts yes
   ForwardAgent yes
   ForwardX11 yes
-  GssApiAuthentication yes
+  #GssApiAuthentication yes
+  GssApiAuthentication no
   GssApiDelegateCredentials yes
   ControlMaster auto
   ControlPath ~/.ssh/cm_socket/ssh-%r@%h:%p
-  ControlPersist 600
+  #ControlPersist 600
 
 Host bitbucket bitbucket.org
   Host bitbucket.org
@@ -17,3 +18,34 @@ Host github github.com
   Hostname github.com
   User git
   IdentityFile ~/.ssh/keys/github
+
+Host build lx27516
+    User pmkbuild
+
+Host lx20038 cit
+    User root
+
+Host 10.0.* inte-* sd*30091
+    GssApiAuthentication no
+    User D1nestea
+
+Host inte-gtw sdgw30091
+    Hostname 10.0.138.80
+
+Host inte-orc sdor30091
+    Hostname 10.0.140.208
+
+Host inte-este sdpe30091
+    Hostname 10.0.140.144
+
+Host inte-cj sdcj3091
+    Hostname 10.0.142.144
+
+Host inte-admin sdad30091
+    Hostname 10.0.148.80
+
+Host inte-tss sdss30091
+    Hostname 10.0.142.80
+
+Host inte-nestea sdnt30091
+    Hostname 10.0.140.80

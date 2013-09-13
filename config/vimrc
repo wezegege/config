@@ -291,9 +291,11 @@ autocmd bufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 
+" OmniComplete
 set omnifunc=syntaxcomplete#Complete
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=./tags;/
+noremap gd 
+noremap gc 
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

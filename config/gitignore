@@ -47,3 +47,6 @@ __pycache__/
 
 # history
 .netrwhist
+
+# ctags
+tags

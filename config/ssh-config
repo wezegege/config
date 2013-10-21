@@ -7,7 +7,7 @@ Host *
   GssApiDelegateCredentials yes
   ControlMaster auto
   ControlPath ~/.ssh/cm_socket/ssh-%r@%h:%p
-  #ControlPersist 600
+  ControlPersist 600
 
 Host bitbucket bitbucket.org
   Host bitbucket.org

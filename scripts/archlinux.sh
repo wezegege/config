@@ -40,6 +40,7 @@ mount /dev/sda3 /mnt
 mkdir /mnt/home /mnt/boot
 mount /dev/sda1 /mnt/boot
 mount /dev/sda4 /mnt/home
+mount -t tmpfs size=2G tmpfs /mnt/tmp
 
 # network
 dhclient
@@ -47,15 +48,19 @@ dhclient
 # install
 graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm"
 development="git python vim"
-admin="pkgfile"
+admin="pkgfile net-tools tree rsync ntp"
 utils="chromium terminator flashplugin"
 core="grub-bios reflector sudo zsh openssh"
 virtual="virtualbox-guest-utils"
-build="fakeroot binutils wget"
+build="fakeroot binutils wget make gcc colorgcc"
 pacstrap /mnt base  ${core} ${development} ${graphics} ${admin} ${utils} ${core} ${virtual} ${build}
 
 # mounts
 genfstab -p /mnt >> /mnt/etc/fstab
+cat <<EOF >> /mnt/etc/fstab
+tmpfs	/tmp	tmpfs	size=2G	0 0
+EOF
+
 sed -i.ori 's/,data=ordered//' /mnt/etc/fstab
 arch-chroot /mnt
 
@@ -73,6 +78,8 @@ EOF
 
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
+ntpd -q
+hwclock -w
 
 # network
 read name
@@ -120,9 +127,11 @@ EOF
 
 # desktop environment
 
+# misc
+pkgfile --update
+
 # install video driver
-systemctl enable gdm
-systemctl enable dhcpd@eth0.service
+systemctl enable gdm dhcpd.service sshd.service ntpd.service
 
 # finish
 exit

@@ -1,4 +1,4 @@
-test module move on biblio + mediawiki
-modify jenkins plugin to accept sagemcom grammar
 
-wiki support right managements
+
+
+

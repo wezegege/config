@@ -1,5 +1,4 @@
 " Use Vim settings, rather than Vi settings (much better!).
-"
 set nocompatible
 
 " This must be first, because it changes other options as a side effect.
@@ -32,7 +31,9 @@ else
 endif
 
 set number
-set relativenumber
+if version >= 703
+  set relativenumber
+endif
 set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
@@ -131,7 +132,9 @@ set nobackup
 set incsearch    " do incremental searching
 set smartcase
 set infercase
-set wildignorecase " file name case insensitive completion
+if version >= 703
+  set wildignorecase " file name case insensitive completion
+endif
 set showmatch
 set showfulltag
 set gdefault " substitutes are global by default
@@ -261,24 +264,9 @@ cnoremap s# s#\v
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Conque
-"let g:ConqueTerm_FastMode = 1
-"let g:ConqueTerm_ReadUnfocused = 1
-"let g:ConqueTerm_InsertOnEnter = 1
-"map <silent><leader>s <esc>:ConqueTerm zsh<CR>
-
-" LustyJuggler
-"let g:LustyJugglerDefaultMappings = 0
-"let g:LustyJugglerSuppressRubyWarning = 1
-"nmap <silent> <Leader>b :LustyJuggler<CR>
-
 " Tagbar
 let g:tagbar_usearrows = 1
 nnoremap <silent><leader>t :TagbarToggle<CR>
-
-" Yankring
-"let g:yankring_history_dir = "~/config/data/vim/yankring"
-"let g:yankring_enabled = 0
 
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
@@ -303,14 +291,11 @@ autocmd bufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 
-" Indent-guides
-"noremap <leader>ig <nop>
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=None
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-"let g:indent_guides_enable_on_vim_startup = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OmniComplete
+set omnifunc=syntaxcomplete#Complete
+set tags=./tags;/
+noremap gd 
+noremap gc 
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

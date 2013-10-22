@@ -22,6 +22,7 @@ br = branch -avv
 pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
 wdiff = diff --word-diff
+ad = add -A .
 addd = add --patch
 sub = submodule
 subup = submodule update --init
@@ -45,6 +46,7 @@ renames = copies # detects file moving and copying
 mnemonicprefix = true
 
 [branch]
+autosetupmerge = always # auto track remote branch
 autosetuprebase = always # auto track remote branch
 
 [push]
@@ -52,6 +54,10 @@ default = tracking # defaults push to upstream branch
 
 [rerere]
 enabled = true # record resolved conflicts hunks
+
+[http]
+sslVerify = false
+
 [user]
-	email = wezegege@live.fr
-	name = Wezegege
+	name = Kevin Tran
+	email = ext.kevin.tran@lotsys.com

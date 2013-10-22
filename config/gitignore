@@ -39,6 +39,7 @@ nohup.out
 __pycache__/
 *.egg-info/
 .coverage
+.tox
 
 # Eclipse
 .project

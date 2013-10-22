@@ -45,11 +45,11 @@ mount /dev/sda4 /mnt/home
 dhclient
 
 # install
-graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm"
+graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool"
 development="git python vim"
 admin="pkgfile"
 utils="chromium terminator flashplugin"
-core="grub-bios reflector sudo zsh openssh"
+core="syslinux reflector sudo zsh openssh lsof htop ntop mlocate"
 virtual="virtualbox-guest-utils"
 build="fakeroot binutils wget"
 pacstrap /mnt base  ${core} ${development} ${graphics} ${admin} ${utils} ${core} ${virtual} ${build}
@@ -70,6 +70,7 @@ KEYMAP="fr-latin1"
 FONT="Lat2-Terminus16"
 FONT_MAP=
 EOF
+localectl set-x11-keymap fr pc105
 
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
@@ -80,10 +81,8 @@ echo ${name} > /etc/hostname
 sed 's/localhost.localdomain/${name}/g' /etc/hosts
 sed 's/# interface=/interface=eth0/;s/# address=/address=/;s/# netmask=/netmask=/;s/# gateway=/gateway=/' /etc/rc.conf
 
-# grub
-grub-install --recheck /dev/sda
-cp /usr/share/locale/fr/LC_MESSAGES/grub.mo /boot/grub/locale/fr.mo
-grub-mkconfig -o /boot/grub/grub.cfg
+# syslinux
+syslinux-install_update -i -a -m
 
 # pacman
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -122,7 +121,7 @@ EOF
 
 # install video driver
 systemctl enable gdm
-systemctl enable dhcpd@eth0.service
+systemctl enable dhcpd.service
 
 # finish
 exit

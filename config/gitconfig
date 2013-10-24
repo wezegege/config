@@ -14,7 +14,7 @@ status=auto
 pretty=oneline # display one line per log entry
 
 [alias]
-st = status
+st = status --short --branch
 ci = commit
 co = checkout
 cl = clone

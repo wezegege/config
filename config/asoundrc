@@ -1,0 +1,6 @@
+defaults.pcm.!rate_converter "samplerate_medium"
+defaults.pcm.card 0
+defaults.pcm.device 0
+defaults.ctl.card 0
+
+defaults.pcm.dmix.!rate 44100

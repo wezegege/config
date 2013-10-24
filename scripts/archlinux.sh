@@ -40,19 +40,20 @@ mount /dev/sda3 /mnt
 mkdir /mnt/home /mnt/boot
 mount /dev/sda1 /mnt/boot
 mount /dev/sda4 /mnt/home
-mount -t tmpfs size=2G tmpfs /mnt/tmp
+mount -t tmpfs -o size=2G tmpfs /mnt/tmp
 
 # network
 dhclient
 
 # install
-graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool"
+graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool alsa-utils"
 development="git python vim"
 admin="pkgfile net-tools tree rsync ntp"
-utils="chromium terminator flashplugin"
-core="syslinux reflector sudo zsh openssh lsof htop ntop mlocate"
+utils="chromium terminator"
+core="syslinux reflector sudo zsh openssh lsof htop iftop mlocate"
 virtual="virtualbox-guest-utils"
-build="fakeroot binutils wget make gcc colorgcc"
+build="fakeroot binutils wget make gcc"
+raid="gptfdisk"
 pacstrap /mnt base  ${core} ${development} ${graphics} ${admin} ${utils} ${core} ${virtual} ${build}
 
 # mounts
@@ -85,11 +86,17 @@ hwclock -w
 # network
 read name
 echo ${name} > /etc/hostname
-sed 's/localhost.localdomain/${name}/g' /etc/hosts
-sed 's/# interface=/interface=eth0/;s/# address=/address=/;s/# netmask=/netmask=/;s/# gateway=/gateway=/' /etc/rc.conf
+sed -i 's/localhost.localdomain/${name}/g' /etc/hosts
 
 # syslinux
 syslinux-install_update -i -a -m
+# raid specifics
+sed -i '/APPEND/ s/.*/APPEND root=/dev/md3 rw md=1,/dev/sda1,/dev/sdb1 md=2,/dev/sda2,/dev/sdb2 md=3,/dev/sda3,/dev/sdb3' /boot/syslinux/syslinux.cfg
+mdadm --specific --scan  >> /etc/mdadm.conf
+sed -i '/FILES/ s#""#"/etc/mdadm.conf"#;
+        /MODULES/ s#"$#dm_mod"#;
+        /HOOKS/ s#udev#udev mdadm_udev#' /etc/mkinitcpio.conf
+mkinitcpio -p linux
 
 # pacman
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -97,9 +104,10 @@ reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 cat << EOF >> /etc/pacman.conf
 [archlinuxfr]
 Server = http://repo.archlinux.fr/\$arch
+SigLevel = Never
 EOF
-pacman -Syyu yaourt pacman-color python-pip
-yaourt chromium-stable-libpdf << EOF
+pacman -Syyu yaourt python-pip
+yaourt chromium-stable-libpdf chromium-pepper-flash << EOF
 1
 n
 y
@@ -128,6 +136,7 @@ EOF
 
 # misc
 pkgfile --update
+updatedb
 
 # install video driver
 systemctl enable gdm dhcpd.service sshd.service ntpd.service
@@ -136,3 +145,40 @@ systemctl enable gdm dhcpd.service sshd.service ntpd.service
 exit
 umount /mnt/{boot,home,}
 reboot
+
+############################################################################
+
+# samba share server
+pacman -S samba
+cp /etc/samba/smb.conf{.default,}
+useradd -r -p share share
+cat <<EOF >> /etc/samba/smb.conf
+
+[share]
+path = /srv/share
+read only = no
+public = yes
+writable = yes
+inherit permissions = yes
+EOF
+gpasswd -a wezegege share
+pdbedit -a -u share
+pdbedit -a -u wezegege
+systemctl enable smbd nmbd
+
+# samba share client
+pacman -S smbclient
+mkdir /mnt/share /etc/samba
+gpasswd -a wezegege share
+cat <<EOF >> /etc/fstab
+//wez-server/share /mnt/share cifs credentials=/etc/samba/share.shared,workgroup=MYGROUP,comment=systemd.automount 0 0
+EOF
+cat <<EOF > /etc/samba/share.shared
+username=share
+password=share
+EOF
+
+# deluge
+pacman -S deluge python2-mako
+systemctl enable deluged deluge-web
+

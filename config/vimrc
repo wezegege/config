@@ -38,7 +38,8 @@ set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
 set showmode
-set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)\ #%n\ %P
+"set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)\ #%n\ %P
+set statusline=%<%F\ %h%m%r%=[%b-%B]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)
 set lazyredraw
 set ttyfast
 set scrolloff=2
@@ -291,11 +292,7 @@ autocmd bufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 
-" OmniComplete
-set omnifunc=syntaxcomplete#Complete
-set tags=./tags;/
-noremap gd 
-noremap gc 
+
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -424,7 +421,6 @@ let &cpo = s:save_cpo | unlet s:save_cpo
 " Shortcuts
 """""""""""""""""""""""""""""""""""""
 
-nmap <silent><leader>f :Explore<CR>
 nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>
 nmap <silent><leader>o <esc>:DiffOrig<CR>
 nmap <silent><leader>h <esc>:nmap <leader><CR>

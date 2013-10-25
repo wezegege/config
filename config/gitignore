@@ -38,7 +38,7 @@ nohup.out
 #
 __pycache__/
 *.egg-info/
-*.egg/
+*.egg
 .coverage
 .tox
 

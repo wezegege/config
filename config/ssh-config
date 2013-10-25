@@ -18,3 +18,8 @@ Host github github.com
   Hostname github.com
   User git
   IdentityFile ~/.ssh/keys/github
+
+Host gitlab
+  Hostname wez-server
+  User git
+  IdentityFile ~/.ssh/keys/gitlab

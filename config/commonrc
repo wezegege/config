@@ -274,19 +274,17 @@ alias svnaddall="svn st -s | \egrep '^?' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1)
 
 alias fmake="make -j 4"
 alias scp="scp -pr"
+alias rsync="rsync -avz"
 alias vi="vim"
 alias perl="perl -w"
 alias shutdown="shutdown -h"
-alias sqlite="sqlite3"
-alias nw="netstat -tupln"
+alias nw="netstat -tpln"
 alias process="ps -weo user,group,pid,%cpu,%mem,stat,time,args"
 
 alias ldapsearch="ldapsearch -LLL"
 alias ldapmodify="ldapmodify -c"
 
 alias fmake="make -j 4"
-alias gmake="make -f ${HOME}/config/data/Makefile"
-alias gfab="fab -f ~/config/scripts/fabfile/__init__.py"
 
 #====================================================================
 # specificities

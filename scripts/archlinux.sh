@@ -52,7 +52,7 @@ admin="pkgfile net-tools tree rsync ntp"
 utils="chromium terminator"
 core="syslinux reflector sudo zsh openssh lsof htop iftop mlocate"
 virtual="virtualbox-guest-utils"
-build="fakeroot binutils wget make gcc"
+build="fakeroot binutils wget make gcc patch"
 raid="gptfdisk"
 pacstrap /mnt base  ${core} ${development} ${graphics} ${admin} ${utils} ${core} ${virtual} ${build}
 
@@ -181,4 +181,51 @@ EOF
 # deluge
 pacman -S deluge python2-mako
 systemctl enable deluged deluge-web
+
+# mpd
+pacman -S mpd
+chown mpd: /var/lib/mpd
+sed '/music_directory/ s#".*"#"/srv/share/music#' /etc/mpd.conf
+systemctl enable mpd
+
+# client175 
+
+yaourt client175-svn
+# systemctl files
+
+# postgresql
+pacman -S postgresql
+systemd-tmpfiles --create postgresql.conf
+mkdir /var/lib/postgres/data
+chown -c -R postgres:postgres /var/lib/postgres
+sudo su - postgres -c "initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'"
+systemctl enable postgresql
+
+# gitlab
+pacman -S libpqxx
+yaourt gitlab
+sudo -u postgres psql -d template1 <<EOF
+CREATE USER git WITH PASSWORD 'git';
+CREATE DATABASE gitlabhq_production OWNER git;
+\q
+EOF
+cp /usr/share/doc/gitlab/database.yml.postgresql /etc/gitlab/database.yml
+sed -i '/username/ s#:#: git#;
+        /password/ s#:#: git#' /etc/gitlab/database.yml
+sed -i '/host/ s#localhost#0.0.0.0#;
+        /port/ s#80#8888#;
+        s#home/git#srv/git#g' /etc/gitlab/gitlab.yml
+# change paths
+systemctl enable redis gitlab-sidekiq gitlab
+
+# ldap
+pacman -S openldap
+cat <<EOF >/etc/openldap/slapd.conf
+database config
+rootdn "cn=admin,cn=config"
+rootpw config
+EOF
+slaptest -f /etc/openldap/slapd.conf -F /etc/openldap/slapd.d
+chown -R ldap: /etc/openldap/slapd.d
+systemctl enable slapd
 

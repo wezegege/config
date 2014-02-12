@@ -34,7 +34,9 @@ c = get_config()
 # c.InteractiveShellApp.exec_files = []
 
 # lines of code to run at IPython startup.
-# c.InteractiveShellApp.exec_lines = []
+c.InteractiveShellApp.exec_lines = []
+c.InteractiveShellApp.exec_lines.append('%load_ext autoreload')
+c.InteractiveShellApp.exec_lines.append('%autoreload 2')
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
@@ -176,7 +178,8 @@ c = get_config()
 # c.TerminalInteractiveShell.ast_transformers = []
 
 # Set the color scheme (NoColor, Linux, or LightBG).
-# c.TerminalInteractiveShell.colors = 'Linux'
+# c.TerminalInteractiveShell.colors = 'LightBG'
+c.TerminalInteractiveShell.colors = 'LightBG'
 
 # 
 # c.TerminalInteractiveShell.separate_in = '\n'
@@ -184,10 +187,10 @@ c = get_config()
 # Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 # Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 # direct exit without any confirmation.
-c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = False
 
 # 
-# c.TerminalInteractiveShell.wildcards_case_sensitive = True
+c.TerminalInteractiveShell.wildcards_case_sensitive = False
 
 # Number of lines of your screen, used to control printing of very long strings.
 # Strings longer than this number of lines will be sent through a pager instead
@@ -316,18 +319,21 @@ c.TerminalInteractiveShell.autoindent = True
 
 # Input prompt.  '\#' will be transformed to the prompt number
 # c.PromptManager.in_template = 'In [\\#]: '
+c.PromptManager.in_template = '>>> '
 
 # 
 # c.PromptManager.color_scheme = 'Linux'
 
 # Continuation prompt.
 # c.PromptManager.in2_template = '   .\\D.: '
+c.PromptManager.in2_template = '... '
 
 # Output prompt. '\#' will be transformed to the prompt number
 # c.PromptManager.out_template = 'Out[\\#]: '
+c.PromptManager.out_template = ''
 
 # If True (default), each prompt will be right-aligned with the preceding one.
-# c.PromptManager.justify = True
+c.PromptManager.justify = False
 
 #------------------------------------------------------------------------------
 # HistoryManager configuration

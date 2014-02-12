@@ -2,6 +2,7 @@ Host *
   HashKnownHosts yes
   ForwardAgent yes
   ForwardX11 yes
+  ForwardX11Trusted yes
   #GssApiAuthentication yes
   GssApiAuthentication no
   GssApiDelegateCredentials yes

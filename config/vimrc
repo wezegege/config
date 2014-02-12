@@ -1,5 +1,6 @@
 " Use Vim settings, rather than Vi settings (much better!).
 set nocompatible
+filetype off
 
 " This must be first, because it changes other options as a side effect.
 if has("multi_byte")
@@ -12,12 +13,29 @@ if has("multi_byte")
    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Use pathogen to easily modify the runtime path to include all
-" plugins under the ~/.vim/bundle directory
-if !exists("g:loaded_pathogen")
-  call pathogen#helptags()
-  call pathogen#incubate()
-endif
+"" Use pathogen to easily modify the runtime path to include all
+"" plugins under the ~/.vim/bundle directory
+"if !exists("g:loaded_pathogen")
+"  call pathogen#helptags()
+"  call pathogen#incubate()
+"endif
+
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'vundle'
+
+Bundle 'https://github.com/Bogdanp/quicksilver.vim'
+Bundle 'https://github.com/Valloric/YouCompleteMe'
+Bundle 'https://github.com/scrooloose/nerdtree'
+Bundle 'Syntastic'
+Bundle 'Tagbar'
+Bundle 'UltiSnips'
+Bundle 'DetectIndent'
+Bundle 'AutoTag'
+
+
+filetype on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
@@ -38,7 +56,6 @@ set laststatus=2
 set ruler    " show the cursor position all the time
 set showcmd    " display incomplete commands
 set showmode
-"set statusline=%<%F\ %h%m%r%=[%03.3b]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)\ #%n\ %P
 set statusline=%<%F\ %h%m%r%=[%b-%B]\ %Y/%{&ff}/%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"(B)\":\"\").\"\ \"}\ (%l\/%L,%c%V)
 set lazyredraw
 set ttyfast
@@ -53,7 +70,7 @@ set listchars=eol:¶,tab:→→,trail:»,extends:↓,precedes:←,nbsp:·
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 if has('mouse')
-  set mouse=a
+  set mouse=nic
 endif
 
 set splitright
@@ -102,6 +119,8 @@ autocmd FileType make setlocal noexpandtab
 " File management
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
 
+set tags=./tags;/
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,15 +130,15 @@ set nocopyindent  " if set to True, creates tabs instead of spaces
 set smartindent
 
 " Indent management
-set expandtab " uses spaces instead of tabs
-set smarttab
-function! Indent(size)
-  let &shiftwidth=a:size " beginning of line with smarttab
-  let &tabstop=a:size " everything else with smarttab
-  let &softtabstop=a:size
-endfunction
+"set expandtab " uses spaces instead of tabs
+"set smarttab
+"function! Indent(size)
+"  let &shiftwidth=a:size " beginning of line with smarttab
+"  let &tabstop=a:size " everything else with smarttab
+"  let &softtabstop=a:size
+"endfunction
 
-call Indent(4)
+"call Indent(4)
 
 set autochdir
 
@@ -202,6 +221,11 @@ nmap <silent> <C-N> :silent noh<CR>
 "diff
 nmap dc ]czz
 
+" goto definition/declaration
+nnoremap gd <C-]>
+nnoremap gs <C-T>
+
+" indent
 nmap > >>
 nmap < <<
 vnoremap < <gv
@@ -226,7 +250,7 @@ nnoremap gr :tabnext<CR>
 
 " nmap <BS> X
 nmap <leader>d :bdelete #<cr>
-nmap <leader>b :buffers<cr>:b 
+nmap <leader>b :buffers<cr>:b
 nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
@@ -273,13 +297,16 @@ nnoremap <silent><leader>t :TagbarToggle<CR>
 let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
       \'passive_filetypes': []}
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 noremap <leader>x <Esc>:Errors<CR>
 
 " UltiSnips
+let g:UltiSnipsExpandTrigger="<C-L>"
+let g:UltiSnipsListSnippets="<C-S>"
+let g:UltiSnipsJumpForwardTrigger="<C-L>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 let g:UltiSnipsEditSplit = "vertical"
-let g:UltiSnipsListSnippets = "<C-s>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:ultisnips_python_style = "sphinx"
 noremap <leader>as :UltiSnipsEdit<cr>
 
@@ -291,6 +318,13 @@ let g:QSIgnored = "\\.pyc$;\\.swp$"
 autocmd bufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
+
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
+
+" NERDTree
+
+map <leader>f :NERDTreeToggle<CR>
 
 
 " Functions

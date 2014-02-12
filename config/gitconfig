@@ -25,7 +25,7 @@ wdiff = diff --word-diff
 ad = add -A .
 addd = add --patch
 sub = submodule
-subup = submodule update --init
+subup = submodule update --init --recursive
 subpull = submodule foreach git pull origin master
 subco = submodule foreach git checkout master
 lg = log -n 10 --abbrev-commit
@@ -37,6 +37,7 @@ uremote = remote -v
 pullff = pull --ff
 pullrb = pull --rebase
 mergeff = merge --ff
+amend = commit --amend -C HEAD
 
 [help]
 autocorrect = 1

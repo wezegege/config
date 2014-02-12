@@ -23,3 +23,15 @@ if [[ $# -ge 1 ]] ; then
     uncommonrc=${HOME}/config/uncommonrc/$1
     put_link ${uncommonrc} ${HOME}/.uncommonrc
 fi
+
+pushd .
+cd ~/.vim/bundle
+git clone https://github.com/gmarik/vundle.git
+vim +BundleInstall +qall
+install cmake clang
+mkdir ~/ycm_build
+cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON . ~/.vim/bundle/YouCompleteMe/cpp
+make ycm_support_libs
+popd
+rm -rf ~/ycm_build
+

@@ -58,7 +58,3 @@ enabled = true # record resolved conflicts hunks
 
 [http]
 sslVerify = false
-
-[user]
-	name = Kevin Tran
-	email = ext.kevin.tran@lotsys.com

@@ -28,6 +28,7 @@ Bundle 'vundle'
 Bundle 'https://github.com/Bogdanp/quicksilver.vim'
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/scrooloose/nerdtree'
+Bundle 'https://github.com/honza/vim-snippets'
 Bundle 'Syntastic'
 Bundle 'Tagbar'
 Bundle 'UltiSnips'
@@ -130,15 +131,15 @@ set nocopyindent  " if set to True, creates tabs instead of spaces
 set smartindent
 
 " Indent management
-"set expandtab " uses spaces instead of tabs
-"set smarttab
-"function! Indent(size)
-"  let &shiftwidth=a:size " beginning of line with smarttab
-"  let &tabstop=a:size " everything else with smarttab
-"  let &softtabstop=a:size
-"endfunction
+set expandtab " uses spaces instead of tabs
+set smarttab
+function! Indent(size)
+  let &shiftwidth=a:size " beginning of line with smarttab
+  let &tabstop=a:size " everything else with smarttab
+  let &softtabstop=a:size
+endfunction
 
-"call Indent(4)
+call Indent(4)
 
 set autochdir
 

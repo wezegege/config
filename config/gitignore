@@ -30,12 +30,9 @@ nohup.out
 *.sqlite
 
 # SVN
-
-.svn/
 .svn/
 
 # Python
-#
 __pycache__/
 *.egg-info/
 *.egg
@@ -56,3 +53,8 @@ tags
 
 # build folder
 target
+_build
+_static
+*.pid
+*.sqlite*
+bower_components

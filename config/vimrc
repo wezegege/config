@@ -246,8 +246,8 @@ nmap <C-l> <C-w>l
 
 " tabs
 nmap <C-T> :tabnew<CR>
-nnoremap gt :tabprevious<CR>
-nnoremap gr :tabnext<CR>
+nnoremap gt :tabnext<CR>
+nnoremap gr :tabprevious<CR>
 
 " nmap <BS> X
 nmap <leader>d :bdelete #<cr>
@@ -299,6 +299,7 @@ let g:syntastic_mode_map = {'mode': 'active',
       \'active_filetypes': [],
       \'passive_filetypes': []}
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_python_checker_args='-d C0301,C0111'
 
 noremap <leader>x <Esc>:Errors<CR>
 
@@ -322,6 +323,7 @@ let g:detectindent_preferred_indent = 2
 
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree
 

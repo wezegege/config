@@ -205,6 +205,8 @@ if has("spell")
 endif
 set spellsuggest=5
 
+map <F1> <nop>
+
 " key easier access for Azerty keyboards
 noremap é ~
 nnoremap à @

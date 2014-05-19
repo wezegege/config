@@ -1,24 +1,3 @@
-[submodule "config/vim/bundle/syntastic"]
-	path = config/vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "config/vim/bundle/tagbar"]
-	path = config/vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "config/vim/bundle/pathogen"]
-	path = config/vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "config/vim/bundle/ultisnips"]
-	path = config/vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "config/vim/bundle/quicksilver"]
-	path = config/vim/bundle/quicksilver
-	url = https://github.com/Bogdanp/quicksilver.vim.git
-[submodule "config/vim/bundle/detectindent"]
-	path = config/vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent.git
 [submodule "scripts/todo.txt-cli"]
 	path = scripts/todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli.git
-[submodule "config/vim/bundle/autotag"]
-	path = config/vim/bundle/autotag
-	url = https://github.com/vim-scripts/AutoTag.git

@@ -4,13 +4,13 @@ filetype off
 
 " This must be first, because it changes other options as a side effect.
 if has("multi_byte")
-   if &termencoding == ""
-      let &termencoding = &encoding
-   endif
-   set encoding=utf-8
-   setglobal fileencoding=utf-8
-   " setglobal bom
-   set fileencodings=ucs-bom,utf-8,latin1
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    " setglobal bom
+    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
 "" Use pathogen to easily modify the runtime path to include all
@@ -25,7 +25,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'vundle'
 
-Bundle 'https://github.com/Bogdanp/quicksilver.vim'
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle 'https://github.com/honza/vim-snippets'
@@ -43,15 +42,15 @@ filetype on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if $TERM == 'linux' || $TERM == 'screen' || $TERM == 'rxvt'
-  colorscheme impact
+    colorscheme impact
 else
-  set t_Co=256
-  colorscheme lucius
+    set t_Co=256
+    colorscheme lucius
 endif
 
 set number
 if version >= 703
-  set relativenumber
+    set relativenumber
 endif
 set laststatus=2
 set ruler    " show the cursor position all the time
@@ -71,7 +70,7 @@ set listchars=eol:¶,tab:→→,trail:»,extends:↓,precedes:←,nbsp:·
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 if has('mouse')
-  set mouse=nic
+    set mouse=nic
 endif
 
 set splitright
@@ -84,30 +83,30 @@ set splitbelow
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
+    syntax on
+    set hlsearch
 endif
 
 if has("autocmd")
-  filetype plugin indent on
-  autocmd! BufNewFile * call LoadTemplate()
+    filetype plugin indent on
+    autocmd! BufNewFile * call LoadTemplate()
 
-  augroup vimrcEx
-    au!
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+    augroup vimrcEx
+        au!
+        " For all text files set 'textwidth' to 78 characters.
+        autocmd FileType text setlocal textwidth=78
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-    autocmd BufReadPost *
-          \ if line("'\"") > 1 && line("'\"") <= line("$") |
-          \   exe "normal! g`\"" |
-          \ endif
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        " Also don't do it when the mark is in the first line, that is the default
+        " position when opening a file.
+        autocmd BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
 
-  augroup END
+    augroup END
 endif
 autocmd! BufWritePost ~/.vimrc bufdo source $MYVIMRC
 
@@ -134,9 +133,9 @@ set smartindent
 set expandtab " uses spaces instead of tabs
 set smarttab
 function! Indent(size)
-  let &shiftwidth=a:size " beginning of line with smarttab
-  let &tabstop=a:size " everything else with smarttab
-  let &softtabstop=a:size
+    let &shiftwidth=a:size " beginning of line with smarttab
+    let &tabstop=a:size " everything else with smarttab
+    let &softtabstop=a:size
 endfunction
 
 call Indent(4)
@@ -154,7 +153,7 @@ set incsearch    " do incremental searching
 set smartcase
 set infercase
 if version >= 703
-  set wildignorecase " file name case insensitive completion
+    set wildignorecase " file name case insensitive completion
 endif
 set showmatch
 set showfulltag
@@ -198,10 +197,10 @@ let mapleader="," "leader controls
 inoremap <C-U> <C-G>u<C-U>
 
 if has("spell")
-  setlocal spell spelllang=
-  nmap <silent> <leader>lf :setlocal spell spelllang=fr<cr>
-  nmap <silent> <leader>le :setlocal spell spelllang=en<cr>
-  nmap <silent> <leader>ll :setlocal spell spelllang=<cr>
+    setlocal spell spelllang=
+    nmap <silent> <leader>lf :setlocal spell spelllang=fr<cr>
+    nmap <silent> <leader>le :setlocal spell spelllang=en<cr>
+    nmap <silent> <leader>ll :setlocal spell spelllang=<cr>
 endif
 set spellsuggest=5
 
@@ -248,8 +247,8 @@ nmap <C-l> <C-w>l
 
 " tabs
 nmap <C-T> :tabnew<CR>
-nnoremap gt :tabprevious<CR>
-nnoremap gr :tabnext<CR>
+nnoremap gt :tabnext<CR>
+nnoremap gr :tabprevious<CR>
 
 " nmap <BS> X
 nmap <leader>d :bdelete #<cr>
@@ -298,9 +297,14 @@ nnoremap <silent><leader>t :TagbarToggle<CR>
 
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'active',
-      \'active_filetypes': [],
-      \'passive_filetypes': []}
+            \'active_filetypes': [],
+            \'passive_filetypes': []}
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_python_pylint_args=' --disable=C'
+sign define SyntasticError text=✗
+sign define SyntasticStyleError text=✗
+sign define SyntasticWarning text=⚠
+sign define SyntasticStyleWarning text=⚠
 
 noremap <leader>x <Esc>:Errors<CR>
 
@@ -313,17 +317,14 @@ let g:UltiSnipsEditSplit = "vertical"
 let g:ultisnips_python_style = "sphinx"
 noremap <leader>as :UltiSnipsEdit<cr>
 
-" Quicksilver
-let g:QSMatchFn = "fuzzy"
-let g:QSIgnored = "\\.pyc$;\\.swp$"
-
 " detectindent
 autocmd bufReadPost * :DetectIndent
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
+let g:detectindent_preferred_expandtab = 2
+let g:detectindent_preferred_indent = 4
 
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree
 
@@ -334,84 +335,84 @@ map <leader>f :NERDTreeToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! Refresh()
-  syntax on
-  silent! syntax sync fromstart
-  if &diff
-     diffupdate
-  endif
+    syntax on
+    silent! syntax sync fromstart
+    if &diff
+        diffupdate
+    endif
 endfunction
 
 function! PrintMode()
-  set list!
-  if exists('+relativenumber')
-    set relativenumber!
-  else
-    set number!
-  endif
+    set list!
+    if exists('+relativenumber')
+        set relativenumber!
+    else
+        set number!
+    endif
 endfunction
 
 function! LoadTemplate()
-  silent! 0r ~/.vim/templates/tmpl.%:e
+    silent! 0r ~/.vim/templates/tmpl.%:e
 endfunction
 
 function! CleanExtraSpaces()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  retab
-  set ff=unix
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :%s/\s\+$//e
+    retab
+    set ff=unix
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
 endfunction
 
 function! DelimitColumns()
-  if &colorcolumn == ''
-    set colorcolumn=80,81,82
-  else
-    set colorcolumn=
-  endif
+    if &colorcolumn == ''
+        set colorcolumn=80,81,82
+    else
+        set colorcolumn=
+    endif
 endfunction
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+                \ | wincmd p | diffthis
 endif
 
 function! ProjectRoot()
-  let dest=""
-  let parent="."
-  while isdirectory(parent . "/.svn")
-    let dest=parent
-    let parent=parent . "/.."
-  endwhile
-  if dest == ""
+    let dest=""
     let parent="."
-    while isdirectory(parent)
-      if isdirectory(parent . "/.git")
+    while isdirectory(parent . "/.svn")
         let dest=parent
-        break
-      else
         let parent=parent . "/.."
-      endif
     endwhile
-  endif
-  if dest == ""
-    let current_dir=getcwd()
-    for folder in split($PROJECTPATH, ":")
-      if current_dir =~ folder . "/"
-        let dest = substitute(current_dir, folder . "\\/\\([^/]\\+\\).*", folder . "\\/\\1", "g")
-        break
-      endif
-    endfor
-  endif
-  if dest == ""
-    let dest="~"
-  endif
-  exec "cd" dest
-  CommandTFlush
+    if dest == ""
+        let parent="."
+        while isdirectory(parent)
+            if isdirectory(parent . "/.git")
+                let dest=parent
+                break
+            else
+                let parent=parent . "/.."
+            endif
+        endwhile
+    endif
+    if dest == ""
+        let current_dir=getcwd()
+        for folder in split($PROJECTPATH, ":")
+            if current_dir =~ folder . "/"
+                let dest = substitute(current_dir, folder . "\\/\\([^/]\\+\\).*", folder . "\\/\\1", "g")
+                break
+            endif
+        endfor
+    endif
+    if dest == ""
+        let dest="~"
+    endif
+    exec "cd" dest
+    CommandTFlush
 endfunction
 
 """""""""""""""""""""""""""""""""""""""
@@ -419,28 +420,28 @@ endfunction
 " http://vim.wikia.com/wiki/VimTip171
 let s:save_cpo = &cpo | set cpo&vim
 if !exists('g:VeryLiteral')
-  let g:VeryLiteral = 0
+    let g:VeryLiteral = 0
 endif
 
 function! s:VSetSearch(cmd)
-  let old_reg = getreg('"')
-  let old_regtype = getregtype('"')
-  normal! gvy
-  if @@ =~? '^[0-9a-z,_]*$' || @@ =~? '^[0-9a-z ,_]*$' && g:VeryLiteral
-    let @/ = @@
-  else
-    let pat = escape(@@, a:cmd.'\')
-    if g:VeryLiteral
-      let pat = substitute(pat, '\n', '\\n', 'g')
+    let old_reg = getreg('"')
+    let old_regtype = getregtype('"')
+    normal! gvy
+    if @@ =~? '^[0-9a-z,_]*$' || @@ =~? '^[0-9a-z ,_]*$' && g:VeryLiteral
+        let @/ = @@
     else
-      let pat = substitute(pat, '^\_s\+', '\\s\\+', '')
-      let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
-      let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
+        let pat = escape(@@, a:cmd.'\')
+        if g:VeryLiteral
+            let pat = substitute(pat, '\n', '\\n', 'g')
+        else
+            let pat = substitute(pat, '^\_s\+', '\\s\\+', '')
+            let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
+            let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
+        endif
+        let @/ = '\V'.pat
     endif
-    let @/ = '\V'.pat
-  endif
-  normal! gV
-  call setreg('"', old_reg, old_regtype)
+    normal! gV
+    call setreg('"', old_reg, old_regtype)
 endfunction
 
 vnoremap <silent> * :<C-U>call <SID>VSetSearch('/')<CR>/<C-R>/<CR>
@@ -448,9 +449,9 @@ vnoremap <silent> # :<C-U>call <SID>VSetSearch('?')<CR>?<C-R>/<CR>
 vmap <kMultiply> *
 
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral
-  \\| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")<CR>
+            \\| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")<CR>
 if !hasmapto("<Plug>VLToggle")
-  nmap <unique> <Leader>vl <Plug>VLToggle
+    nmap <unique> <Leader>vl <Plug>VLToggle
 endif
 let &cpo = s:save_cpo | unlet s:save_cpo
 

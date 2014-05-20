@@ -22,7 +22,7 @@ br = branch -avv
 pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
 wdiff = diff --word-diff
-ad = add -A .
+ad = add -A
 addd = add --patch
 sub = submodule
 subup = submodule update --init --recursive

@@ -33,6 +33,7 @@ Bundle 'Tagbar'
 Bundle 'UltiSnips'
 Bundle 'DetectIndent'
 Bundle 'AutoTag'
+Bundle 'vim-less'
 
 
 filetype on
@@ -301,10 +302,6 @@ let g:syntastic_mode_map = {'mode': 'active',
             \'passive_filetypes': []}
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_python_pylint_args=' --disable=C'
-sign define SyntasticError text=✗
-sign define SyntasticStyleError text=✗
-sign define SyntasticWarning text=⚠
-sign define SyntasticStyleWarning text=⚠
 
 noremap <leader>x <Esc>:Errors<CR>
 

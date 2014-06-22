@@ -13,27 +13,19 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-"" Use pathogen to easily modify the runtime path to include all
-"" plugins under the ~/.vim/bundle directory
-"if !exists("g:loaded_pathogen")
-"  call pathogen#helptags()
-"  call pathogen#incubate()
-"endif
-
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'vundle'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle 'https://github.com/honza/vim-snippets'
+Bundle 'ctrlp.vim'
 Bundle 'Syntastic'
 Bundle 'Tagbar'
 Bundle 'UltiSnips'
 Bundle 'DetectIndent'
 Bundle 'AutoTag'
-Bundle 'vim-less'
 
 
 filetype on
@@ -115,6 +107,7 @@ au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
 au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
 au BufRead,BufNewFile *.cmake set filetype=cmake
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.less,*.sass set filetype=css
 autocmd FileType make setlocal noexpandtab
 
 " File management
@@ -328,6 +321,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 map <leader>f :NERDTreeToggle<CR>
 
 
+" CtrlP
+
+map <leader>q :CtrlPMixed<CR>
+
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -360,14 +357,6 @@ function! CleanExtraSpaces()
     set ff=unix
     call setpos('.', save_cursor)
     call setreg('/', old_query)
-endfunction
-
-function! DelimitColumns()
-    if &colorcolumn == ''
-        set colorcolumn=80,81,82
-    else
-        set colorcolumn=
-    endif
 endfunction
 
 " Convenient command to see the difference between the current buffer and the
@@ -409,7 +398,6 @@ function! ProjectRoot()
         let dest="~"
     endif
     exec "cd" dest
-    CommandTFlush
 endfunction
 
 """""""""""""""""""""""""""""""""""""""

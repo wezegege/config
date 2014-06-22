@@ -1,3 +1,6 @@
 [submodule "scripts/todo.txt-cli"]
 	path = scripts/todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli.git
+[submodule "config/vim/bundle/vundle"]
+	path = config/vim/bundle/vundle
+	url = https://github.com/gmarik/vundle

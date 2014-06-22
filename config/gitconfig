@@ -40,7 +40,7 @@ mergeff = merge --ff
 amend = commit --amend -C HEAD
 rc = rebase --continue
 rs = rebase --skip
-pulll = !git stash; git pull; git stash pop
+pulll = "!f(){ git stash && git pull ${*} && git stash pop; };f"
 
 [help]
 autocorrect = 1

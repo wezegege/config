@@ -3,4 +3,4 @@
 	url = https://github.com/ginatrapani/todo.txt-cli.git
 [submodule "config/vim/bundle/vundle"]
 	path = config/vim/bundle/vundle
-	url = https://github.com/gmarik/vundle
+	url = https://github.com/vim-scripts/vundle.git

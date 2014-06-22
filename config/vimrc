@@ -20,12 +20,13 @@ call vundle#rc()
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle 'https://github.com/honza/vim-snippets'
-Bundle 'ctrlp.vim'
+Bundle 'https://github.com/bling/vim-bufferline'
 Bundle 'Syntastic'
 Bundle 'Tagbar'
 Bundle 'UltiSnips'
 Bundle 'DetectIndent'
 Bundle 'AutoTag'
+Bundle 'ctrlp.vim'
 
 
 filetype on
@@ -66,8 +67,8 @@ if has('mouse')
     set mouse=nic
 endif
 
-set splitright
-set splitbelow
+" set splitright
+" set splitbelow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File type
@@ -258,11 +259,11 @@ nmap <leader>p "+p
 nmap <leader>P "*p
 
 " config files
-nmap <leader>av :vsplit ~/.vimrc<cr>
-nmap <leader>ab :vsplit ~/.bashrc<cr>
-nmap <leader>az :vsplit ~/.zshrc<cr>
-nmap <leader>ac :vsplit ~/.commonrc<cr>
-nmap <leader>au :vsplit ~/.uncommonrc<cr>
+nmap <leader>av :e ~/.vimrc<cr>
+nmap <leader>ab :e ~/.bashrc<cr>
+nmap <leader>az :e ~/.zshrc<cr>
+nmap <leader>ac :e ~/.commonrc<cr>
+nmap <leader>au :e ~/.uncommonrc<cr>
 
 " allow command line editing like emacs
 cnoremap <C-A>       <Home>
@@ -317,8 +318,11 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree
-
 map <leader>f :NERDTreeToggle<CR>
+
+" CtrlP
+
+map <leader>q :CtrlPMixed
 
 
 " CtrlP

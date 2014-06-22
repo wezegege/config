@@ -38,6 +38,9 @@ pullff = pull --ff
 pullrb = pull --rebase
 mergeff = merge --ff
 amend = commit --amend -C HEAD
+rc = rebase --continue
+rs = rebase --skip
+pulll = !git stash; git pull; git stash pop
 
 [help]
 autocorrect = 1

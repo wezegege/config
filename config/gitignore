@@ -39,6 +39,10 @@ __pycache__/
 .coverage
 .tox
 
+# Ruby
+
+.sass-cache
+
 # Eclipse
 .project
 .pydevproject
@@ -58,3 +62,4 @@ _static
 *.pid
 *.sqlite*
 bower_components
+

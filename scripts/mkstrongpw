@@ -7,123 +7,123 @@ from optparse import OptionGroup
 
 # verbose output
 def vo(string=''):
-	if options.verbose:
-		print string
-		return True
-	else:
-		return False
+    if options.verbose:
+        print string
+        return True
+    else:
+        return False
 
 def generate_sequence():
-	vo('Using built-in sequence generator:')
+    vo('Using built-in sequence generator:')
 
-	# define valid characters
-	valid_chars = {} 
-	valid_chars['lowercase']	= 'abcdefghijklmnopqrstuvwxyz'
-	valid_chars['uppercase']	= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-	valid_chars['digits']		= '1234567890'
-	valid_chars['symbols']		= ' !@#$%^&*()[]{},.<>/\?=+|'
+    # define valid characters
+    valid_chars = {}
+    valid_chars['lowercase']    = 'abcdefghijklmnopqrstuvwxyz'
+    valid_chars['uppercase']    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    valid_chars['digits']        = '1234567890'
+    valid_chars['symbols']        = ' !@#$%^&*()[]{},.<>/\?=+|'
 
-	# form sequence string based on the definitions above and
-	# the values of relevant command line options
-	the_string = ''
-	if options.lowercase and options.nolowercase == False:
-		vo('  including '+desc['lowercase']+' (likelihood: '+str(options.lowercase)+')')
-		for i in range(0, options.lowercase):
-			the_string += valid_chars['lowercase']
-	else:
-		vo('  omitting '+desc['lowercase'])
-	if options.uppercase and options.nouppercase == False:
-		vo('  including '+desc['uppercase']+' (likelihood: '+str(options.uppercase)+')')
-		for i in range(0, options.uppercase):
-			the_string += valid_chars['uppercase']
-	else:
-		vo('  omitting '+desc['uppercase']+'')
-	if options.digits and options.nodigits == False:
-		vo('  including '+desc['digits']+' (likelihood: '+str(options.digits)+')')
-		for i in range(0, options.digits):
-			the_string += valid_chars['digits']
-	else:
-		vo('  omitting '+desc['digits']+'')
-	if options.symbols and options.nosymbols == False:
-		vo('  including '+desc['symbols']+' (likelihood: '+str(options.symbols)+')')
-		for i in range(0, options.symbols):
-			the_string += valid_chars['symbols']
-	else:
-		vo('  omitting '+desc['symbols']+'')
+    # form sequence string based on the definitions above and
+    # the values of relevant command line options
+    the_string = ''
+    if options.lowercase and options.nolowercase == False:
+        vo('  including '+desc['lowercase']+' (likelihood: '+str(options.lowercase)+')')
+        for i in range(0, options.lowercase):
+            the_string += valid_chars['lowercase']
+    else:
+        vo('  omitting '+desc['lowercase'])
+    if options.uppercase and options.nouppercase == False:
+        vo('  including '+desc['uppercase']+' (likelihood: '+str(options.uppercase)+')')
+        for i in range(0, options.uppercase):
+            the_string += valid_chars['uppercase']
+    else:
+        vo('  omitting '+desc['uppercase']+'')
+    if options.digits and options.nodigits == False:
+        vo('  including '+desc['digits']+' (likelihood: '+str(options.digits)+')')
+        for i in range(0, options.digits):
+            the_string += valid_chars['digits']
+    else:
+        vo('  omitting '+desc['digits']+'')
+    if options.symbols and options.nosymbols == False:
+        vo('  including '+desc['symbols']+' (likelihood: '+str(options.symbols)+')')
+        for i in range(0, options.symbols):
+            the_string += valid_chars['symbols']
+    else:
+        vo('  omitting '+desc['symbols']+'')
 
-	vo()
-	return the_string
+    vo()
+    return the_string
 
 def read_file(filename):
-	if filename == '-':
-		vo('Reading sequence from standard input')
-		the_string = sys.stdin.read()
-	else:
-		vo('Reading file: '+filename)
-		the_file = open(filename, 'r')
-		the_string = the_file.read() 
+    if filename == '-':
+        vo('Reading sequence from standard input')
+        the_string = sys.stdin.read()
+    else:
+        vo('Reading file: '+filename)
+        the_file = open(filename, 'r')
+        the_string = the_file.read()
 
-	# break the file into lines, strip whitespace from each line,
-	# and re-form all lines into a single string
-	the_lines = the_string.splitlines()
-	the_string = ''
-	for i in the_lines:
-		the_string += i.strip() 
-	vo()
-	vo('Input string: "'+the_string+'"')
-	vo()
-	return the_string
+    # break the file into lines, strip whitespace from each line,
+    # and re-form all lines into a single string
+    the_lines = the_string.splitlines()
+    the_string = ''
+    for i in the_lines:
+        the_string += i.strip()
+    vo()
+    vo('Input string: "'+the_string+'"')
+    vo()
+    return the_string
 
 desc = {}
-desc['lowercase']		= 'lowercase letters'
-desc['uppercase']		= 'uppercase letters'
-desc['digits']			= 'numerical digits'
-desc['symbols']		= 'non-alphanumeric symbols'
+desc['lowercase']        = 'lowercase letters'
+desc['uppercase']        = 'uppercase letters'
+desc['digits']            = 'numerical digits'
+desc['symbols']        = 'non-alphanumeric symbols'
 
 usage = '%prog [options] [filename]'
 version = '%prog 1.0'
 parser = OptionParser(usage=usage, version=version)
 
 parser.add_option('-v', '--verbose', dest='verbose',
-		action='store_true', default=False,
-		help='print verbose output')
+        action='store_true', default=False,
+        help='print verbose output')
 parser.add_option('-c', '--chars', dest='chars',
-		type='int', default=8,
-		help='number of characters per password (default 8)', metavar='N')
+        type='int', default=8,
+        help='number of characters per password (default 8)', metavar='N')
 parser.add_option('-n', '--number', dest='number',
-		type='int', default=10,
-		help='number of passwords to generate (default 10)', metavar='N')
+        type='int', default=10,
+        help='number of passwords to generate (default 10)', metavar='N')
 
 generator = OptionGroup(parser, 'Sequence Generator Options',
-		'These options control the inclusion of certain character types '
-		'in passwords generated using the built-in sequence generator. '
-		'You can disable any character group by setting its likelihood to '
-		'zero. These options only apply to the generator and do not '
-		'affect strings read from a file or stdin.')
+        'These options control the inclusion of certain character types '
+        'in passwords generated using the built-in sequence generator. '
+        'You can disable any character group by setting its likelihood to '
+        'zero. These options only apply to the generator and do not '
+        'affect strings read from a file or stdin.')
 generator.add_option('-l', '--lowercase', dest='lowercase',
-		type='int', metavar='N', default=5,
-		help='likelihood of '+desc['lowercase']+' (default %default)')
+        type='int', metavar='N', default=5,
+        help='likelihood of '+desc['lowercase']+' (default %default)')
 generator.add_option('-L', '--nolowercase', dest='nolowercase',
-		action='store_true', default=False,
-		help='disable '+desc['lowercase']+' (same as --lowercase=0)')
+        action='store_true', default=False,
+        help='disable '+desc['lowercase']+' (same as --lowercase=0)')
 generator.add_option('-u', '--uppercase', dest='uppercase',
-		type='int', metavar='N', default=2,
-		help='likelihood of '+desc['uppercase']+' (default %default)')
+        type='int', metavar='N', default=2,
+        help='likelihood of '+desc['uppercase']+' (default %default)')
 generator.add_option('-U', '--nouppercase', dest='nouppercase',
-		action='store_true', default=False,
-		help='disable '+desc['uppercase']+' (same as --uppercase=0)')
+        action='store_true', default=False,
+        help='disable '+desc['uppercase']+' (same as --uppercase=0)')
 generator.add_option('-d', '--digits', dest='digits',
-		type='int', metavar='N', default=2,
-		help='likelihood of '+desc['digits']+' (default %default)')
+        type='int', metavar='N', default=2,
+        help='likelihood of '+desc['digits']+' (default %default)')
 generator.add_option('-D', '--nodigits', dest='nodigits',
-		action='store_true', default=False,
-		help='disable '+desc['digits']+' (same as --digits=0)')
+        action='store_true', default=False,
+        help='disable '+desc['digits']+' (same as --digits=0)')
 generator.add_option('-s', '--symbols', dest='symbols',
-		type='int', metavar='N', default=1,
-		help='likelihood of '+desc['symbols']+' (default %default)')
+        type='int', metavar='N', default=1,
+        help='likelihood of '+desc['symbols']+' (default %default)')
 generator.add_option('-S', '--nosymbols', dest='nosymbols',
-		action='store_true', default=False,
-		help='disable '+desc['symbols']+' (same as --symbols=0)')
+        action='store_true', default=False,
+        help='disable '+desc['symbols']+' (same as --symbols=0)')
 
 parser.add_option_group(generator)
 (options, args) = parser.parse_args()
@@ -134,30 +134,30 @@ vo()
 
 # check if filename has been given
 if len(args) > 1:
-	parser.error('too many arguments')
+    parser.error('too many arguments')
 elif len(args) == 1:
-	the_file = args[0]
-	the_sequence = read_file(args[0])
+    the_file = args[0]
+    the_sequence = read_file(args[0])
 else:
-	the_sequence = generate_sequence()
+    the_sequence = generate_sequence()
 
 pw_length = options.chars
 number_of_passwords = options.number
 
 if len(the_sequence) < 1:
-	sys.exit('Error: empty sequence')
+    sys.exit('Error: empty sequence')
 
 vo('Password length: '+str(options.chars))
 vo()
 vo('Passwords:')
 
 for i in range(0, number_of_passwords):
-	the_pw = ''
-	for i in range(0, pw_length):
-		the_letter = random.choice(the_sequence),
-		the_pw += ''.join(the_letter)
+    the_pw = ''
+    for i in range(0, pw_length):
+        the_letter = random.choice(the_sequence),
+        the_pw += ''.join(the_letter)
 
-	print the_pw
+    print the_pw
 
 vo(str(options.number) + ' password(s) generated')
 vo()

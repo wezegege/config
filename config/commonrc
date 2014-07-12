@@ -213,6 +213,7 @@ function extract {     # Handy Extract Program.
 function profileplot {
   gprof2dot -f pstats "$1" -n 0 -e 0 | dot -Tpdf -o "$1".pdf
 }
+
 #====================================================================
 # aliases
 #====================================================================
@@ -257,6 +258,11 @@ alias seetar="tar tvf"
 alias upgrade="update"
 alias cdd='cd $(proot)'
 
+# vim
+
+alias vims="vim --servername VIMSERVER"
+alias vimc="vim --servername VIMSERVER --remote-tab"
+
 # applications
 
 alias sudo="sudo -E "
@@ -269,7 +275,7 @@ alias tmux="tmux -2"
 alias svnrmall="svn st -s | \egrep '^!' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs svn rm"
 alias svnaddall="svn st -s | \egrep '^?' | awk '{for(i=1;i<=NF-1;i++)\$i=\$(i+1);NF-=1;print}' | xargs svn add"
 
-alias fmake="make -j 4"
+alias fmake='make -j $(nproc)'
 alias scp="scp -pr"
 alias rsync="rsync -avz"
 alias vi="vim"
@@ -281,7 +287,6 @@ alias process="ps -weo user,group,pid,%cpu,%mem,stat,time,args"
 alias ldapsearch="ldapsearch -LLL"
 alias ldapmodify="ldapmodify -c"
 
-alias fmake="make -j 4"
 
 #====================================================================
 # specificities

@@ -101,15 +101,17 @@ if has("autocmd")
                     \ endif
 
     augroup END
-endif
-autocmd! BufWritePost ~/.vimrc bufdo source $MYVIMRC
 
-au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
-au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
-au BufRead,BufNewFile *.cmake set filetype=cmake
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.less,*.sass set filetype=css
-autocmd FileType make setlocal noexpandtab
+    autocmd! BufWritePost ~/.vimrc bufdo source $MYVIMRC
+
+    au BufRead,BufNewFile *.jinja2 set filetype=html.javascript.jinja2
+    au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
+    au BufRead,BufNewFile *.cmake set filetype=cmake
+    au BufRead,BufNewFile *.md set filetype=markdown
+    au BufRead,BufNewFile *.less,*.sass set filetype=css
+    autocmd FileType make setlocal noexpandtab
+
+endif
 
 " File management
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
@@ -180,6 +182,11 @@ set virtualedit=block
 set noerrorbells
 set visualbell
 set t_vb=
+
+" Sessions
+
+set ssop-=options " do not store global and local values in a session
+set ssop-=folds " do not store folds
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key binding

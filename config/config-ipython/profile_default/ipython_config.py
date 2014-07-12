@@ -46,7 +46,7 @@ c.InteractiveShellApp.exec_lines.append('%autoreload 2')
 # c.InteractiveShellApp.file_to_run = ''
 
 # A list of dotted module names of IPython extensions to load.
-# c.InteractiveShellApp.extensions = []
+c.InteractiveShellApp.extensions = ['autoreload']
 
 # If true, IPython will populate the user namespace with numpy, pylab, etc. and
 # an 'import *' is done from numpy and pylab, when using pylab mode.
@@ -105,7 +105,7 @@ c.InteractiveShellApp.exec_lines.append('%autoreload 2')
 # c.TerminalIPythonApp.exec_files = []
 
 # A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
+c.TerminalIPythonApp.extensions = ['autoreload']
 
 # The date format used by logging formatters for %(asctime)s
 # c.TerminalIPythonApp.log_datefmt = '%Y-%m-%d %H:%M:%S'
@@ -139,7 +139,7 @@ c.InteractiveShellApp.exec_lines.append('%autoreload 2')
 # c.TerminalIPythonApp.ignore_old_config = False
 
 # lines of code to run at IPython startup.
-# c.TerminalIPythonApp.exec_lines = []
+c.TerminalIPythonApp.exec_lines = ['%autoreload 2']
 
 # If a command or file is given via the command-line, e.g. 'ipython foo.py
 # c.TerminalIPythonApp.force_interact = False

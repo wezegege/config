@@ -1,0 +1,3 @@
+---
+- include: personal.yml
+- include: laptop.yml

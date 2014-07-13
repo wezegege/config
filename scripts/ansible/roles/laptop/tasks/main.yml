@@ -1,0 +1,5 @@
+---
+- name: make sure appropriate packages are installed
+  pacman: name={{ item }} state=present
+  with_items:
+    - xf86-input-synaptics

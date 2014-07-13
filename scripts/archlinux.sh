@@ -129,6 +129,7 @@ modprobe -a vboxguest vboxsf vboxvideo
 echo <<  EOF > /etc/modules-load.d/virtualbox.conf
 vboxguest
 vboxsf
+
 vboxvideo
 EOF
 

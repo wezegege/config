@@ -13,21 +13,8 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'https://github.com/Valloric/YouCompleteMe'
-Bundle 'https://github.com/scrooloose/nerdtree'
-Bundle 'https://github.com/honza/vim-snippets'
-Bundle 'https://github.com/bling/vim-bufferline'
-Bundle 'Syntastic'
-Bundle 'Tagbar'
-Bundle 'UltiSnips'
-Bundle 'DetectIndent'
-Bundle 'AutoTag'
-Bundle 'ctrlp.vim'
-
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 filetype on
 

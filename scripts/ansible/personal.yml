@@ -4,4 +4,3 @@
     - system
     - { role: user,  main_user: wezegege }
     - gui
-    - wifi

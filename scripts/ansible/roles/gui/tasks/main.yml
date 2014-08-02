@@ -26,6 +26,8 @@
     - chromium
     - deluge
     - terminator
+    - vlc
+    - redshift
 - name: make sure gdm is enabled
   service: name=gdm state=started enabled=yes
 

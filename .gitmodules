@@ -28,3 +28,6 @@
 [submodule "config/vim/bundle/vim-pathogen"]
 	path = config/vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule "config/vim/bundle/delimitMate.vim"]
+	path = config/vim/bundle/delimitMate.vim
+	url = https://github.com/vim-scripts/delimitMate.vim.git

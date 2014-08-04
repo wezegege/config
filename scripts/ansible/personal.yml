@@ -1,0 +1,6 @@
+---
+- hosts: personal
+  roles:
+    - system
+    - { role: user,  main_user: wezegege }
+    - gui

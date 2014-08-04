@@ -1,3 +1,33 @@
-[submodule "config/vim/bundle/vundle"]
-	path = config/vim/bundle/vundle
-	url = https://github.com/vim-scripts/vundle.git
+[submodule "scripts/todo.txt-cli"]
+	path = scripts/todo.txt-cli
+	url = https://github.com/ginatrapani/todo.txt-cli.git
+[submodule "config/vim/bundle/AutoTag"]
+	path = config/vim/bundle/AutoTag
+	url = http://github.com/vim-scripts/AutoTag.git
+[submodule "config/vim/bundle/DetectIndent"]
+	path = config/vim/bundle/DetectIndent
+	url = http://github.com/vim-scripts/DetectIndent.git
+[submodule "config/vim/bundle/nerdtree"]
+	path = config/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "config/vim/bundle/Syntastic"]
+	path = config/vim/bundle/Syntastic
+	url = http://github.com/vim-scripts/Syntastic.git
+[submodule "config/vim/bundle/Tagbar"]
+	path = config/vim/bundle/Tagbar
+	url = http://github.com/vim-scripts/Tagbar.git
+[submodule "config/vim/bundle/UltiSnips"]
+	path = config/vim/bundle/UltiSnips
+	url = http://github.com/vim-scripts/UltiSnips.git
+[submodule "config/vim/bundle/vim-snippets"]
+	path = config/vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "config/vim/bundle/YouCompleteMe"]
+	path = config/vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "config/vim/bundle/vim-pathogen"]
+	path = config/vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "config/vim/bundle/delimitMate.vim"]
+	path = config/vim/bundle/delimitMate.vim
+	url = https://github.com/vim-scripts/delimitMate.vim.git

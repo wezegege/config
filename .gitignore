@@ -1,4 +1,3 @@
-config/vim/bundle
 *.pyc
 uncommonrc
 data/todo.txt-cli/*

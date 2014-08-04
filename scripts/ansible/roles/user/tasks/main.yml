@@ -1,0 +1,27 @@
+---
+- name: make sure zsh is installed
+  pacman: name=zsh state=present
+- name: create user
+  user: name={{ main_user }}
+    state=present
+    password=$6$rounds=100000$rjU7f7ndPSnEASlf$t2jVfVrOpNvcVjS4Pmtj0SxGWT2UhbfBSNMu8ukB63FAVnknK47gYPsv2WdNlUX1x56BWnkA46LjeMibotk2x/
+    update_password=on_create
+    shell=/bin/zsh
+    group=users
+    groups=wheel
+- name: make sure appropriate packages are installed
+  pacman: name={{ item }} state=present
+  with_items:
+    - git 
+    - cmake
+    - clang
+- name: get config
+  git: repo=http://www.github.com/wezegege/config.git
+      dest=/home/{{ main_user }}/config
+      update=yes
+  remote_user: wezegege
+- name: install YouCompleteMe
+  command: /home/{{ main_user }}/.vim/bundle/YouCompleteMe/install.sh
+  remote_user: wezegege
+
+

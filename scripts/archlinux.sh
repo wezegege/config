@@ -46,7 +46,7 @@ mount -t tmpfs -o size=2G tmpfs /mnt/tmp
 dhclient
 
 # install
-graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool alsa-utils"
+graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool alsa-utils evince eog"
 development="git python vim"
 admin="pkgfile net-tools tree rsync ntp"
 utils="chromium terminator"
@@ -129,6 +129,7 @@ modprobe -a vboxguest vboxsf vboxvideo
 echo <<  EOF > /etc/modules-load.d/virtualbox.conf
 vboxguest
 vboxsf
+
 vboxvideo
 EOF
 

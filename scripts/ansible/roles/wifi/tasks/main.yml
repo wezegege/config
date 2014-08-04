@@ -1,0 +1,8 @@
+---
+- name: make sure network-related packages are installed
+  pacman: name={{ item }} state=present
+  with_items:
+    - wpa_supplicant
+    - wpa_actiond
+- name: enable auto wifi connection
+  service: name=netctl-auto@wls1.service state=started enabled=yes

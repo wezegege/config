@@ -1,0 +1,39 @@
+---
+- name: make sure graphics driver are installed
+  pacman: name={{ graphics }} state=present
+- name: make sure packages are installed
+  pacman: name={{ item }} state=present
+  with_items:
+    - xorg-server
+    - xorg-xinit
+    - xorg-server-utils
+    - gnome-shell
+    - eog
+    - evince
+    - gdm
+    - gnome-calculator
+    - gnome-control-center
+    - gnome-desktop
+    - gnome-disk-utility
+    - gnome-font-viewer
+    - gnome-icon-theme
+    - gnome-settings-daemon
+    - gnome-shell-extensions
+    - gnome-system-log
+    - mutter
+    - nautilus
+    - gnome-tweak-tool
+    - chromium
+    - deluge
+    - terminator
+    - vlc
+    - redshift
+- name: make sure gdm is enabled
+  service: name=gdm state=started enabled=yes
+
+- name: locale conf
+  copy: src=vconsole.conf
+    dest=/etc/vconsole.conf
+- name: set locale
+  command: localectl set-x11-keymap fr pc105
+

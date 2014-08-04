@@ -1,0 +1,53 @@
+---
+- name: update cache
+  pacman: update_cache=yes
+- name: make sure packages are installed
+  pacman: name={{ item }} state=present
+  with_items:
+    - ntp
+    - sudo
+    - openssh
+    - htop
+    - iftop
+    - mlocate
+    - pkgfile
+    - tree
+    - rsync
+    - wget
+    - make
+    - gcc
+    - gvim
+
+# Locale
+- name: install locale
+  locale_gen: name=en_US.UTF-8 state=present
+- name: configure locale
+  copy: content="LANG=fr_FR.UTF-8" dest=/etc/locale.conf
+
+# services
+- name: make sure appropriate services are active
+  service: name={{ item }} state=started enabled=yes
+  with_items:
+    - sshd
+    - ntpd
+
+# sudo
+- name: allow wheel group as sudoers without password
+  lineinfile: "dest=/etc/sudoers state=present regexp='^%wheel' line='%wheel ALL=(ALL) NOPASSWD: ALL'"
+# timezone
+- name: set timezone file
+  file: name=/etc/localtime
+    state=link
+    src=/usr/share/zoneinfo/Europe/Paris
+- name: synchronize clocks
+  command: "{{ item }}"
+  with_items:
+    - 'hwclock --systohc --utc'
+    - 'hwclock -w'
+
+# misc.
+- name: updatedb
+  shell: updatedb
+
+- name: pkgfile update
+  shell: pkgfile

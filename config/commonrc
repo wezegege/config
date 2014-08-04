@@ -167,6 +167,18 @@ function uninstall {
    return 1
 }
 
+function search {
+   hash apt-cache 2>/dev/null
+   [ $? -eq 0 ] && sudo apt-cache search $@ && return
+}
+
+function pkgfile {
+   hash \pkgfile 2>/dev/null
+   [ $? -eq 0 ] && \pkgfile $@ && return
+   hash dpkg 2>/dev/null
+   [ $? -eq 0 ] && dpkg -S $@ && return
+}
+
 function extract {     # Handy Extract Program.
   if [ -f $1 ] ; then
     tarext='.(tgz|tbz2|tbz|txz|tar(.(bz2|gz|xz))?)'
@@ -210,9 +222,6 @@ function extract {     # Handy Extract Program.
   fi
 }
 
-function profileplot {
-  gprof2dot -f pstats "$1" -n 0 -e 0 | dot -Tpdf -o "$1".pdf
-}
 #====================================================================
 # aliases
 #====================================================================

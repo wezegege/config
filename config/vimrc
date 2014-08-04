@@ -344,9 +344,8 @@ function! PrintMode()
     set list!
     if exists('+relativenumber')
         set relativenumber!
-    else
-        set number!
     endif
+    set number!
 endfunction
 
 function! LoadTemplate()

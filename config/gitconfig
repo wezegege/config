@@ -28,7 +28,7 @@ sub = submodule
 subup = submodule update --init --recursive
 subpull = submodule foreach git pull origin master
 subco = submodule foreach git checkout master
-lg = log -n 10 --abbrev-commit
+lg = log -n 15 --abbrev-commit --no-merges
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
 show-graph = log --graph --abbrev-commit --pretty=oneline
 diffc = diff --cached

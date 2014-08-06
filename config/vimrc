@@ -19,7 +19,7 @@ execute pathogen#infect()
 filetype on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Display
+" @@@Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if $TERM == 'linux' || $TERM == 'screen' || $TERM == 'rxvt'
@@ -54,11 +54,8 @@ if has('mouse')
     set mouse=nic
 endif
 
-" set splitright
-" set splitbelow
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File type
+" @@@File type
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Switch syntax highlighting on, when the terminal has colors
@@ -106,7 +103,7 @@ set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.log,.pyc,.pyo,.o
 set tags=./tags;/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Editing
+" @@@Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set autoindent    " always set autoindenting on
@@ -176,7 +173,7 @@ set ssop-=options " do not store global and local values in a session
 set ssop-=folds " do not store folds
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key binding
+" @@@Key binding
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set pastetoggle=<F2>
 let mapleader="," "leader controls
@@ -277,7 +274,7 @@ cnoremap <ESC><C-H>  <C-W>
 cnoremap s# s#\v
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" @@@Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Tagbar
@@ -323,7 +320,8 @@ map <leader>q :CtrlPMixed
 
 map <leader>q :CtrlPMixed<CR>
 
-" Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" @@@Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! Refresh()
@@ -438,7 +436,7 @@ endif
 let &cpo = s:save_cpo | unlet s:save_cpo
 
 """""""""""""""""""""""""""""""""""""
-" Shortcuts
+" @@@Shortcuts
 """""""""""""""""""""""""""""""""""""
 
 nmap <silent><leader>c <esc>:keepjumps call CleanExtraSpaces()<CR>

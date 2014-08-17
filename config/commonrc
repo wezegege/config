@@ -172,7 +172,7 @@ function search {
    [ $? -eq 0 ] && sudo apt-cache search $@ && return
 }
 
-function pkgfile {
+function package {
    hash \pkgfile 2>/dev/null
    [ $? -eq 0 ] && \pkgfile $@ && return
    hash dpkg 2>/dev/null

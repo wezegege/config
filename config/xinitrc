@@ -15,3 +15,7 @@ setterm -blength 0
 setterm -bfreq 0
 
 setxkbmap fr
+
+#screensaver
+xset s off
+xset -dpms

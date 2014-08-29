@@ -71,9 +71,6 @@ if has("autocmd")
 
     augroup vimrcEx
         au!
-        " For all text files set 'textwidth' to 78 characters.
-        autocmd FileType text setlocal textwidth=78
-
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
         " (happens when dropping a file on gvim).
@@ -202,8 +199,8 @@ noremap ² [
 noremap & ]
 
 " search
-nnoremap / /\v
-vnoremap / /\v
+nnoremap / /\v\c
+vnoremap / /\v\c
 nmap <silent> <C-N> :silent noh<CR>
 
 "diff
@@ -445,3 +442,4 @@ nmap <silent><leader>h <esc>:nmap <leader><CR>
 nmap <silent><F5> :call Refresh()<cr>
 nmap <silent><F6> :call PrintMode()<cr>
 nmap ,i :call Indent()<left>
+

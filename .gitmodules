@@ -37,3 +37,6 @@
 [submodule "config/vim/bundle/vim-bufferline"]
 	path = config/vim/bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
+[submodule "config/vim/bundle/vim-less"]
+	path = config/vim/bundle/vim-less
+	url = https://github.com/vim-scripts/vim-less

@@ -89,7 +89,6 @@ if has("autocmd")
     au BufRead,BufNewFile *.cc,*.h,*.hpp,*.cpp set filetype=cpp.doxygen
     au BufRead,BufNewFile *.cmake set filetype=cmake
     au BufRead,BufNewFile *.md set filetype=markdown
-    au BufRead,BufNewFile *.less,*.sass set filetype=css
     autocmd FileType make setlocal noexpandtab
 
 endif

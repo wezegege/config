@@ -139,7 +139,7 @@ function install {
    hash apt-get 2>/dev/null && sudo apt-get install $@ && return
    hash pacman-color 2>/dev/null && sudo pacman-color -S $@ && return
    hash pacman 2>/dev/null && sudo pacman -S $@ && return
-   hash yaourt 2>/dev/null && yaourt $@ && return
+   hash yaourt 2>/dev/null && yaourt --noconfirm $@ && return
    hash yum 2>/dev/null && sudo yum install $@ && return
    echo "No package manager found"
    return 1

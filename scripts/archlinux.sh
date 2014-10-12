@@ -47,7 +47,7 @@ dhclient
 
 # install
 graphics="xorg-server xorg-xinit xorg-server-utils mesa gnome gdm gnome-tweak-tool alsa-utils evince eog"
-development="git python vim"
+development="git python vim ctags"
 admin="pkgfile net-tools tree rsync ntp"
 utils="chromium terminator"
 core="syslinux reflector sudo zsh openssh lsof htop iftop mlocate"

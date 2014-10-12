@@ -26,7 +26,7 @@ ad = add -A
 addd = add --patch
 sub = submodule
 subup = submodule update --init --recursive
-subpull = submodule foreach git pull origin master
+subpull = submodule foreach git pull origin master --recurse-submodules=yes
 subco = submodule foreach git checkout master
 lg = log -n 15 --abbrev-commit --no-merges
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'

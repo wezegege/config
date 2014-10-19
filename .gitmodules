@@ -31,12 +31,9 @@
 [submodule "config/vim/bundle/delimitMate.vim"]
 	path = config/vim/bundle/delimitMate.vim
 	url = https://github.com/vim-scripts/delimitMate.vim.git
-[submodule "config/vim/bundle/bim-bufferline"]
-	path = config/vim/bundle/bim-bufferline
-	url = https://github.com/vim-scripts/vim-bufferline
-[submodule "config/vim/bundle/vim-bufferline"]
-	path = config/vim/bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
 [submodule "config/vim/bundle/vim-less"]
 	path = config/vim/bundle/vim-less
 	url = https://github.com/vim-scripts/vim-less
+[submodule "config/vim/bundle/ctrlp.vim"]
+	path = config/vim/bundle/ctrlp.vim
+	url = https://github.com/vim-scripts/ctrlp.vim.git

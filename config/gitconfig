@@ -20,10 +20,7 @@ ci = commit
 co = checkout
 cl = clone
 br = branch -avv
-pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
-wdiff = diff --word-diff
-diffc = diff --cached
 ad = add -A
 addd = add --patch
 sub = submodule
@@ -32,23 +29,11 @@ subpull = submodule foreach git pull origin master --recurse-submodules=yes
 subco = submodule foreach git checkout master
 lg = log -n 15 --abbrev-commit --no-merges
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
-show-graph = log --graph --abbrev-commit --pretty=oneline
 re = remote -vv
-uremote = remote -v
-pullff = pull --ff
-pullrb = pull --rebase
-mergeff = merge --ff
 amend = commit --amend -C HEAD
 rc = rebase --continue
 rs = rebase --skip
 ra = rebase --abort
-pulll = "!f(){ git stash && git pull ${*} && git stash pop; };f"
-biggies = "!allfileshas=$(git rev-list --objects --all | sort -k 2); \
-    git gc > /dev/null 2&>1; \
-    bigobjects=$(git verify-pack -v .git/objects/pack/pack-*.idx |  egrep '^\\w+ blob\\W+[0-9]+ [0-9]+ [0-9]+$' | sort -k 3 -n -r); \
-    for SHA in $(echo \"$bigobjects\" | cut -f 1 -d\\ | head); do \
-      echo $(echo \"$bigobjects\" | grep $SHA) $(echo \"$allfileshas\" | grep $SHA) | awk '{print $3,$7}'; \
-    done"
 
 [user]
 logallrefupdates = true
@@ -70,6 +55,9 @@ default = tracking # defaults push to upstream branch
 
 [rerere]
 enabled = true # record resolved conflicts hunks
+
+[fetch]
+    recurseSubmodules = true
 
 [http]
 sslVerify = false

@@ -1,0 +1,5 @@
+for pid in $(ps -e | tail -n +2 | awk '{ print $1 }'); do
+	swapped=$(grep VmSwap /proc/${pid}/status 2>/dev/null | awk '{ print $2}')
+	name=$(ps -p ${pid} -o args | tail -n 1)
+	echo "${swapped} ${name}"
+done | sort -k 1 -g | tail -n 10

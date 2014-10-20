@@ -3,6 +3,7 @@ editor = vim
 autocrlf = input
 whitespace = trailing-spaces,space-before-tab
 excludesfile = ~/.gitignore
+	sharedRepository = group
 
 [color]
 branch=auto
@@ -22,6 +23,7 @@ br = branch -avv
 pulll = pull --recurse-submodules=yes -ff
 difff = diff --staged
 wdiff = diff --word-diff
+diffc = diff --cached
 ad = add -A
 addd = add --patch
 sub = submodule
@@ -31,7 +33,6 @@ subco = submodule foreach git checkout master
 lg = log -n 15 --abbrev-commit --no-merges
 lgg = log --graph --pretty=format:'%Cred%h%Creset %s%Cred%d%Creset %Cgreen(%cr by %cN)%Creset'
 show-graph = log --graph --abbrev-commit --pretty=oneline
-diffc = diff --cached
 re = remote -vv
 uremote = remote -v
 pullff = pull --ff
@@ -49,6 +50,8 @@ biggies = "!allfileshas=$(git rev-list --objects --all | sort -k 2); \
       echo $(echo \"$bigobjects\" | grep $SHA) $(echo \"$allfileshas\" | grep $SHA) | awk '{print $3,$7}'; \
     done"
 
+[user]
+logallrefupdates = true
 
 
 [help]

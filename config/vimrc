@@ -110,6 +110,8 @@ set smartindent
 set expandtab " uses spaces instead of tabs
 set smarttab
 function! Indent(size)
+    set nocopyindent
+    set smartindent
     let &shiftwidth=a:size " beginning of line with smarttab
     let &tabstop=a:size " everything else with smarttab
     let &softtabstop=a:size
@@ -240,6 +242,7 @@ nmap <leader>g :!egrep "/" *
 nnoremap <leader>s :%s#/#
 vnoremap <leader>s :s#/#
 nmap <leader>S :bufdo %s#/#
+nmap <leader>m :set fdl=0<cr>
 
 "paste shortcuts
 nmap <leader>p "+p
@@ -287,10 +290,10 @@ let g:syntastic_python_pylint_args=' --disable=C'
 noremap <leader>x <Esc>:Errors<CR>
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<C-L>"
-let g:UltiSnipsListSnippets="<C-S>"
-let g:UltiSnipsJumpForwardTrigger="<C-L>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsListSnippets="<f3>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit = "vertical"
 let g:ultisnips_python_style = "sphinx"
 noremap <leader>as :UltiSnipsEdit<cr>
@@ -306,11 +309,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " NERDTree
 map <leader>f :NERDTreeToggle<CR>
-
-" CtrlP
-
-map <leader>q :CtrlPMixed
-
 
 " CtrlP
 

@@ -63,3 +63,5 @@ _static
 *.sqlite*
 bower_components
 
+# openssl
+.srl

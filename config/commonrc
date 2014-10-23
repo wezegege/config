@@ -230,10 +230,10 @@ function extract {     # Handy Extract Program.
 
 alias ls="ls --color=auto"
 alias ll="ls -lhF --group-directories-first"
-alias lq="ls -A --group-directories-first"
-alias la="lq -lhF"
+alias la="ls -A --group-directories-first"
+alias lla="ll -A"
 alias lt="ls -lrth"
-alias lg="lt -A"
+alias lta="lt -A"
 
 # grep
 

@@ -15,14 +15,16 @@
   go_up = <Ctrl><Shift>k
 [profiles]
   [[default]]
-    background_image = None
-    scrollback_lines = 10000
     scrollbar_position = hidden
+    use_system_font = False
+    scrollback_lines = 10000
+    background_image = None
     split_to_group = True
     foreground_color = "#e0e0e0"
     scroll_on_output = False
     icon_bell = False
     show_titlebar = False
+    font = Inconsolata Medium 10
     background_color = "#1c1c1c"
 [layouts]
   [[default]]

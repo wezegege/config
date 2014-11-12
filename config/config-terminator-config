@@ -24,7 +24,7 @@
     scroll_on_output = False
     icon_bell = False
     show_titlebar = False
-    font = Inconsolata Medium 11
+    font = Inconsolata Medium 10
     background_color = "#1c1c1c"
 [layouts]
   [[default]]

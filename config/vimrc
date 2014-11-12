@@ -237,8 +237,8 @@ nnoremap gr :tabprevious<CR>
 
 " nmap <BS> X
 nmap <leader>d :bdelete #<cr>
-nnoremap <leader>d "_d
 nmap <leader>g :!egrep "/" *
+nmap Q :b#<CR>
 nnoremap <leader>s :%s#/#
 vnoremap <leader>s :s#/#
 nmap <leader>S :bufdo %s#/#
@@ -311,9 +311,11 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 map <leader>f :NERDTreeToggle<CR>
 
 " CtrlP
-
 map <leader>q :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
+
+" Gundo.vim
+nnoremap <F4> :GundoToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @@@Functions

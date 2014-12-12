@@ -43,6 +43,9 @@ PROJECTPATH="${PROJECTPATH}:/usr/lib/python*/site-packages:/usr/lib/python*:/usr
 PROJECTPATH="${PROJECTPATH}:/lib:/var/*:/etc:/srv:/opt"
 
 
+ulimit -c unlimited
+
+
 #====================================================================
 # functions
 #====================================================================
@@ -260,6 +263,7 @@ alias df="df -h"
 alias dotar="tar pczf"
 alias untar="tar xvf"
 alias seetar="tar tvf"
+alias dtrx="dtrx -r --one here"
 
 # functions
 

@@ -61,7 +61,7 @@ function CLASSIC_COLOR () { echo -ne "\[\e[1;$1m\]"; }
 bash_prompt_command () {
     history -a
     PREVIOUS=$(_rc=$? && [[ ${_rc} -ne 0 ]] && echo "|${_rc}|")
-    BRANCH=$(git symbolic-ref HEAD 2>/dev/null | xargs basename 2>/dev/null | xargs -I {} echo "<±{}>")
+    BRANCH=$(git symbolic-ref --short -q HEAD 2>/dev/null | xargs -I {} echo "<±{}>")
 }
 
 function set_prompt () {

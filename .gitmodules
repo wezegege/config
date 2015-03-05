@@ -31,18 +31,9 @@
 [submodule "config/vim/bundle/delimitMate.vim"]
 	path = config/vim/bundle/delimitMate.vim
 	url = https://github.com/vim-scripts/delimitMate.vim.git
-[submodule "config/vim/bundle/vim-less"]
-	path = config/vim/bundle/vim-less
-	url = https://github.com/vim-scripts/vim-less
 [submodule "config/vim/bundle/tern_for_vim"]
 	path = config/vim/bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
 [submodule "config/vim/bundle/ctrlp.vim"]
 	path = config/vim/bundle/ctrlp.vim
 	url = https://github.com/vim-scripts/ctrlp.vim.git
-[submodule "config/vim/bundle/closetag.vim"]
-	path = config/vim/bundle/closetag.vim
-	url = https://github.com/vim-scripts/closetag.vim
-[submodule "config/vim/bundle/gundo.vim"]
-	path = config/vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim

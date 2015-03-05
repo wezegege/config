@@ -1,0 +1,13 @@
+#!/bin/bash
+
+folders="$@"
+for folder in $(echo ${folders}); do
+    echo "Removing ${folder}"
+    if [ ! -d "${folder}" ]; then
+        echo "Folder not found"
+        continue
+    fi
+    git submodule deinit ${folder}
+    git rm ${folder}
+    rm -rf .git/modules/${folder}
+done

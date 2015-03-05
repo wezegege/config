@@ -281,6 +281,7 @@ alias sudo="sudo -E "
 alias diff="diff -ur"
 alias tailf="tail -f"
 alias lns="ln -s"
+alias cp="cp -r"
 alias tree="tree -C -I '*.pyc|__pycache__'"
 alias tmux="tmux -2"
 

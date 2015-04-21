@@ -37,6 +37,8 @@ ra = rebase --abort
 
 [user]
 logallrefupdates = true
+	name = ktran
+	email = ktran@anevia.com
 
 
 [help]

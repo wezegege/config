@@ -90,6 +90,7 @@ if has("autocmd")
     au BufRead,BufNewFile *.cmake set filetype=cmake
     au BufRead,BufNewFile *.md set filetype=markdown
     au BufRead,BufNewFile *.php set omnifunc= "Too slow
+    au BufRead,BufNewFile *.less set omnifunc= "Too slow
     autocmd FileType make setlocal noexpandtab
 
 endif

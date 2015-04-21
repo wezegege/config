@@ -37,3 +37,12 @@
 [submodule "config/vim/bundle/ctrlp.vim"]
 	path = config/vim/bundle/ctrlp.vim
 	url = https://github.com/vim-scripts/ctrlp.vim.git
+[submodule "config/vim/bundle/vim-less"]
+	path = config/vim/bundle/vim-less
+	url = https://github.com/vim-scripts/vim-less.git
+[submodule "config/pyenv"]
+	path = config/pyenv
+	url = git://github.com/yyuu/pyenv.git
+[submodule "config/pyenv:plugins:pyenv-virtualenv"]
+	path = config/pyenv:plugins:pyenv-virtualenv
+	url = https://github.com/yyuu/pyenv-virtualenv.git

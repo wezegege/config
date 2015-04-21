@@ -15,7 +15,7 @@ function put_link {
 
 config_folder="${HOME}/config/config"
 for config_file in $(ls ${config_folder}); do
-    path="${HOME}/.$(echo ${config_file} | tr '-' '/')"
+    path="${HOME}/.$(echo ${config_file} | tr ':' '/')"
     put_link ${config_folder}/${config_file} ${path}
 done
 

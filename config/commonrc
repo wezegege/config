@@ -308,3 +308,12 @@ alias ldapmodify="ldapmodify -c"
 if [ -f ~/.uncommonrc ]; then
    source ~/.uncommonrc   # --> Read /etc/bashrc, if present.
 fi
+
+if [ -d ~/.pyenv ]; then
+  export PYENV_ROOT="${HOME}/.pyenv"
+  export PATH="${PYENV_ROOT}/bin:${PATH}"
+  eval "$(pyenv init  -)"
+  eval "$(pyenv virtualenv-init  -)"
+fi
+
+

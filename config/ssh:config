@@ -10,8 +10,11 @@ Host *
   ControlPath ~/.ssh/cm_socket/ssh-%r@%h:%p
   ControlPersist 600
 
+Host dedibox
+  Hostname cloudmonitoring.anevia-hospitality.com
+
 Host bitbucket bitbucket.org
-  Host bitbucket.org
+  Hostname bitbucket.org
   User git
   IdentityFile ~/.ssh/keys/bitbucket
 
@@ -24,3 +27,22 @@ Host gitlab
   Hostname wez-server
   User git
   IdentityFile ~/.ssh/keys/gitlab
+
+Host remote.anevia.com
+  Hostname git.anevia.com
+
+Host caciis
+  Hostname 172.22.30.10
+  User root
+
+Host caciis-preprod
+  Hostname 172.22.30.11
+  User root
+
+
+Host pentalog
+        User user
+        ProxyCommand ssh home.anevia.com nc -w1 192.168.11.248 22
+        DynamicForward 55001
+        LocalForward 5900 192.168.11.246:5900
+        LocalForward 5959 192.168.190.248:5900

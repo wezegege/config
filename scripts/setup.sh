@@ -6,9 +6,9 @@ function put_link {
     dest=$2
     [[ -e $(dirname ${dest}) ]] || mkdir -p $(dirname ${dest})
     if [[ -e ${dest} && $(readlink ${dest}) == ${config_folder}/${config_file} ]] ; then
-        ln -sf ${config_folder}/${config_file} ${dest}
+        ln -sfn ${config_folder}/${config_file} ${dest}
     else
-        ln -sbf ${config_folder}/${config_file} ${dest}
+        ln -sbfn ${config_folder}/${config_file} ${dest}
     fi
 
 }
